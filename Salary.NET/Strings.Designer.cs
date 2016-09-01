@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Salary.NET.Properties {
+namespace Salary.NET {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Salary.NET.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Salary.NET.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Salary.NET.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Salary.NET.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,60 @@ namespace Salary.NET.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Willst du wirklich den Mitarbeiter &quot;%s&quot; löschen? ähnelt.
+        /// </summary>
+        internal static string CONFIRM_EMPLOYEE_DELETION {
+            get {
+                return ResourceManager.GetString("CONFIRM_EMPLOYEE_DELETION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fehler ähnelt.
+        /// </summary>
+        internal static string ERROR {
+            get {
+                return ResourceManager.GetString("ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warnung ähnelt.
+        /// </summary>
+        internal static string WARNING {
+            get {
+                return ResourceManager.GetString("WARNING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die XML-Datei &quot;%s&quot; existiert bereits. ähnelt.
+        /// </summary>
+        internal static string XML_FILE_ALREADY_EXISTS {
+            get {
+                return ResourceManager.GetString("XML_FILE_ALREADY_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die XML-Datei &quot;%s&quot; existiert nicht. ähnelt.
+        /// </summary>
+        internal static string XML_FILE_DOESNT_EXISTS {
+            get {
+                return ResourceManager.GetString("XML_FILE_DOESNT_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die XML-Dateien|*.xml|Alle Dateien|*.* ähnelt.
+        /// </summary>
+        internal static string XML_FILE_FILTER {
+            get {
+                return ResourceManager.GetString("XML_FILE_FILTER", resourceCulture);
             }
         }
     }
