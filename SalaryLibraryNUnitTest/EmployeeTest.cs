@@ -62,7 +62,7 @@ namespace SalaryLibraryNUnitTest
 		[Test]
 		public void TestEmployeeConstructorIdException()
 		{
-			Assert.Throws<ArgumentException>(() => { new Employee(0, "Max", "Mustermann"); });
+			Assert.Throws<ArgumentException>(() => { new Employee(null, "Max", "Mustermann"); });
 		}
 
 		[Test]
@@ -125,7 +125,10 @@ namespace SalaryLibraryNUnitTest
 			Assert.IsFalse(employee1Exists);
 			var newId1 = Settings.DefaultDataBackend.InsertEmployee(employee1);
 			Assert.AreEqual(1, newId1);
-			
+
+			var employee1ExistsById = Settings.DefaultDataBackend.EmployeeExists(newId1);
+			Assert.IsTrue(employee1ExistsById);
+
 			var employeeLoaded = Settings.DefaultDataBackend.GetEmployee(newId1);
 
 			Assert.AreEqual("Max", employeeLoaded.FirstName);

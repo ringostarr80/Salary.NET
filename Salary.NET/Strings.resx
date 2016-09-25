@@ -120,6 +120,9 @@
   <data name="CONFIRM_EMPLOYEE_DELETION" xml:space="preserve">
     <value>Willst du wirklich den Mitarbeiter "%s" löschen?</value>
   </data>
+  <data name="CONFIRM_SALARY_ACCOUNTING_DELETION" xml:space="preserve">
+    <value>Willst du wirklich die Gehaltsabrechnung mit der Id "%s" löschen?</value>
+  </data>
   <data name="ERROR" xml:space="preserve">
     <value>Fehler</value>
   </data>

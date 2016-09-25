@@ -121,52 +121,13 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
-    <value>&amp;Datei</value>
-  </data>
-  <data name="toolStripMenuItemEditAddEmployee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="toolStripMenuItemEditAddEmployee.Text" xml:space="preserve">
-    <value>&amp;Mitarbeiter</value>
-  </data>
-  <data name="toolStripMenuItemEditAddSalaryAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="toolStripMenuItemEditAddSalaryAccount.Text" xml:space="preserve">
-    <value>&amp;Gehaltsabrechnung</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStripMenuItemEditAdd.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
-    <value>&amp;Hinzufügen</value>
-  </data>
-  <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
-    <value>&amp;Bearbeiten</value>
-  </data>
-  <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
-    <value>&amp;Optionen</value>
-  </data>
   <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>624, 24</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -183,7 +144,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStripMain.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
+    <value>&amp;Datei</value>
   </data>
   <data name="toolStripMenuItemNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -218,6 +185,39 @@
   <data name="toolStripMenuItemClose.Text" xml:space="preserve">
     <value>&amp;Beenden</value>
   </data>
+  <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
+    <value>&amp;Bearbeiten</value>
+  </data>
+  <data name="toolStripMenuItemEditAdd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
+    <value>&amp;Hinzufügen</value>
+  </data>
+  <data name="toolStripMenuItemEditAddEmployee.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="toolStripMenuItemEditAddEmployee.Text" xml:space="preserve">
+    <value>&amp;Mitarbeiter</value>
+  </data>
+  <data name="toolStripMenuItemEditAddSalaryAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="toolStripMenuItemEditAddSalaryAccount.Text" xml:space="preserve">
+    <value>&amp;Gehaltsabrechnung</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
+    <value>&amp;Optionen</value>
+  </data>
   <data name="toolStripMenuItemLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
   </data>
@@ -245,68 +245,50 @@
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>322, 17</value>
   </metadata>
-  <metadata name="tabPageSalaries.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="&gt;&gt;tabPageEmployees.Name" xml:space="preserve">
-    <value>tabPageEmployees</value>
+  <data name="olvColumnHeaderId.Text" xml:space="preserve">
+    <value>Id</value>
   </data>
-  <data name="&gt;&gt;tabPageEmployees.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="olvColumnHeaderPersonnelNumber.Text" xml:space="preserve">
+    <value>Personalnummer</value>
   </data>
-  <data name="&gt;&gt;tabPageEmployees.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
+  <data name="olvColumnHeaderPersonnelNumber.Width" type="System.Int32, mscorlib">
+    <value>100</value>
   </data>
-  <data name="&gt;&gt;tabPageEmployees.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="olvColumnHeaderFirstName.Text" xml:space="preserve">
+    <value>Vorname</value>
   </data>
-  <data name="&gt;&gt;tabPageSalaries.Name" xml:space="preserve">
-    <value>tabPageSalaries</value>
+  <data name="olvColumnHeaderLastName.Text" xml:space="preserve">
+    <value>Nachname</value>
   </data>
-  <data name="&gt;&gt;tabPageSalaries.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="olvColumnHeaderBirthday.Text" xml:space="preserve">
+    <value>Geburtstag</value>
   </data>
-  <data name="&gt;&gt;tabPageSalaries.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabPageSalaries.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="olvColumnHeaderBirthday.Width" type="System.Int32, mscorlib">
+    <value>100</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabControlMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="objectListViewEmployees.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
+  <data name="objectListViewEmployees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 417</value>
+  <data name="objectListViewEmployees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 385</value>
   </data>
-  <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="objectListViewEmployees.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tabControlMain.Name" xml:space="preserve">
-    <value>tabControlMain</value>
+  <data name="&gt;&gt;objectListViewEmployees.Name" xml:space="preserve">
+    <value>objectListViewEmployees</value>
   </data>
-  <data name="&gt;&gt;tabControlMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;objectListViewEmployees.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;tabControlMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControlMain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.Name" xml:space="preserve">
-    <value>listViewEmployees</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.Parent" xml:space="preserve">
+  <data name="&gt;&gt;objectListViewEmployees.Parent" xml:space="preserve">
     <value>tabPageEmployees</value>
   </data>
-  <data name="&gt;&gt;listViewEmployees.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;objectListViewEmployees.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPageEmployees.Location" type="System.Drawing.Point, System.Drawing">
@@ -336,73 +318,19 @@
   <data name="&gt;&gt;tabPageEmployees.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="listViewEmployees.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listViewEmployees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="listViewEmployees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 385</value>
-  </data>
-  <data name="listViewEmployees.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.Name" xml:space="preserve">
-    <value>listViewEmployees</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.Parent" xml:space="preserve">
-    <value>tabPageEmployees</value>
-  </data>
-  <data name="&gt;&gt;listViewEmployees.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="columnHeaderId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="columnHeaderId.Width" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="columnHeaderPersonnelNumber.Text" xml:space="preserve">
-    <value>Personalnummer</value>
-  </data>
-  <data name="columnHeaderPersonnelNumber.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="columnHeaderFirstName.Text" xml:space="preserve">
-    <value>Vorname</value>
-  </data>
-  <data name="columnHeaderFirstName.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="columnHeaderLastName.Text" xml:space="preserve">
-    <value>Nachname</value>
-  </data>
-  <data name="columnHeaderLastName.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="columnHeaderBirthday.Text" xml:space="preserve">
-    <value>Geburtstag</value>
-  </data>
-  <data name="columnHeaderBirthday.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
   <metadata name="tabPageSalaries.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="&gt;&gt;listViewSalaryAccounts.Name" xml:space="preserve">
-    <value>listViewSalaryAccounts</value>
+  <data name="&gt;&gt;objectListViewSalaryAccounts.Name" xml:space="preserve">
+    <value>objectListViewSalaryAccounts</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;objectListViewSalaryAccounts.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.Parent" xml:space="preserve">
+  <data name="&gt;&gt;objectListViewSalaryAccounts.Parent" xml:space="preserve">
     <value>tabPageSalaries</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;objectListViewSalaryAccounts.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPageSalaries.Location" type="System.Drawing.Point, System.Drawing">
@@ -431,6 +359,66 @@
   </data>
   <data name="&gt;&gt;tabPageSalaries.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="tabControlMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>624, 417</value>
+  </data>
+  <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Name" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 385</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;objectListViewSalaryAccounts.Name" xml:space="preserve">
+    <value>objectListViewSalaryAccounts</value>
+  </data>
+  <data name="&gt;&gt;objectListViewSalaryAccounts.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;objectListViewSalaryAccounts.Parent" xml:space="preserve">
+    <value>tabPageSalaries</value>
+  </data>
+  <data name="&gt;&gt;objectListViewSalaryAccounts.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="olvColumnId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="olvColumnGross.Text" xml:space="preserve">
+    <value>Brutto</value>
+  </data>
+  <data name="olvColumnNet.Text" xml:space="preserve">
+    <value>Netto</value>
+  </data>
+  <data name="olvColumnPeriod.Text" xml:space="preserve">
+    <value>Zeitraum</value>
   </data>
   <metadata name="contextMenuStripEmployees.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>455, 17</value>
@@ -462,53 +450,41 @@
   <data name="toolStripMenuItemContextEmployeeDelete.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
   </data>
-  <data name="listViewSalaryAccounts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <metadata name="contextMenuStripSalaryAccountings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>662, 17</value>
+  </metadata>
+  <data name="contextMenuStripSalaryAccountings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 92</value>
   </data>
-  <data name="listViewSalaryAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="&gt;&gt;contextMenuStripSalaryAccountings.Name" xml:space="preserve">
+    <value>contextMenuStripSalaryAccountings</value>
   </data>
-  <data name="listViewSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 385</value>
+  <data name="&gt;&gt;contextMenuStripSalaryAccountings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="listViewSalaryAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="toolStripMenuItemSalaryAccountingsEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.Name" xml:space="preserve">
-    <value>listViewSalaryAccounts</value>
+  <data name="toolStripMenuItemSalaryAccountingsEdit.Text" xml:space="preserve">
+    <value>&amp;Bearbeiten</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStripMenuItemSalaryAccountingsCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.Parent" xml:space="preserve">
-    <value>tabPageSalaries</value>
+  <data name="toolStripMenuItemSalaryAccountingsCopy.Text" xml:space="preserve">
+    <value>&amp;Kopieren</value>
   </data>
-  <data name="&gt;&gt;listViewSalaryAccounts.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="toolStripMenuItemSalaryAccountingsPaste.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
   </data>
-  <data name="columnHeaderSalaryAccountId.Text" xml:space="preserve">
-    <value>Id</value>
+  <data name="toolStripMenuItemSalaryAccountingsPaste.Text" xml:space="preserve">
+    <value>&amp;Einfügen</value>
   </data>
-  <data name="columnHeaderSalaryAccountId.Width" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="toolStripMenuItemSalaryAccountingsDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
   </data>
-  <data name="columnHeaderSalaryAccountGross.Text" xml:space="preserve">
-    <value>Brutto</value>
-  </data>
-  <data name="columnHeaderSalaryAccountGross.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="columnHeaderSalaryAccountNet.Text" xml:space="preserve">
-    <value>Netto</value>
-  </data>
-  <data name="columnHeaderSalaryAccountNet.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="columnHeaderSalaryAccountPeriod.Text" xml:space="preserve">
-    <value>Zeitraum</value>
-  </data>
-  <data name="columnHeaderSalaryAccountPeriod.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="toolStripMenuItemSalaryAccountingsDelete.Text" xml:space="preserve">
+    <value>&amp;Löschen</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -627,35 +603,59 @@
   <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeaderId.Name" xml:space="preserve">
-    <value>columnHeaderId</value>
+  <data name="&gt;&gt;olvColumnHeaderId.Name" xml:space="preserve">
+    <value>olvColumnHeaderId</value>
   </data>
-  <data name="&gt;&gt;columnHeaderId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;olvColumnHeaderId.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;columnHeaderPersonnelNumber.Name" xml:space="preserve">
-    <value>columnHeaderPersonnelNumber</value>
+  <data name="&gt;&gt;olvColumnHeaderPersonnelNumber.Name" xml:space="preserve">
+    <value>olvColumnHeaderPersonnelNumber</value>
   </data>
-  <data name="&gt;&gt;columnHeaderPersonnelNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;olvColumnHeaderPersonnelNumber.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;columnHeaderFirstName.Name" xml:space="preserve">
-    <value>columnHeaderFirstName</value>
+  <data name="&gt;&gt;olvColumnHeaderFirstName.Name" xml:space="preserve">
+    <value>olvColumnHeaderFirstName</value>
   </data>
-  <data name="&gt;&gt;columnHeaderFirstName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;olvColumnHeaderFirstName.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;columnHeaderLastName.Name" xml:space="preserve">
-    <value>columnHeaderLastName</value>
+  <data name="&gt;&gt;olvColumnHeaderLastName.Name" xml:space="preserve">
+    <value>olvColumnHeaderLastName</value>
   </data>
-  <data name="&gt;&gt;columnHeaderLastName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;olvColumnHeaderLastName.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;columnHeaderBirthday.Name" xml:space="preserve">
-    <value>columnHeaderBirthday</value>
+  <data name="&gt;&gt;olvColumnHeaderBirthday.Name" xml:space="preserve">
+    <value>olvColumnHeaderBirthday</value>
   </data>
-  <data name="&gt;&gt;columnHeaderBirthday.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;olvColumnHeaderBirthday.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvColumnId.Name" xml:space="preserve">
+    <value>olvColumnId</value>
+  </data>
+  <data name="&gt;&gt;olvColumnId.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvColumnGross.Name" xml:space="preserve">
+    <value>olvColumnGross</value>
+  </data>
+  <data name="&gt;&gt;olvColumnGross.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvColumnNet.Name" xml:space="preserve">
+    <value>olvColumnNet</value>
+  </data>
+  <data name="&gt;&gt;olvColumnNet.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvColumnPeriod.Name" xml:space="preserve">
+    <value>olvColumnPeriod</value>
+  </data>
+  <data name="&gt;&gt;olvColumnPeriod.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItemShowSalaryAccounts.Name" xml:space="preserve">
     <value>toolStripMenuItemShowSalaryAccounts</value>
@@ -675,29 +675,29 @@
   <data name="&gt;&gt;toolStripMenuItemContextEmployeeDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountId.Name" xml:space="preserve">
-    <value>columnHeaderSalaryAccountId</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsEdit.Name" xml:space="preserve">
+    <value>toolStripMenuItemSalaryAccountingsEdit</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountGross.Name" xml:space="preserve">
-    <value>columnHeaderSalaryAccountGross</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsCopy.Name" xml:space="preserve">
+    <value>toolStripMenuItemSalaryAccountingsCopy</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountGross.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountNet.Name" xml:space="preserve">
-    <value>columnHeaderSalaryAccountNet</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsPaste.Name" xml:space="preserve">
+    <value>toolStripMenuItemSalaryAccountingsPaste</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountNet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsPaste.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountPeriod.Name" xml:space="preserve">
-    <value>columnHeaderSalaryAccountPeriod</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsDelete.Name" xml:space="preserve">
+    <value>toolStripMenuItemSalaryAccountingsDelete</value>
   </data>
-  <data name="&gt;&gt;columnHeaderSalaryAccountPeriod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripMenuItemSalaryAccountingsDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SalaryForm</value>

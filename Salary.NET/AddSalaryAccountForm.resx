@@ -117,9 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 226</value>
+    <value>113, 453</value>
   </data>
   <data name="buttonAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -141,10 +145,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonAdd.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>33</value>
+  </data>
+  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 226</value>
+    <value>322, 453</value>
   </data>
   <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -165,13 +172,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>32</value>
   </data>
   <data name="labelWageTax.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelWageTax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelWageTax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
+    <value>12, 247</value>
   </data>
   <data name="labelWageTax.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -192,13 +202,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelWageTax.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>31</value>
   </data>
   <data name="numericUpDownWageTax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 12</value>
+    <value>168, 245</value>
   </data>
   <data name="numericUpDownWageTax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="numericUpDownWageTax.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -216,13 +226,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;numericUpDownWageTax.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>30</value>
   </data>
   <data name="labelSolidarityTax.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelSolidarityTax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelSolidarityTax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 40</value>
+    <value>12, 273</value>
   </data>
   <data name="labelSolidarityTax.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -243,13 +256,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelSolidarityTax.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>29</value>
   </data>
   <data name="numericUpDownSolidarityTax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 38</value>
+    <value>168, 271</value>
   </data>
   <data name="numericUpDownSolidarityTax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="numericUpDownSolidarityTax.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -267,13 +280,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;numericUpDownSolidarityTax.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>28</value>
   </data>
   <data name="numericUpDownSicknessInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 64</value>
+    <value>168, 297</value>
   </data>
   <data name="numericUpDownSicknessInsurance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="numericUpDownSicknessInsurance.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -291,13 +304,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;numericUpDownSicknessInsurance.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>27</value>
   </data>
   <data name="labelSicknessInsurance.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelSicknessInsurance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelSicknessInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 66</value>
+    <value>12, 299</value>
   </data>
   <data name="labelSicknessInsurance.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
@@ -318,13 +334,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelSicknessInsurance.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>26</value>
   </data>
   <data name="numericUpDownAnnuityInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 90</value>
+    <value>168, 323</value>
   </data>
   <data name="numericUpDownAnnuityInsurance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="numericUpDownAnnuityInsurance.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -342,13 +358,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;numericUpDownAnnuityInsurance.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>25</value>
   </data>
   <data name="labelAnnuityInsurance.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelAnnuityInsurance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelAnnuityInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 92</value>
+    <value>12, 325</value>
   </data>
   <data name="labelAnnuityInsurance.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
@@ -369,13 +388,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelAnnuityInsurance.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>24</value>
   </data>
   <data name="numericUpDownUnemploymentInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 116</value>
+    <value>168, 349</value>
   </data>
   <data name="numericUpDownUnemploymentInsurance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="numericUpDownUnemploymentInsurance.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -393,13 +412,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;numericUpDownUnemploymentInsurance.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>23</value>
   </data>
   <data name="labelUnemploymentInsurance.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelUnemploymentInsurance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelUnemploymentInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 118</value>
+    <value>12, 351</value>
   </data>
   <data name="labelUnemploymentInsurance.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 13</value>
@@ -420,13 +442,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelUnemploymentInsurance.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>22</value>
   </data>
   <data name="numericUpDownCompulsoryLongTermCareInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 142</value>
+    <value>168, 375</value>
   </data>
   <data name="numericUpDownCompulsoryLongTermCareInsurance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="numericUpDownCompulsoryLongTermCareInsurance.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -444,13 +466,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;numericUpDownCompulsoryLongTermCareInsurance.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>21</value>
   </data>
   <data name="labelCompulsoryLongTermCareInsurance.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelCompulsoryLongTermCareInsurance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelCompulsoryLongTermCareInsurance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 144</value>
+    <value>12, 377</value>
   </data>
   <data name="labelCompulsoryLongTermCareInsurance.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 13</value>
@@ -471,6 +496,696 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelCompulsoryLongTermCareInsurance.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="labelTotalGross.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTotalGross.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTotalGross.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 404</value>
+  </data>
+  <data name="labelTotalGross.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="labelTotalGross.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="labelTotalGross.Text" xml:space="preserve">
+    <value>Bruttolohn:</value>
+  </data>
+  <data name="&gt;&gt;labelTotalGross.Name" xml:space="preserve">
+    <value>labelTotalGross</value>
+  </data>
+  <data name="&gt;&gt;labelTotalGross.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTotalGross.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelTotalGross.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="textBoxTotalGross.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 401</value>
+  </data>
+  <data name="textBoxTotalGross.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="textBoxTotalGross.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGross.Name" xml:space="preserve">
+    <value>textBoxTotalGross</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGross.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGross.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGross.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="textBoxTotalNet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 427</value>
+  </data>
+  <data name="textBoxTotalNet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="textBoxTotalNet.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNet.Name" xml:space="preserve">
+    <value>textBoxTotalNet</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNet.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="labelTotalNet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTotalNet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTotalNet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 430</value>
+  </data>
+  <data name="labelTotalNet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="labelTotalNet.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="labelTotalNet.Text" xml:space="preserve">
+    <value>Nettolohn:</value>
+  </data>
+  <data name="&gt;&gt;labelTotalNet.Name" xml:space="preserve">
+    <value>labelTotalNet</value>
+  </data>
+  <data name="&gt;&gt;labelTotalNet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTotalNet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelTotalNet.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="buttonEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 453</value>
+  </data>
+  <data name="buttonEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="buttonEdit.Text" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="&gt;&gt;buttonEdit.Name" xml:space="preserve">
+    <value>buttonEdit</value>
+  </data>
+  <data name="&gt;&gt;buttonEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonEdit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonEdit.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="labelPeriod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelPeriod.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 221</value>
+  </data>
+  <data name="labelPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="labelPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="labelPeriod.Text" xml:space="preserve">
+    <value>Zeitraum:</value>
+  </data>
+  <data name="&gt;&gt;labelPeriod.Name" xml:space="preserve">
+    <value>labelPeriod</value>
+  </data>
+  <data name="&gt;&gt;labelPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelPeriod.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="comboBoxPeriodYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 218</value>
+  </data>
+  <data name="comboBoxPeriodYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 21</value>
+  </data>
+  <data name="comboBoxPeriodYear.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodYear.Name" xml:space="preserve">
+    <value>comboBoxPeriodYear</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodYear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodYear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodYear.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items" xml:space="preserve">
+    <value>Januar</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items1" xml:space="preserve">
+    <value>Februar</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items2" xml:space="preserve">
+    <value>März</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items3" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items4" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items5" xml:space="preserve">
+    <value>Juni</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items6" xml:space="preserve">
+    <value>Juli</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items7" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items8" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items9" xml:space="preserve">
+    <value>Oktober</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items10" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Items11" xml:space="preserve">
+    <value>Dezember</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 218</value>
+  </data>
+  <data name="comboBoxPeriodMonth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 21</value>
+  </data>
+  <data name="comboBoxPeriodMonth.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodMonth.Name" xml:space="preserve">
+    <value>comboBoxPeriodMonth</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodMonth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodMonth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodMonth.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="userControlSalaryItems1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="userControlSalaryItems1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 192</value>
+  </data>
+  <data name="userControlSalaryItems1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;userControlSalaryItems1.Name" xml:space="preserve">
+    <value>userControlSalaryItems1</value>
+  </data>
+  <data name="&gt;&gt;userControlSalaryItems1.Type" xml:space="preserve">
+    <value>Salary.NET.UserControlSalaryItems, Salary.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;userControlSalaryItems1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;userControlSalaryItems1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 220</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.Text" xml:space="preserve">
+    <value>Von/Bis</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriodFromTo.Name" xml:space="preserve">
+    <value>checkBoxPeriodFromTo</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriodFromTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriodFromTo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriodFromTo.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items" xml:space="preserve">
+    <value>01</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items1" xml:space="preserve">
+    <value>02</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items2" xml:space="preserve">
+    <value>03</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items3" xml:space="preserve">
+    <value>04</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items4" xml:space="preserve">
+    <value>05</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items5" xml:space="preserve">
+    <value>06</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items6" xml:space="preserve">
+    <value>07</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items7" xml:space="preserve">
+    <value>08</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items8" xml:space="preserve">
+    <value>09</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items9" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items10" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items11" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items12" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items13" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items14" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items15" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items16" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items17" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items18" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items19" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items20" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items21" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items22" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items23" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items24" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items25" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items26" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items27" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items28" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items29" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Items30" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>396, 218</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 21</value>
+  </data>
+  <data name="comboBoxPeriodFromDay.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodFromDay.Name" xml:space="preserve">
+    <value>comboBoxPeriodFromDay</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodFromDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodFromDay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodFromDay.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items" xml:space="preserve">
+    <value>01</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items1" xml:space="preserve">
+    <value>02</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items2" xml:space="preserve">
+    <value>03</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items3" xml:space="preserve">
+    <value>04</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items4" xml:space="preserve">
+    <value>05</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items5" xml:space="preserve">
+    <value>06</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items6" xml:space="preserve">
+    <value>07</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items7" xml:space="preserve">
+    <value>08</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items8" xml:space="preserve">
+    <value>09</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items9" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items10" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items11" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items12" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items13" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items14" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items15" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items16" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items17" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items18" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items19" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items20" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items21" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items22" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items23" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items24" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items25" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items26" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items27" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items28" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items29" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Items30" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>447, 218</value>
+  </data>
+  <data name="comboBoxPeriodToDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 21</value>
+  </data>
+  <data name="comboBoxPeriodToDay.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodToDay.Name" xml:space="preserve">
+    <value>comboBoxPeriodToDay</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodToDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodToDay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPeriodToDay.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="textBoxWageTaxPercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 245</value>
+  </data>
+  <data name="textBoxWageTaxPercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxWageTaxPercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;textBoxWageTaxPercentage.Name" xml:space="preserve">
+    <value>textBoxWageTaxPercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxWageTaxPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxWageTaxPercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxWageTaxPercentage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textBoxSolidarityTaxPercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 271</value>
+  </data>
+  <data name="textBoxSolidarityTaxPercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxSolidarityTaxPercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;textBoxSolidarityTaxPercentage.Name" xml:space="preserve">
+    <value>textBoxSolidarityTaxPercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxSolidarityTaxPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxSolidarityTaxPercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxSolidarityTaxPercentage.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textBoxSicknessInsurancePercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 297</value>
+  </data>
+  <data name="textBoxSicknessInsurancePercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxSicknessInsurancePercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;textBoxSicknessInsurancePercentage.Name" xml:space="preserve">
+    <value>textBoxSicknessInsurancePercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxSicknessInsurancePercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxSicknessInsurancePercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxSicknessInsurancePercentage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBoxAnnuityInsurancePercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 323</value>
+  </data>
+  <data name="textBoxAnnuityInsurancePercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxAnnuityInsurancePercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;textBoxAnnuityInsurancePercentage.Name" xml:space="preserve">
+    <value>textBoxAnnuityInsurancePercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxAnnuityInsurancePercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxAnnuityInsurancePercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxAnnuityInsurancePercentage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBoxUnemploymentInsurancePercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 349</value>
+  </data>
+  <data name="textBoxUnemploymentInsurancePercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxUnemploymentInsurancePercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;textBoxUnemploymentInsurancePercentage.Name" xml:space="preserve">
+    <value>textBoxUnemploymentInsurancePercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxUnemploymentInsurancePercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxUnemploymentInsurancePercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxUnemploymentInsurancePercentage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBoxCompulsoryLongTermCareInsurancePercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 375</value>
+  </data>
+  <data name="textBoxCompulsoryLongTermCareInsurancePercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxCompulsoryLongTermCareInsurancePercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;textBoxCompulsoryLongTermCareInsurancePercentage.Name" xml:space="preserve">
+    <value>textBoxCompulsoryLongTermCareInsurancePercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxCompulsoryLongTermCareInsurancePercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxCompulsoryLongTermCareInsurancePercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxCompulsoryLongTermCareInsurancePercentage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBoxTotalGrossPercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 401</value>
+  </data>
+  <data name="textBoxTotalGrossPercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxTotalGrossPercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="textBoxTotalGrossPercentage.Text" xml:space="preserve">
+    <value>100 %</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGrossPercentage.Name" xml:space="preserve">
+    <value>textBoxTotalGrossPercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGrossPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGrossPercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalGrossPercentage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBoxTotalNetPercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 427</value>
+  </data>
+  <data name="textBoxTotalNetPercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="textBoxTotalNetPercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNetPercentage.Name" xml:space="preserve">
+    <value>textBoxTotalNetPercentage</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNetPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNetPercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalNetPercentage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -480,7 +1195,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>504, 261</value>
+    <value>504, 488</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Gehaltsabrechnung hinzufügen</value>

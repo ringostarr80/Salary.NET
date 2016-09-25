@@ -160,6 +160,33 @@
   <data name="labelCompulsoryLongTermCareInsurance.Text" xml:space="preserve">
     <value>Compulsory LT Care Insurance:</value>
   </data>
+  <data name="labelTotalGross.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="labelTotalGross.Text" xml:space="preserve">
+    <value>Gross Wage:</value>
+  </data>
+  <data name="labelTotalNet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="labelTotalNet.Text" xml:space="preserve">
+    <value>Net Wage:</value>
+  </data>
+  <data name="buttonEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="labelPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="labelPeriod.Text" xml:space="preserve">
+    <value>Period:</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="checkBoxPeriodFromTo.Text" xml:space="preserve">
+    <value>From/To</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Add Salary Account</value>
   </data>

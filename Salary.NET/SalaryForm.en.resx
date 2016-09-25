@@ -169,6 +169,9 @@
   <data name="toolStripMenuItemClose.Text" xml:space="preserve">
     <value>&amp;Close</value>
   </data>
+  <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 22</value>
+  </data>
   <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
     <value>&amp;Add</value>
   </data>
@@ -227,6 +230,33 @@
     <value>190, 22</value>
   </data>
   <data name="toolStripMenuItemContextEmployeeDelete.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="contextMenuStripSalaryAccountings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 92</value>
+  </data>
+  <data name="toolStripMenuItemSalaryAccountingsEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="toolStripMenuItemSalaryAccountingsEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="kopierenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="kopierenToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Copy</value>
+  </data>
+  <data name="einfügenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="einfügenToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Paste</value>
+  </data>
+  <data name="toolStripMenuItemSalaryAccountingsDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="toolStripMenuItemSalaryAccountingsDelete.Text" xml:space="preserve">
     <value>&amp;Delete</value>
   </data>
 </root>

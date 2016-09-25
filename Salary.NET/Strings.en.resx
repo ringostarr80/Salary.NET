@@ -120,6 +120,9 @@
   <data name="CONFIRM_EMPLOYEE_DELETION" xml:space="preserve">
     <value>Do you really want to delete the employee "%s"?</value>
   </data>
+  <data name="CONFIRM_SALARY_ACCOUNTING_DELETION" xml:space="preserve">
+    <value>Do you really want to delete the salary accounting with the id "%s"?</value>
+  </data>
   <data name="ERROR" xml:space="preserve">
     <value>Error</value>
   </data>

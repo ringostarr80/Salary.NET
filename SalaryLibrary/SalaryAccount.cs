@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace SalaryLibrary
 {
-	public class SalaryAccount
+	public class SalaryAccount : ICloneable
 	{
-		private uint _id = 0;
+		private object _id = null;
 		private Employee _employee = null;
+		private DateTime _periodStart = DateTime.Now;
+		private DateTime _periodEnd = DateTime.Now;
 		private Dictionary<SalaryType, SalaryItem> _salaries = new Dictionary<SalaryType, SalaryItem>();
 		private double _wageTax = 0.0;
 		private double _solidarityTax = 0.0;
@@ -17,16 +21,21 @@ namespace SalaryLibrary
 		private double _unemploymentInsurance = 0.0;
 		private double _compulsoryLongTermCareInsurance = 0.0;
 
-		public uint Id { get { return this._id; }
-			set {
-				if(value == 0) {
-					throw new ArgumentException("Salary.Id must be greater than 0!");
+		public object Id { get { return this._id; } set { this._id = value; } }
+		public Employee Employee { get { return this._employee; } }
+		public DateTime PeriodStart { get { return this._periodStart; } set { this._periodStart = value; } }
+		public DateTime PeriodEnd { get { return this._periodEnd; } set { this._periodEnd = value; } }
+		public string FormattedPeriod {
+			get {
+				var periodString = String.Format("{0}-{1:00}", this.PeriodStart.Year, this.PeriodStart.Month);
+				if(this.PeriodStart.Day != 1 ||
+					this.PeriodEnd.Day != DateTime.DaysInMonth(this.PeriodStart.Year, this.PeriodStart.Month)) {
+					periodString += String.Format("-{0:00} - {1}-{2:00}-{3:00}", this.PeriodStart.Day, this.PeriodEnd.Year, this.PeriodEnd.Month, this.PeriodEnd.Day);
 				}
 
-				this._id = value;
+				return periodString;
 			}
 		}
-		public Employee Employee { get { return this._employee; } }
 		public Dictionary<SalaryType, SalaryItem> Salaries { get { return this._salaries; } }
 		/// <summary>
 		/// Lohnsteuer
@@ -55,17 +64,18 @@ namespace SalaryLibrary
 		/// <summary>
 		/// Nettolohn
 		/// </summary>
+		
+		public double GrossWage {
+			get {
+				return this._salaries.Sum(s => s.Value.Amount);
+			}
+		}
+
 		public double NetWage {
 			get {
-				var finalSubtraction = 0.0;
+				var netWage = this.GrossWage;
+				var finalSubtraction = this._salaries.Sum(s => (s.Key == SalaryType.BezugVWLlfd) ? s.Value.Amount : 0.0);
 
-				var netWage = 0.0;
-				foreach(var salaryItem in this._salaries) {
-					netWage += salaryItem.Value.Amount;
-					if(salaryItem.Key == SalaryType.BezugVWLlfd) {
-						finalSubtraction += salaryItem.Value.Amount;
-					}
-				}
 				netWage -= this.AnnuityInsurance;
 				netWage -= this.CompulsoryLongTermCareInsurance;
 				netWage -= this.SicknessInsurance;
@@ -86,61 +96,126 @@ namespace SalaryLibrary
 			}
 
 			this._employee = employee;
+			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
 		}
 
 		public SalaryAccount(XmlNode node)
+		{
+			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
+			this.ParseNode(node);
+		}
+
+		public SalaryAccount(Employee employee, XmlNode node)
+		{
+			if(employee == null) {
+				throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");
+			}
+
+			this._employee = employee;
+			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
+
+			this.ParseNode(node);
+		}
+
+		public object Clone()
+		{
+			var clone = (SalaryAccount)this.MemberwiseClone();
+			clone._salaries = new Dictionary<SalaryType, SalaryItem>();
+			foreach(var keyValue in this._salaries) {
+				clone._salaries.Add(keyValue.Key, (SalaryItem)keyValue.Value.Clone());
+			}
+
+			return clone;
+		}
+
+		public void SetPeriod(int year, int month)
+		{
+			this._periodStart = new DateTime(year, month, 1);
+			this._periodEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
+		}
+
+		public void SetPeriod(int startYear, int startMonth, int startDay, int endYear, int endMonth, int endDay)
+		{
+			this._periodStart = new DateTime(startYear, startMonth, startDay);
+			this._periodEnd = new DateTime(endYear, endMonth, endDay);
+		}
+
+		private void ParseNode(XmlNode node)
 		{
 			var idAttr = node.Attributes.GetNamedItem("id");
 			if(idAttr != null) {
 				this.Id = Convert.ToUInt32(idAttr.Value);
 			}
 
-			if(node.ChildNodes != null) {
-				var culture = CultureInfo.CreateSpecificCulture("en-US");
-				foreach(XmlNode childNode in node.ChildNodes) {
-					switch(childNode.Name) {
-						case "annuity-insurance":
-							this.AnnuityInsurance = Convert.ToDouble(childNode.InnerText, culture);
-							break;
+			if(node.ChildNodes == null) {
+				return;
+			}
 
-						case "compulsory-long-term-care-insurance":
-							this.CompulsoryLongTermCareInsurance = Convert.ToDouble(childNode.InnerText, culture);
-							break;
+			var culture = CultureInfo.CreateSpecificCulture("en-US");
+			foreach(XmlNode childNode in node.ChildNodes) {
+				switch(childNode.Name) {
+					case "annuity-insurance":
+						this.AnnuityInsurance = Convert.ToDouble(childNode.InnerText, culture);
+						break;
 
-						case "unemployment-insurance":
-							this.UnemploymentInsurance = Convert.ToDouble(childNode.InnerText, culture);
-							break;
+					case "compulsory-long-term-care-insurance":
+						this.CompulsoryLongTermCareInsurance = Convert.ToDouble(childNode.InnerText, culture);
+						break;
 
-						case "salaries":
-							if (childNode.ChildNodes != null) {
-								foreach(XmlNode salaryNode in childNode.ChildNodes) {
-									switch(salaryNode.Name) {
-										case "salary":
-											var typeAttr = salaryNode.Attributes.GetNamedItem("type");
-											var amountAttr = salaryNode.Attributes.GetNamedItem("amount");
-											if (typeAttr != null && amountAttr != null) {
-												var salaryType = (SalaryType)Convert.ToInt32(typeAttr.Value);
-												var salaryAmount = Convert.ToDouble(amountAttr.Value, culture);
-												this._salaries.Add(salaryType, new SalaryItem(salaryAmount));
-											}
-											break;
-									}
+					case "period":
+						var periodPattern = "^([0-9]{1,4})\\-([0-9]{2})(\\-([0-9]{2}) \\- ([0-9]{1,4})\\-([0-9]{2})\\-([0-9]{2}))?$";
+						var periodMatch = Regex.Match(childNode.InnerText.Trim(), periodPattern, RegexOptions.Compiled);
+						if (!periodMatch.Success) {
+							throw new FormatException("The format of the period is invalid. It must be 'YYYY-MM' or 'YYYY-MM-DD - YYYY-MM-DD'!");
+						}
+						if (periodMatch.Groups[3].Value == String.Empty) {
+							var periodYear = Convert.ToInt32(periodMatch.Groups[1].Value);
+							var periodMonth = Convert.ToInt32(periodMatch.Groups[2].Value);
+							this.SetPeriod(periodYear, periodMonth);
+						} else {
+							var periodStartYear = Convert.ToInt32(periodMatch.Groups[1].Value);
+							var periodStartMonth = Convert.ToInt32(periodMatch.Groups[2].Value);
+							var periodStartDay = Convert.ToInt32(periodMatch.Groups[4].Value);
+							var periodEndYear = Convert.ToInt32(periodMatch.Groups[5].Value);
+							var periodEndMonth = Convert.ToInt32(periodMatch.Groups[6].Value);
+							var periodEndDay = Convert.ToInt32(periodMatch.Groups[7].Value);
+							this.SetPeriod(periodStartYear, periodStartMonth, periodStartDay, periodEndYear, periodEndMonth, periodEndDay);
+						}
+						break;
+
+					case "unemployment-insurance":
+						this.UnemploymentInsurance = Convert.ToDouble(childNode.InnerText, culture);
+						break;
+
+					case "salaries":
+						if(childNode.ChildNodes != null) {
+							foreach(XmlNode salaryNode in childNode.ChildNodes) {
+								switch(salaryNode.Name) {
+									case "salary":
+										var typeAttr = salaryNode.Attributes.GetNamedItem("type");
+										var amountAttr = salaryNode.Attributes.GetNamedItem("amount");
+										if(typeAttr != null && amountAttr != null) {
+											var salaryType = (SalaryType)Convert.ToInt32(typeAttr.Value);
+											var salaryAmount = Convert.ToDouble(amountAttr.Value, culture);
+											this._salaries.Add(salaryType, new SalaryItem(salaryAmount));
+										}
+										break;
 								}
 							}
-							break;
+						}
+						break;
 
-						case "sickness-insurance":
-							this.SicknessInsurance = Convert.ToDouble(childNode.InnerText, culture);
-							break;
+					case "sickness-insurance":
+						this.SicknessInsurance = Convert.ToDouble(childNode.InnerText, culture);
+						break;
 
-						case "solidarity-tax":
-							this.SolidarityTax = Convert.ToDouble(childNode.InnerText, culture);
-							break;
+					case "solidarity-tax":
+						this.SolidarityTax = Convert.ToDouble(childNode.InnerText, culture);
+						break;
 
-						case "wage-tax":
-							this.WageTax = Convert.ToDouble(childNode.InnerText, culture);
-							break;
-					}
+					case "wage-tax":
+						this.WageTax = Convert.ToDouble(childNode.InnerText, culture);
+						break;
 				}
 			}
 		}
@@ -173,6 +248,12 @@ namespace SalaryLibrary
 			if (((object)a == null) || ((object)b == null)) {
 				return false;
 			}
+			if (a.PeriodStart != b.PeriodStart) {
+				return false;
+			}
+			if(a.PeriodEnd != b.PeriodEnd) {
+				return false;
+			}
 
 			if(a.AnnuityInsurance != b.AnnuityInsurance ||
 				a.CompulsoryLongTermCareInsurance != b.CompulsoryLongTermCareInsurance ||
@@ -185,6 +266,14 @@ namespace SalaryLibrary
 			}
 			if (a.Salaries.Count != b.Salaries.Count) {
 				return false;
+			}
+			foreach(var keyValue in a.Salaries) {
+				if(!b.Salaries.ContainsKey(keyValue.Key)) {
+					return false;
+				}
+				if (keyValue.Value != b.Salaries[keyValue.Key]) {
+					return false;
+				}
 			}
 
 			return true;

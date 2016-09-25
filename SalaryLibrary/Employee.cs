@@ -17,9 +17,9 @@ namespace SalaryLibrary
 
 		}
 
-		public Employee(uint id, string firstName, string lastName) : base(id, firstName, lastName)
+		public Employee(object id, string firstName, string lastName) : base(id, firstName, lastName)
 		{
-
+			
 		}
 
 		public Employee(XmlNode node) : base(node)

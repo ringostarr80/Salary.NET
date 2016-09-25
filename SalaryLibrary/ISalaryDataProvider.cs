@@ -6,26 +6,30 @@ namespace SalaryLibrary
 {
 	public interface ISalaryDataProvider
 	{
-		uint InsertEmployee(Employee employee);
-		Task<uint> InsertEmployeeAsync(Employee employee);
+		object InsertEmployee(Employee employee);
+		Task<object> InsertEmployeeAsync(Employee employee);
 		void UpdateEmployee(Employee employee);
 		Task UpdateEmployeeAsync(Employee employee);
-		void DeleteEmployee(uint id);
+		void DeleteEmployee(object id);
 		void DeleteEmployee(string firstName, string lastName);
 		void DeleteEmployee(Employee employee);
-		bool EmployeeExists(uint id);
+		bool EmployeeExists(object id);
 		bool EmployeeExists(string firstName, string lastName);
-		Employee GetEmployee(uint id);
+		Employee GetEmployee(object id);
 		Employee GetEmployee(string firstName, string lastName);
 		uint GetEmployeesCount();
 		List<Employee> GetEmployees();
 		Task<List<Employee>> GetEmployeesAsync();
 		uint GetEmployees(Action<Employee> callback);
 
-		uint InsertSalary(SalaryAccount salary);
-		SalaryAccount GetSalaryAccount(uint id);
+		object InsertSalary(SalaryAccount salary);
+		SalaryAccount GetSalaryAccount(object id);
+		List<SalaryAccount> GetSalaryAccounts();
+		Task<List<SalaryAccount>> GetSalaryAccountsAsync();
+		uint GetSalaryAccounts(Action<SalaryAccount> callback);
 		void UpdateSalary(SalaryAccount salary);
-		void DeleteSalary(uint id);
-		void DeleteSalary(SalaryAccount salary);
+		Task UpdateSalaryAsync(SalaryAccount salary);
+		void DeleteSalary(object id);
+		Task DeleteSalaryAsync(object id);
 	}
 }

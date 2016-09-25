@@ -70,6 +70,15 @@ namespace Salary.NET {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Willst du wirklich die Gehaltsabrechnung mit der Id &quot;%s&quot; löschen? ähnelt.
+        /// </summary>
+        internal static string CONFIRM_SALARY_ACCOUNTING_DELETION {
+            get {
+                return ResourceManager.GetString("CONFIRM_SALARY_ACCOUNTING_DELETION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Fehler ähnelt.
         /// </summary>
         internal static string ERROR {

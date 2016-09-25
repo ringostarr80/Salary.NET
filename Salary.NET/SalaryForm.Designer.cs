@@ -49,27 +49,35 @@
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.tabControlMain = new System.Windows.Forms.TabControl();
 			this.tabPageEmployees = new System.Windows.Forms.TabPage();
-			this.listViewEmployees = new System.Windows.Forms.ListView();
-			this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderPersonnelNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderBirthday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.objectListViewEmployees = new BrightIdeasSoftware.ObjectListView();
+			this.olvColumnHeaderId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnHeaderPersonnelNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnHeaderFirstName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnHeaderLastName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnHeaderBirthday = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
 			this.tabPageSalaries = new System.Windows.Forms.TabPage();
+			this.objectListViewSalaryAccounts = new BrightIdeasSoftware.ObjectListView();
+			this.olvColumnId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnGross = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnNet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+			this.olvColumnPeriod = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
 			this.contextMenuStripEmployees = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.toolStripMenuItemShowSalaryAccounts = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemContextEmployeeEdit = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemContextEmployeeDelete = new System.Windows.Forms.ToolStripMenuItem();
-			this.listViewSalaryAccounts = new System.Windows.Forms.ListView();
-			this.columnHeaderSalaryAccountId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderSalaryAccountGross = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderSalaryAccountNet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeaderSalaryAccountPeriod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.contextMenuStripSalaryAccountings = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.toolStripMenuItemSalaryAccountingsEdit = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemSalaryAccountingsCopy = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemSalaryAccountingsPaste = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemSalaryAccountingsDelete = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStripMain.SuspendLayout();
 			this.tabControlMain.SuspendLayout();
 			this.tabPageEmployees.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.objectListViewEmployees)).BeginInit();
 			this.tabPageSalaries.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.objectListViewSalaryAccounts)).BeginInit();
 			this.contextMenuStripEmployees.SuspendLayout();
+			this.contextMenuStripSalaryAccountings.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStripMain
@@ -200,56 +208,119 @@
 			// 
 			// tabPageEmployees
 			// 
-			this.tabPageEmployees.Controls.Add(this.listViewEmployees);
+			this.tabPageEmployees.Controls.Add(this.objectListViewEmployees);
 			resources.ApplyResources(this.tabPageEmployees, "tabPageEmployees");
 			this.tabPageEmployees.Name = "tabPageEmployees";
 			this.tabPageEmployees.UseVisualStyleBackColor = true;
 			// 
-			// listViewEmployees
+			// objectListViewEmployees
 			// 
-			this.listViewEmployees.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderId,
-            this.columnHeaderPersonnelNumber,
-            this.columnHeaderFirstName,
-            this.columnHeaderLastName,
-            this.columnHeaderBirthday});
-			resources.ApplyResources(this.listViewEmployees, "listViewEmployees");
-			this.listViewEmployees.FullRowSelect = true;
-			this.listViewEmployees.GridLines = true;
-			this.listViewEmployees.MultiSelect = false;
-			this.listViewEmployees.Name = "listViewEmployees";
-			this.listViewEmployees.UseCompatibleStateImageBehavior = false;
-			this.listViewEmployees.View = System.Windows.Forms.View.Details;
-			this.listViewEmployees.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewEmployees_MouseClick);
-			this.listViewEmployees.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewEmployees_MouseDoubleClick);
-			this.listViewEmployees.Resize += new System.EventHandler(this.listViewEmployees_Resize);
+			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderId);
+			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderPersonnelNumber);
+			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderFirstName);
+			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderLastName);
+			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderBirthday);
+			this.objectListViewEmployees.CellEditUseWholeCell = false;
+			this.objectListViewEmployees.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnHeaderId,
+            this.olvColumnHeaderPersonnelNumber,
+            this.olvColumnHeaderFirstName,
+            this.olvColumnHeaderLastName,
+            this.olvColumnHeaderBirthday});
+			this.objectListViewEmployees.Cursor = System.Windows.Forms.Cursors.Default;
+			resources.ApplyResources(this.objectListViewEmployees, "objectListViewEmployees");
+			this.objectListViewEmployees.FullRowSelect = true;
+			this.objectListViewEmployees.GridLines = true;
+			this.objectListViewEmployees.HideSelection = false;
+			this.objectListViewEmployees.MultiSelect = false;
+			this.objectListViewEmployees.Name = "objectListViewEmployees";
+			this.objectListViewEmployees.ShowGroups = false;
+			this.objectListViewEmployees.UseCompatibleStateImageBehavior = false;
+			this.objectListViewEmployees.View = System.Windows.Forms.View.Details;
+			this.objectListViewEmployees.DoubleClick += new System.EventHandler(this.objectListViewEmployees_DoubleClick);
+			this.objectListViewEmployees.MouseClick += new System.Windows.Forms.MouseEventHandler(this.objectListViewEmployees_MouseClick);
+			this.objectListViewEmployees.Resize += new System.EventHandler(this.objectListViewEmployees_Resize);
 			// 
-			// columnHeaderId
+			// olvColumnHeaderId
 			// 
-			resources.ApplyResources(this.columnHeaderId, "columnHeaderId");
+			this.olvColumnHeaderId.AspectName = "Id";
+			resources.ApplyResources(this.olvColumnHeaderId, "olvColumnHeaderId");
 			// 
-			// columnHeaderPersonnelNumber
+			// olvColumnHeaderPersonnelNumber
 			// 
-			resources.ApplyResources(this.columnHeaderPersonnelNumber, "columnHeaderPersonnelNumber");
+			this.olvColumnHeaderPersonnelNumber.AspectName = "PersonnelNumber";
+			resources.ApplyResources(this.olvColumnHeaderPersonnelNumber, "olvColumnHeaderPersonnelNumber");
 			// 
-			// columnHeaderFirstName
+			// olvColumnHeaderFirstName
 			// 
-			resources.ApplyResources(this.columnHeaderFirstName, "columnHeaderFirstName");
+			this.olvColumnHeaderFirstName.AspectName = "FirstName";
+			resources.ApplyResources(this.olvColumnHeaderFirstName, "olvColumnHeaderFirstName");
 			// 
-			// columnHeaderLastName
+			// olvColumnHeaderLastName
 			// 
-			resources.ApplyResources(this.columnHeaderLastName, "columnHeaderLastName");
+			this.olvColumnHeaderLastName.AspectName = "LastName";
+			resources.ApplyResources(this.olvColumnHeaderLastName, "olvColumnHeaderLastName");
 			// 
-			// columnHeaderBirthday
+			// olvColumnHeaderBirthday
 			// 
-			resources.ApplyResources(this.columnHeaderBirthday, "columnHeaderBirthday");
+			this.olvColumnHeaderBirthday.AspectName = "Birthday";
+			this.olvColumnHeaderBirthday.AspectToStringFormat = "{0:yyyy}-{0:MM}-{0:dd}";
+			resources.ApplyResources(this.olvColumnHeaderBirthday, "olvColumnHeaderBirthday");
 			// 
 			// tabPageSalaries
 			// 
-			this.tabPageSalaries.Controls.Add(this.listViewSalaryAccounts);
+			this.tabPageSalaries.Controls.Add(this.objectListViewSalaryAccounts);
 			resources.ApplyResources(this.tabPageSalaries, "tabPageSalaries");
 			this.tabPageSalaries.Name = "tabPageSalaries";
 			this.tabPageSalaries.UseVisualStyleBackColor = true;
+			// 
+			// objectListViewSalaryAccounts
+			// 
+			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnId);
+			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnGross);
+			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnNet);
+			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnPeriod);
+			this.objectListViewSalaryAccounts.CellEditUseWholeCell = false;
+			this.objectListViewSalaryAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnId,
+            this.olvColumnGross,
+            this.olvColumnNet,
+            this.olvColumnPeriod});
+			this.objectListViewSalaryAccounts.Cursor = System.Windows.Forms.Cursors.Default;
+			resources.ApplyResources(this.objectListViewSalaryAccounts, "objectListViewSalaryAccounts");
+			this.objectListViewSalaryAccounts.FullRowSelect = true;
+			this.objectListViewSalaryAccounts.GridLines = true;
+			this.objectListViewSalaryAccounts.HideSelection = false;
+			this.objectListViewSalaryAccounts.MultiSelect = false;
+			this.objectListViewSalaryAccounts.Name = "objectListViewSalaryAccounts";
+			this.objectListViewSalaryAccounts.ShowGroups = false;
+			this.objectListViewSalaryAccounts.UseCompatibleStateImageBehavior = false;
+			this.objectListViewSalaryAccounts.View = System.Windows.Forms.View.Details;
+			this.objectListViewSalaryAccounts.DoubleClick += new System.EventHandler(this.objectListViewSalaryAccounts_DoubleClick);
+			this.objectListViewSalaryAccounts.MouseUp += new System.Windows.Forms.MouseEventHandler(this.objectListViewSalaryAccounts_MouseUp);
+			this.objectListViewSalaryAccounts.Resize += new System.EventHandler(this.objectListViewSalaryAccounts_Resize);
+			// 
+			// olvColumnId
+			// 
+			this.olvColumnId.AspectName = "Id";
+			resources.ApplyResources(this.olvColumnId, "olvColumnId");
+			// 
+			// olvColumnGross
+			// 
+			this.olvColumnGross.AspectName = "GrossWage";
+			this.olvColumnGross.AspectToStringFormat = "{0:0.00} €";
+			resources.ApplyResources(this.olvColumnGross, "olvColumnGross");
+			// 
+			// olvColumnNet
+			// 
+			this.olvColumnNet.AspectName = "NetWage";
+			this.olvColumnNet.AspectToStringFormat = "{0:0.00} €";
+			resources.ApplyResources(this.olvColumnNet, "olvColumnNet");
+			// 
+			// olvColumnPeriod
+			// 
+			this.olvColumnPeriod.AspectName = "FormattedPeriod";
+			resources.ApplyResources(this.olvColumnPeriod, "olvColumnPeriod");
 			// 
 			// contextMenuStripEmployees
 			// 
@@ -278,36 +349,39 @@
 			resources.ApplyResources(this.toolStripMenuItemContextEmployeeDelete, "toolStripMenuItemContextEmployeeDelete");
 			this.toolStripMenuItemContextEmployeeDelete.Click += new System.EventHandler(this.toolStripMenuItemContextEmployeeDelete_Click);
 			// 
-			// listViewSalaryAccounts
+			// contextMenuStripSalaryAccountings
 			// 
-			this.listViewSalaryAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderSalaryAccountId,
-            this.columnHeaderSalaryAccountGross,
-            this.columnHeaderSalaryAccountNet,
-            this.columnHeaderSalaryAccountPeriod});
-			resources.ApplyResources(this.listViewSalaryAccounts, "listViewSalaryAccounts");
-			this.listViewSalaryAccounts.FullRowSelect = true;
-			this.listViewSalaryAccounts.GridLines = true;
-			this.listViewSalaryAccounts.MultiSelect = false;
-			this.listViewSalaryAccounts.Name = "listViewSalaryAccounts";
-			this.listViewSalaryAccounts.UseCompatibleStateImageBehavior = false;
-			this.listViewSalaryAccounts.View = System.Windows.Forms.View.Details;
+			this.contextMenuStripSalaryAccountings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSalaryAccountingsEdit,
+            this.toolStripMenuItemSalaryAccountingsCopy,
+            this.toolStripMenuItemSalaryAccountingsPaste,
+            this.toolStripMenuItemSalaryAccountingsDelete});
+			this.contextMenuStripSalaryAccountings.Name = "contextMenuStripSalaryAccountings";
+			resources.ApplyResources(this.contextMenuStripSalaryAccountings, "contextMenuStripSalaryAccountings");
 			// 
-			// columnHeaderSalaryAccountId
+			// toolStripMenuItemSalaryAccountingsEdit
 			// 
-			resources.ApplyResources(this.columnHeaderSalaryAccountId, "columnHeaderSalaryAccountId");
+			this.toolStripMenuItemSalaryAccountingsEdit.Name = "toolStripMenuItemSalaryAccountingsEdit";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsEdit, "toolStripMenuItemSalaryAccountingsEdit");
+			this.toolStripMenuItemSalaryAccountingsEdit.Click += new System.EventHandler(this.toolStripMenuItemSalaryAccountingsEdit_Click);
 			// 
-			// columnHeaderSalaryAccountGross
+			// toolStripMenuItemSalaryAccountingsCopy
 			// 
-			resources.ApplyResources(this.columnHeaderSalaryAccountGross, "columnHeaderSalaryAccountGross");
+			this.toolStripMenuItemSalaryAccountingsCopy.Name = "toolStripMenuItemSalaryAccountingsCopy";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsCopy, "toolStripMenuItemSalaryAccountingsCopy");
+			this.toolStripMenuItemSalaryAccountingsCopy.Click += new System.EventHandler(this.toolStripMenuItemSalaryAccountingsCopy_Click);
 			// 
-			// columnHeaderSalaryAccountNet
+			// toolStripMenuItemSalaryAccountingsPaste
 			// 
-			resources.ApplyResources(this.columnHeaderSalaryAccountNet, "columnHeaderSalaryAccountNet");
+			this.toolStripMenuItemSalaryAccountingsPaste.Name = "toolStripMenuItemSalaryAccountingsPaste";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsPaste, "toolStripMenuItemSalaryAccountingsPaste");
+			this.toolStripMenuItemSalaryAccountingsPaste.Click += new System.EventHandler(this.toolStripMenuItemSalaryAccountingsPaste_Click);
 			// 
-			// columnHeaderSalaryAccountPeriod
+			// toolStripMenuItemSalaryAccountingsDelete
 			// 
-			resources.ApplyResources(this.columnHeaderSalaryAccountPeriod, "columnHeaderSalaryAccountPeriod");
+			this.toolStripMenuItemSalaryAccountingsDelete.Name = "toolStripMenuItemSalaryAccountingsDelete";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsDelete, "toolStripMenuItemSalaryAccountingsDelete");
+			this.toolStripMenuItemSalaryAccountingsDelete.Click += new System.EventHandler(this.toolStripMenuItemSalaryAccountingsDelete_Click);
 			// 
 			// SalaryForm
 			// 
@@ -322,8 +396,11 @@
 			this.menuStripMain.PerformLayout();
 			this.tabControlMain.ResumeLayout(false);
 			this.tabPageEmployees.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.objectListViewEmployees)).EndInit();
 			this.tabPageSalaries.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.objectListViewSalaryAccounts)).EndInit();
 			this.contextMenuStripEmployees.ResumeLayout(false);
+			this.contextMenuStripSalaryAccountings.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -348,25 +425,30 @@
 		private System.Windows.Forms.TabControl tabControlMain;
 		private System.Windows.Forms.TabPage tabPageEmployees;
 		private System.Windows.Forms.TabPage tabPageSalaries;
-		private System.Windows.Forms.ListView listViewEmployees;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditAdd;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditAddEmployee;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditAddSalaryAccount;
-		private System.Windows.Forms.ColumnHeader columnHeaderId;
-		private System.Windows.Forms.ColumnHeader columnHeaderPersonnelNumber;
-		private System.Windows.Forms.ColumnHeader columnHeaderFirstName;
-		private System.Windows.Forms.ColumnHeader columnHeaderLastName;
-		private System.Windows.Forms.ColumnHeader columnHeaderBirthday;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStripEmployees;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemContextEmployeeEdit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemContextEmployeeDelete;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowSalaryAccounts;
-		private System.Windows.Forms.ListView listViewSalaryAccounts;
-		private System.Windows.Forms.ColumnHeader columnHeaderSalaryAccountId;
-		private System.Windows.Forms.ColumnHeader columnHeaderSalaryAccountGross;
-		private System.Windows.Forms.ColumnHeader columnHeaderSalaryAccountNet;
-		private System.Windows.Forms.ColumnHeader columnHeaderSalaryAccountPeriod;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStripSalaryAccountings;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSalaryAccountingsEdit;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSalaryAccountingsDelete;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSalaryAccountingsCopy;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSalaryAccountingsPaste;
+		private BrightIdeasSoftware.ObjectListView objectListViewSalaryAccounts;
+		private BrightIdeasSoftware.OLVColumn olvColumnId;
+		private BrightIdeasSoftware.OLVColumn olvColumnGross;
+		private BrightIdeasSoftware.OLVColumn olvColumnNet;
+		private BrightIdeasSoftware.OLVColumn olvColumnPeriod;
+		private BrightIdeasSoftware.ObjectListView objectListViewEmployees;
+		private BrightIdeasSoftware.OLVColumn olvColumnHeaderId;
+		private BrightIdeasSoftware.OLVColumn olvColumnHeaderPersonnelNumber;
+		private BrightIdeasSoftware.OLVColumn olvColumnHeaderFirstName;
+		private BrightIdeasSoftware.OLVColumn olvColumnHeaderLastName;
+		private BrightIdeasSoftware.OLVColumn olvColumnHeaderBirthday;
 	}
 }
 

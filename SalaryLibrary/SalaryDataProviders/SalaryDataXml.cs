@@ -15,6 +15,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		private XmlDocument _combinedDoc = null;
 		private XmlDocument _employeeDoc = null;
 		private XmlDocument _salaryDoc = null;
+		private CultureInfo _culture = CultureInfo.CreateSpecificCulture("en-US");
 		private object _writeLock = new object();
 
 		public SalaryDataXml(string combinedFilename)
@@ -119,20 +120,29 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		private XmlNode BuildSalaryNode(SalaryAccount salary, XmlDocument salaryDoc)
 		{
-			var culture = CultureInfo.CreateSpecificCulture("en-US");
-
 			var salaryNode = salaryDoc.CreateElement("salary");
 			salaryNode.SetAttribute("id", salary.Id.ToString());
-			if (salary.Employee != null && salary.Employee.Id > 0) {
-				salaryNode.SetAttribute("employee-id", salary.Employee.Id.ToString());
+			if (salary.Employee != null && salary.Employee.Id is uint && ((uint)salary.Employee.Id) > 0) {
+				salaryNode.SetAttribute("employee-id", ((uint)salary.Employee.Id).ToString());
 			}
+
+			var periodNode = salaryDoc.CreateElement("period");
+			var periodString = String.Format("{0}-{1:00}", salary.PeriodStart.Year, salary.PeriodStart.Month);
+			if (salary.PeriodStart.Year != salary.PeriodEnd.Year ||
+				salary.PeriodStart.Month != salary.PeriodEnd.Month ||
+				salary.PeriodStart.Day != 1 ||
+				salary.PeriodEnd.Day != DateTime.DaysInMonth(salary.PeriodEnd.Year, salary.PeriodEnd.Month)) {
+				periodString += String.Format("-{0:00} - {1}-{2:00}-{3:00}", salary.PeriodStart.Day, salary.PeriodEnd.Year, salary.PeriodEnd.Month, salary.PeriodEnd.Day);
+			}
+			periodNode.InnerText = periodString;
+			salaryNode.AppendChild(periodNode);
 
 			if (salary.Salaries.Count > 0) {
 				var salariesNode = salaryDoc.CreateElement("salaries");
 				foreach(var keyValue in salary.Salaries) {
 					var salaryItemNode = salaryDoc.CreateElement("salary");
 					salaryItemNode.SetAttribute("type", ((int)keyValue.Key).ToString());
-					salaryItemNode.SetAttribute("amount", keyValue.Value.Amount.ToString(culture));
+					salaryItemNode.SetAttribute("amount", keyValue.Value.Amount.ToString(this._culture));
 					salariesNode.AppendChild(salaryItemNode);
 				}
 				salaryNode.AppendChild(salariesNode);
@@ -140,40 +150,40 @@ namespace SalaryLibrary.SalaryDataProviders
 
 			if (salary.WageTax != 0.0) {
 				var wageTaxNode = salaryDoc.CreateElement("wage-tax");
-				wageTaxNode.InnerText = salary.WageTax.ToString(culture);
+				wageTaxNode.InnerText = salary.WageTax.ToString(this._culture);
 				salaryNode.AppendChild(wageTaxNode);
 			}
 			if(salary.SolidarityTax != 0.0) {
 				var solidarityTaxNode = salaryDoc.CreateElement("solidarity-tax");
-				solidarityTaxNode.InnerText = salary.SolidarityTax.ToString(culture);
+				solidarityTaxNode.InnerText = salary.SolidarityTax.ToString(this._culture);
 				salaryNode.AppendChild(solidarityTaxNode);
 			}
 
 			if(salary.SicknessInsurance != 0.0) {
 				var sicknessInsuranceNode = salaryDoc.CreateElement("sickness-insurance");
-				sicknessInsuranceNode.InnerText = salary.SicknessInsurance.ToString(culture);
+				sicknessInsuranceNode.InnerText = salary.SicknessInsurance.ToString(this._culture);
 				salaryNode.AppendChild(sicknessInsuranceNode);
 			}
 			if(salary.AnnuityInsurance != 0.0) {
 				var annuityInsuranceNode = salaryDoc.CreateElement("annuity-insurance");
-				annuityInsuranceNode.InnerText = salary.AnnuityInsurance.ToString(culture);
+				annuityInsuranceNode.InnerText = salary.AnnuityInsurance.ToString(this._culture);
 				salaryNode.AppendChild(annuityInsuranceNode);
 			}
 			if(salary.UnemploymentInsurance != 0.0) {
 				var unemploymentInsuranceNode = salaryDoc.CreateElement("unemployment-insurance");
-				unemploymentInsuranceNode.InnerText = salary.UnemploymentInsurance.ToString(culture);
+				unemploymentInsuranceNode.InnerText = salary.UnemploymentInsurance.ToString(this._culture);
 				salaryNode.AppendChild(unemploymentInsuranceNode);
 			}
 			if(salary.CompulsoryLongTermCareInsurance != 0.0) {
 				var compulsoryLongTermCareInsuranceeNode = salaryDoc.CreateElement("compulsory-long-term-care-insurance");
-				compulsoryLongTermCareInsuranceeNode.InnerText = salary.CompulsoryLongTermCareInsurance.ToString(culture);
+				compulsoryLongTermCareInsuranceeNode.InnerText = salary.CompulsoryLongTermCareInsurance.ToString(this._culture);
 				salaryNode.AppendChild(compulsoryLongTermCareInsuranceeNode);
 			}
 
 			return salaryNode;
 		}
 
-		public uint InsertEmployee(Employee employee)
+		public object InsertEmployee(Employee employee)
 		{
 			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
 			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
@@ -198,7 +208,7 @@ namespace SalaryLibrary.SalaryDataProviders
 			return employee.Id;
 		}
 
-		public async Task<uint> InsertEmployeeAsync(Employee employee)
+		public async Task<object> InsertEmployeeAsync(Employee employee)
 		{
 			return await Task.Run(() => {
 				lock(this._writeLock) {
@@ -230,7 +240,7 @@ namespace SalaryLibrary.SalaryDataProviders
 			});
 		}
 
-		public void DeleteEmployee(uint id)
+		public void DeleteEmployee(object id)
 		{
 			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
 			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
@@ -272,10 +282,10 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public void DeleteEmployee(Employee employee)
 		{
-			this.DeleteEmployee(employee.Id);
+			this.DeleteEmployee((uint)employee.Id);
 		}
 
-		public bool EmployeeExists(uint id)
+		public bool EmployeeExists(object id)
 		{
 			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + id + "']");
@@ -310,7 +320,7 @@ namespace SalaryLibrary.SalaryDataProviders
 			return false;
 		}
 
-		public Employee GetEmployee(uint id)
+		public Employee GetEmployee(object id)
 		{
 			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + id + "']");
@@ -437,7 +447,7 @@ namespace SalaryLibrary.SalaryDataProviders
 			return lastId;
 		}
 
-		public uint InsertSalary(SalaryAccount salary)
+		public object InsertSalary(SalaryAccount salary)
 		{
 			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
 			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
@@ -462,30 +472,95 @@ namespace SalaryLibrary.SalaryDataProviders
 			return salary.Id;
 		}
 
-		public SalaryAccount GetSalaryAccount(uint id)
+		public SalaryAccount GetSalaryAccount(object id)
 		{
 			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
 			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + id + "']");
 			if(salaryNode == null) {
 				return null;
 			}
+			var employeeIdAttr = salaryNode.Attributes.GetNamedItem("employee-id");
+			uint employeeId = 0;
+			if(employeeIdAttr == null) {
+				return null;
+			}
+			employeeId = Convert.ToUInt32(employeeIdAttr.Value);
 
-			return new SalaryAccount(salaryNode);
+			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + employeeId + "']");
+			if(employeeNode == null) {
+				return null;
+			}
+			var employee = new Employee(employeeNode);
+
+			return new SalaryAccount(employee, salaryNode);
+		}
+
+		public List<SalaryAccount> GetSalaryAccounts()
+		{
+			var salaryAccounts = new List<SalaryAccount>();
+
+			this.GetSalaryAccounts((salaryAccount) => {
+				salaryAccounts.Add(salaryAccount);
+			});
+
+			return salaryAccounts;
+		}
+
+		public uint GetSalaryAccounts(Action<SalaryAccount> callback)
+		{
+			uint count = 0;
+
+			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryNodes = salaryDoc.SelectNodes("/salary-data/salary-accountings/salary[@id]");
+			foreach(XmlNode salaryNode in salaryNodes) {
+				callback(new SalaryAccount(salaryNode));
+				count++;
+			}
+
+			return count;
+		}
+
+		public async Task<List<SalaryAccount>> GetSalaryAccountsAsync()
+		{
+			return await Task.Run(() => { return this.GetSalaryAccounts(); });
 		}
 
 		public void UpdateSalary(SalaryAccount salary)
 		{
-			throw new NotImplementedException("Method: SalaryDataXml.UpdateSalary(SalaryAccount salary); is not implemented yet.");
+			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + salary.Id + "']");
+			if(salaryNode == null) {
+				throw new ArgumentException("Cannot find salary-id in xml-data to update.");
+			}
+
+			var newSalaryNode = this.BuildSalaryNode(salary, salaryDoc);
+			salaryNode.ParentNode.ReplaceChild(newSalaryNode, salaryNode);
+			salaryDoc.Save(salaryFilename);
 		}
 
-		public void DeleteSalary(uint id)
+		public async Task UpdateSalaryAsync(SalaryAccount salary)
 		{
-			throw new NotImplementedException("Method: SalaryDataXml.DeleteSalary(uint id); is not implemented yet.");
+			await Task.Run(() => { this.UpdateSalary(salary); });
 		}
 
-		public void DeleteSalary(SalaryAccount salary)
+		public void DeleteSalary(object id)
 		{
-			throw new NotImplementedException("Method: SalaryDataXml.DeleteSalary(SalaryAccount salary); is not implemented yet.");
+			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + id + "']");
+			if(salaryNode == null) {
+				throw new ArgumentException("Cannot find salary-id in xml-data to delete.");
+			}
+
+			salaryNode.ParentNode.RemoveChild(salaryNode);
+			salaryDoc.Save(salaryFilename);
+		}
+
+		public async Task DeleteSalaryAsync(object id)
+		{
+			await Task.Run(() => { this.DeleteSalary(id); });
 		}
 	}
 }

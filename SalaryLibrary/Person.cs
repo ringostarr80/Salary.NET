@@ -14,7 +14,7 @@ namespace SalaryLibrary
 
     public class Person
     {
-		protected uint _id = 0;
+		protected object _id = null;
 		protected Gender _gender = Gender.NotSpecified;
 		protected string _firstName = String.Empty;
 		protected string _middleName = String.Empty;
@@ -24,10 +24,10 @@ namespace SalaryLibrary
 		/// <summary>
 		/// Id
 		/// </summary>
-		public uint Id { get { return this._id; }
+		public object Id { get { return this._id; }
 			set {
-				if (value == 0) {
-					throw new ArgumentException("Person.Id must be greater than 0!");
+				if (value == null) {
+					throw new ArgumentException("Person.Id cannot be null!");
 				}
 
 				this._id = value;
@@ -60,7 +60,7 @@ namespace SalaryLibrary
 			this.LastName = lastName;
 		}
 
-		public Person(uint id, string firstName, string lastName)
+		public Person(object id, string firstName, string lastName)
 		{
 			this.Id = id;
 			this.FirstName = firstName;
