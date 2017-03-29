@@ -8,16 +8,17 @@ namespace Salary.NET
 {
 	public partial class UserControlSalaryItems : UserControl
 	{
+		private List<SalaryType> _salaryTypes = new List<SalaryType>();
 		private List<UserControlGrossIncome> _grossIncomeControls = new List<UserControlGrossIncome>();
 		private int _userControlCounter = 1;
 
 		public event EventHandler<SalaryItemChangedEventArgs> SalaryItemChanged;
 		public Dictionary<SalaryType, SalaryItem> Salaries {
 			get {
-				var salaries = new Dictionary<SalaryType, SalaryItem>();
-				salaries.Add(this.userControlGrossIncome1.SalaryType, new SalaryItem(this.userControlGrossIncome1.Amount));
-
-				foreach(var grossControl in this._grossIncomeControls) {
+				var salaries = new Dictionary<SalaryType, SalaryItem> {
+					{ this.userControlGrossIncome1.SalaryType, new SalaryItem(this.userControlGrossIncome1.Amount) }
+				};
+				foreach (var grossControl in this._grossIncomeControls) {
 					if (grossControl.Amount == 0.0) {
 						continue;
 					}
@@ -33,9 +34,7 @@ namespace Salary.NET
 
 		protected virtual void OnSalaryItemChanged(SalaryItemChangedEventArgs e)
 		{
-			if (this.SalaryItemChanged != null) {
-				this.SalaryItemChanged(this, e);
-			}
+			this.SalaryItemChanged?.Invoke(this, e);
 		}
 
 		public UserControlSalaryItems()
@@ -44,19 +43,33 @@ namespace Salary.NET
 			this.RefreshPanelSize();
 		}
 
-		public void SetSalaryItems(Dictionary<SalaryType, SalaryItem> salaryAccounts)
+		public UserControlSalaryItems(List<SalaryType> salaryTypes)
 		{
+			this._salaryTypes = salaryTypes;
+
+			InitializeComponent();
+			this.RefreshPanelSize();
+		}
+
+		public void SetSalaryItems(List<SalaryType> salaryTypes, Dictionary<SalaryType, SalaryItem> salaryAccounts)
+		{
+			this._salaryTypes = salaryTypes;
 			this.ResetSalaryItems();
 
 			var counter = 0;
 			foreach(var keyValue in salaryAccounts) {
-				counter++;
-				if (counter > 1) {
-					this.AddSalaryItem(keyValue.Key, keyValue.Value.Amount);
+				var salaryType = this._salaryTypes.Find(st => st == keyValue.Key);
+				if (salaryType == null) {
 					continue;
 				}
 
-				this.userControlGrossIncome1.SalaryType = keyValue.Key;
+				counter++;
+				if (counter > 1) {
+					this.AddSalaryItem(salaryType, keyValue.Value.Amount);
+					continue;
+				}
+
+				this.userControlGrossIncome1.SalaryType = salaryType;
 				this.userControlGrossIncome1.Amount = keyValue.Value.Amount;
 			}
 		}
@@ -82,27 +95,41 @@ namespace Salary.NET
 			}
 
 			this.userControlGrossIncome1.Amount = 0;
-			this.userControlGrossIncome1.SalaryType = SalaryType.Gehalt;
+			if (this._salaryTypes.Count > 0) {
+				foreach(var salaryType in this._salaryTypes) {
+					this.userControlGrossIncome1.SalaryType = salaryType;
+					break;
+				}
+			} else {
+				this.userControlGrossIncome1.SalaryType = new SalaryType(1, 1, "Dummy");
+			}
 
 			this.ReorderItems();
 			this.RefreshPanelSize();
 		}
 
-		private void buttonAdd1_Click(object sender, EventArgs e)
+		private void ButtonAdd1_Click(object sender, EventArgs e)
 		{
 			this.AddSalaryItem();
 		}
 
 		private void AddSalaryItem()
 		{
-			this.AddSalaryItem(SalaryType.Gehalt, 0);
+			if (this._salaryTypes.Count > 0) {
+				foreach (var salaryType in this._salaryTypes) {
+					this.userControlGrossIncome1.SalaryType = salaryType;
+					break;
+				}
+			} else {
+				this.userControlGrossIncome1.SalaryType = new SalaryType(1, 1, "Dummy");
+			}
 		}
 
 		private void AddSalaryItem(SalaryType salaryType, double amount)
 		{
 			var incomeControlsCount = this._grossIncomeControls.Count;
 
-			var newUserControlGrossIncome = new UserControlGrossIncome() {
+			var newUserControlGrossIncome = new UserControlGrossIncome(this._salaryTypes) {
 				Name = "userControlGrossIncome" + (++this._userControlCounter),
 				Left = this.userControlGrossIncome1.Left,
 				Top = this.userControlGrossIncome1.Top + (incomeControlsCount + 1) * 27, // 46 - 19 = 27
@@ -111,7 +138,7 @@ namespace Salary.NET
 				SalaryType = salaryType,
 				SalaryTypeWidth = this.userControlGrossIncome1.SalaryTypeWidth
 			};
-			newUserControlGrossIncome.SalaryItemChanged += this.userControlGrossIncome1_SalaryItemChanged;
+			newUserControlGrossIncome.SalaryItemChanged += this.UserControlGrossIncome1_SalaryItemChanged;
 
 			var newButtonAdd = new Button() {
 				Name = "buttonAdd" + this._userControlCounter,
@@ -121,7 +148,7 @@ namespace Salary.NET
 				Height = this.buttonAdd1.Height,
 				Text = this.buttonAdd1.Text
 			};
-			newButtonAdd.Click += this.buttonAdd1_Click;
+			newButtonAdd.Click += this.ButtonAdd1_Click;
 
 			var newButtonRemove = new Button() {
 				Name = "buttonRemove" + this._userControlCounter,
@@ -131,7 +158,7 @@ namespace Salary.NET
 				Height = this.buttonRemove1.Height,
 				Text = this.buttonRemove1.Text
 			};
-			newButtonRemove.Click += this.buttonRemove1_Click;
+			newButtonRemove.Click += this.ButtonRemove1_Click;
 
 			this._grossIncomeControls.Add(newUserControlGrossIncome);
 			this.panel.Controls.Add(newUserControlGrossIncome);
@@ -141,7 +168,7 @@ namespace Salary.NET
 			this.RefreshPanelSize();
 		}
 
-		private void buttonRemove1_Click(object sender, EventArgs e)
+		private void ButtonRemove1_Click(object sender, EventArgs e)
 		{
 			var removeButton = (Button)sender;
 			var buttonNumberMatch = Regex.Match(removeButton.Name, "^buttonRemove([0-9]+)$", RegexOptions.Compiled);
@@ -202,12 +229,12 @@ namespace Salary.NET
 			}
 		}
 
-		private void vScrollBar_Scroll(object sender, ScrollEventArgs e)
+		private void VScrollBar_Scroll(object sender, ScrollEventArgs e)
 		{
 			this.panel.Top = -e.NewValue * 5;
 		}
 
-		private void userControlGrossIncome1_SalaryItemChanged(object sender, SalaryItemChangedEventArgs e)
+		private void UserControlGrossIncome1_SalaryItemChanged(object sender, SalaryItemChangedEventArgs e)
 		{
 			this.OnSalaryItemChanged(e);
 		}

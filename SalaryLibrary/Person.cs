@@ -16,9 +16,9 @@ namespace SalaryLibrary
     {
 		protected object _id = null;
 		protected Gender _gender = Gender.NotSpecified;
-		protected string _firstName = String.Empty;
-		protected string _middleName = String.Empty;
-		protected string _lastName = String.Empty;
+		protected string _firstName = string.Empty;
+		protected string _middleName = string.Empty;
+		protected string _lastName = string.Empty;
 		protected DateTime _birthday = DateTime.MinValue;
 
 		/// <summary>
@@ -26,11 +26,7 @@ namespace SalaryLibrary
 		/// </summary>
 		public object Id { get { return this._id; }
 			set {
-				if (value == null) {
-					throw new ArgumentException("Person.Id cannot be null!");
-				}
-
-				this._id = value;
+				this._id = value ?? throw new ArgumentException("Person.Id cannot be null!");
 			}
 		}
 		/// <summary>
@@ -114,7 +110,7 @@ namespace SalaryLibrary
 
 						case "birthday":
 							var birthdayText = childNode.InnerText.Trim();
-							if (birthdayText != String.Empty) {
+							if (birthdayText != string.Empty) {
 								var dateMatch = Regex.Match(birthdayText, "^(\\d{4})-(\\d{2})-(\\d{2})$", RegexOptions.Compiled);
 								if(!dateMatch.Success) {
 									throw new FormatException("The birthday-node (" + birthdayText + ") has an invalid format. Expected format: YYYY-MM-DD.");
@@ -149,14 +145,14 @@ namespace SalaryLibrary
 
 		public string GetInformalSalutation()
 		{
-			var salutation = String.Empty;
+			var salutation = string.Empty;
 
-			if (this.FirstName != String.Empty) {
+			if (this.FirstName != string.Empty) {
 				salutation += this.FirstName;
 			}
 
-			if(this.LastName != String.Empty) {
-				if(salutation != String.Empty) {
+			if(this.LastName != string.Empty) {
+				if(salutation != string.Empty) {
 					salutation += " ";
 				}
 				salutation += this.LastName;

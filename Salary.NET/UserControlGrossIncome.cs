@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using SalaryLibrary;
 
@@ -6,13 +7,13 @@ namespace Salary.NET
 {
 	public partial class UserControlGrossIncome : UserControl, ICloneable
 	{
+		private List<SalaryType> _salaryTypes = new List<SalaryType>();
+
 		public event EventHandler<SalaryItemChangedEventArgs> SalaryItemChanged;
 
 		protected virtual void OnSalaryItemChanged(SalaryItemChangedEventArgs e)
 		{
-			if(this.SalaryItemChanged != null) {
-				this.SalaryItemChanged(this, e);
-			}
+			this.SalaryItemChanged?.Invoke(this, e);
 		}
 
 		public SalaryType SalaryType {
@@ -70,16 +71,27 @@ namespace Salary.NET
 			this.InitControls();
 		}
 
-		public UserControlGrossIncome(SalaryType salaryType)
+		public UserControlGrossIncome(List<SalaryType> salaryTypes)
 		{
+			this._salaryTypes = salaryTypes;
+
+			InitializeComponent();
+			this.InitControls();
+		}
+
+		public UserControlGrossIncome(List<SalaryType> salaryTypes, SalaryType salaryType)
+		{
+			this._salaryTypes = salaryTypes;
 			InitializeComponent();
 			this.InitControls();
 
 			this.SalaryType = salaryType;
 		}
 
-		public UserControlGrossIncome(SalaryType salaryType, double amount)
+		public UserControlGrossIncome(List<SalaryType> salaryTypes, SalaryType salaryType, double amount)
 		{
+			this._salaryTypes = salaryTypes;
+
 			InitializeComponent();
 			this.InitControls();
 
@@ -89,7 +101,7 @@ namespace Salary.NET
 
 		public object Clone()
 		{
-			var clone = new UserControlGrossIncome(this.SalaryType, this.Amount) {
+			var clone = new UserControlGrossIncome(this._salaryTypes, this.SalaryType, this.Amount) {
 				Top = this.Top,
 				Left = this.Left,
 				SalaryTypeWidth = this.SalaryTypeWidth,
@@ -100,21 +112,22 @@ namespace Salary.NET
 
 		public void InitControls()
 		{
-			this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(SalaryType.Gehalt));
-			this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(SalaryType.BezugVWLlfd));
-			this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(SalaryType.BruttoWeihnachtsgeld));
-			this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(SalaryType.NettoWeihnachtsgeld));
-			this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(SalaryType.AbzugVWL));
+			foreach(var salaryType in this._salaryTypes) {
+				this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(salaryType));
+			}
+			if (this.comboBoxSalaryType.Items.Count == 0) {
+				this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(new SalaryType(1, 1, "Dummy")));
+			}
 
 			this.comboBoxSalaryType.SelectedIndex = 0;
 		}
 
-		private void comboBoxSalaryType_SelectedIndexChanged(object sender, EventArgs e)
+		private void ComboBoxSalaryType_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			this.OnSalaryItemChanged(new SalaryItemChangedEventArgs(this.SalaryType, this.Amount));
 		}
 
-		private void numericUpDownAmount_ValueChanged(object sender, EventArgs e)
+		private void NumericUpDownAmount_ValueChanged(object sender, EventArgs e)
 		{
 			this.OnSalaryItemChanged(new SalaryItemChangedEventArgs(this.SalaryType, this.Amount));
 		}

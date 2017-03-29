@@ -5,7 +5,7 @@ namespace Salary.NET
 {
 	class SalaryTypeItem
 	{
-		private SalaryType _type = SalaryType.AbzugVWL;
+		private SalaryType _type = null;
 
 		public SalaryType Type { get { return this._type; } }
 
@@ -16,31 +16,7 @@ namespace Salary.NET
 
 		public override string ToString()
 		{
-			var text = "(" + (int)this._type + ") ";
-
-			switch(this._type) {
-				case SalaryType.AbzugVWL:
-					text += "Abzug VWL";
-					break;
-
-				case SalaryType.BezugVWLlfd:
-					text += "Bezug VWL lfd";
-					break;
-
-				case SalaryType.BruttoWeihnachtsgeld:
-					text += "Brutto Weihnachtsgeld";
-					break;
-
-				case SalaryType.Gehalt:
-					text += "Gehalt";
-					break;
-
-				case SalaryType.NettoWeihnachtsgeld:
-					text += "Netto Weihnachtsgeld";
-					break;
-			}
-
-			return text;
+			return string.Format("({0}) {1}", this._type.Number, this._type.Name);
 		}
 	}
 }

@@ -17,6 +17,16 @@ namespace SalaryLibrary.SalaryDataProviders
 		private XmlDocument _salaryDoc = null;
 		private CultureInfo _culture = CultureInfo.CreateSpecificCulture("en-US");
 		private object _writeLock = new object();
+		private List<SalaryType> _cachedSalaryTypes = null;
+
+		public List<SalaryType> CachedSalaryTypes {
+			get {
+				if (this._cachedSalaryTypes == null) {
+					this._cachedSalaryTypes = this.GetSalaryTypes();
+				}
+				return this._cachedSalaryTypes;
+			}
+		}
 
 		public SalaryDataXml(string combinedFilename)
 		{
@@ -141,7 +151,7 @@ namespace SalaryLibrary.SalaryDataProviders
 				var salariesNode = salaryDoc.CreateElement("salaries");
 				foreach(var keyValue in salary.Salaries) {
 					var salaryItemNode = salaryDoc.CreateElement("salary");
-					salaryItemNode.SetAttribute("type", ((int)keyValue.Key).ToString());
+					salaryItemNode.SetAttribute("type-id", keyValue.Key.Id.ToString());
 					salaryItemNode.SetAttribute("amount", keyValue.Value.Amount.ToString(this._culture));
 					salariesNode.AppendChild(salaryItemNode);
 				}
@@ -152,6 +162,11 @@ namespace SalaryLibrary.SalaryDataProviders
 				var wageTaxNode = salaryDoc.CreateElement("wage-tax");
 				wageTaxNode.InnerText = salary.WageTax.ToString(this._culture);
 				salaryNode.AppendChild(wageTaxNode);
+			}
+			if(salary.ChurchTax != 0.0) {
+				var churchTaxNode = salaryDoc.CreateElement("church-tax");
+				churchTaxNode.InnerText = salary.ChurchTax.ToString(this._culture);
+				salaryNode.AppendChild(churchTaxNode);
 			}
 			if(salary.SolidarityTax != 0.0) {
 				var solidarityTaxNode = salaryDoc.CreateElement("solidarity-tax");
@@ -183,9 +198,22 @@ namespace SalaryLibrary.SalaryDataProviders
 			return salaryNode;
 		}
 
+		private XmlNode BuildSalaryTypeNode(SalaryType salaryType, XmlDocument salaryDoc)
+		{
+			var salaryTypeNode = salaryDoc.CreateElement("salary-type");
+			salaryTypeNode.SetAttribute("id", salaryType.Id.ToString());
+			salaryTypeNode.SetAttribute("number", salaryType.Number.ToString());
+			salaryTypeNode.SetAttribute("name", salaryType.Name);
+			if (salaryType.DiscountOnNetWage) {
+				salaryTypeNode.SetAttribute("discount-on-net-wage", "true");
+			}
+			
+			return salaryTypeNode;
+		}
+
 		public object InsertEmployee(Employee employee)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
 
 			var salaryDataNode = employeeDoc.SelectSingleNode("/salary-data");
@@ -219,7 +247,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public void UpdateEmployee(Employee employee)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + employee.Id + "']");
 			if (employeeNode == null) {
@@ -242,7 +270,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public void DeleteEmployee(object id)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + id + "']");
 			if(employeeNode == null) {
@@ -255,7 +283,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public void DeleteEmployee(string firstName, string lastName)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNodes = employeeDoc.SelectNodes("/salary-data/employees/employee");
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var firstNameNode = employeeNode.SelectSingleNode("./first-name");
@@ -287,14 +315,14 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public bool EmployeeExists(object id)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + id + "']");
 			return (employeeNode != null) ? true : false;
 		}
 
 		public bool EmployeeExists(string firstName, string lastName)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNodes = employeeDoc.SelectNodes("/salary-data/employees/employee");
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var firstNameNode = employeeNode.SelectSingleNode("./first-name");
@@ -322,7 +350,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public Employee GetEmployee(object id)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + id + "']");
 			if (employeeNode == null) {
 				return null;
@@ -333,7 +361,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public Employee GetEmployee(string firstName, string lastName)
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNodes = employeeDoc.SelectNodes("/salary-data/employees/employee[@id]");
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var firstNameNode = employeeNode.SelectSingleNode("./first-name");
@@ -361,7 +389,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public uint GetEmployeesCount()
 		{
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNodes = employeeDoc.SelectNodes("/salary-data/employees/employee[@id]");
 			return (uint)employeeNodes.Count;
 		}
@@ -386,7 +414,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		{
 			var count = 0U;
 
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNodes = employeeDoc.SelectNodes("/salary-data/employees/employee[@id]");
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var employee = new Employee(employeeNode);
@@ -402,7 +430,7 @@ namespace SalaryLibrary.SalaryDataProviders
 			uint lastId = 0;
 			uint parsedId = 0;
 
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNodes = employeeDoc.SelectNodes("/salary-data/employees/employee[@id]");
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var idAttr = employeeNode.Attributes.GetNamedItem("id");
@@ -427,7 +455,7 @@ namespace SalaryLibrary.SalaryDataProviders
 			uint lastId = 0;
 			uint parsedId = 0;
 
-			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryNodes = salaryDoc.SelectNodes("/salary-data/salary-accountings/salary[@id]");
 			foreach(XmlNode salaryNode in salaryNodes) {
 				var idAttr = salaryNode.Attributes.GetNamedItem("id");
@@ -447,9 +475,34 @@ namespace SalaryLibrary.SalaryDataProviders
 			return lastId;
 		}
 
+		private uint GetLastSalaryTypeId()
+		{
+			uint lastId = 0;
+			uint parsedId = 0;
+
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryTypeNodes = salaryDoc.SelectNodes("/salary-data/salary-types/salary-type[@id]");
+			foreach (XmlNode salaryTypeNode in salaryTypeNodes) {
+				var idAttr = salaryTypeNode.Attributes.GetNamedItem("id");
+				if (idAttr == null) {
+					continue;
+				}
+
+				if (!UInt32.TryParse(idAttr.Value, out parsedId)) {
+					continue;
+				}
+
+				if (parsedId > lastId) {
+					lastId = parsedId;
+				}
+			}
+
+			return lastId;
+		}
+
 		public object InsertSalary(SalaryAccount salary)
 		{
-			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
 
 			var salaryDataNode = salaryDoc.SelectSingleNode("/salary-data");
@@ -474,7 +527,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public SalaryAccount GetSalaryAccount(object id)
 		{
-			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + id + "']");
 			if(salaryNode == null) {
 				return null;
@@ -486,14 +539,14 @@ namespace SalaryLibrary.SalaryDataProviders
 			}
 			employeeId = Convert.ToUInt32(employeeIdAttr.Value);
 
-			var employeeDoc = (this._employeeDoc != null) ? this._employeeDoc : this._combinedDoc;
+			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + employeeId + "']");
 			if(employeeNode == null) {
 				return null;
 			}
 			var employee = new Employee(employeeNode);
 
-			return new SalaryAccount(employee, salaryNode);
+			return new SalaryAccount(this.CachedSalaryTypes, employee, salaryNode);
 		}
 
 		public List<SalaryAccount> GetSalaryAccounts()
@@ -507,14 +560,46 @@ namespace SalaryLibrary.SalaryDataProviders
 			return salaryAccounts;
 		}
 
+		public List<SalaryAccount> GetSalaryAccounts(object id)
+		{
+			var salaryAccounts = new List<SalaryAccount>();
+
+			this.GetSalaryAccounts(id, (salaryAccount) => {
+				if(salaryAccount.Employee.Id == id) {
+					salaryAccounts.Add(salaryAccount);
+				}
+			});
+
+			return salaryAccounts;
+		}
+
 		public uint GetSalaryAccounts(Action<SalaryAccount> callback)
 		{
 			uint count = 0;
 
-			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryNodes = salaryDoc.SelectNodes("/salary-data/salary-accountings/salary[@id]");
 			foreach(XmlNode salaryNode in salaryNodes) {
-				callback(new SalaryAccount(salaryNode));
+				callback(new SalaryAccount(this.CachedSalaryTypes, salaryNode));
+				count++;
+			}
+
+			return count;
+		}
+
+		public uint GetSalaryAccounts(object id, Action<SalaryAccount> callback)
+		{
+			uint count = 0;
+
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryNodes = salaryDoc.SelectNodes("/salary-data/salary-accountings/salary[@employee-id=" + id.ToString() + "]");
+			foreach(XmlNode salaryNode in salaryNodes) {
+				if (salaryNode.Attributes.GetNamedItem("id") == null) {
+					continue;
+				}
+				var employee = new Employee(id, String.Empty, String.Empty);
+				var salaryAccount = new SalaryAccount(this.CachedSalaryTypes, employee, salaryNode);
+				callback(salaryAccount);
 				count++;
 			}
 
@@ -528,7 +613,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public void UpdateSalary(SalaryAccount salary)
 		{
-			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
 			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + salary.Id + "']");
 			if(salaryNode == null) {
@@ -547,7 +632,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public void DeleteSalary(object id)
 		{
-			var salaryDoc = (this._salaryDoc != null) ? this._salaryDoc : this._combinedDoc;
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
 			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + id + "']");
 			if(salaryNode == null) {
@@ -561,6 +646,56 @@ namespace SalaryLibrary.SalaryDataProviders
 		public async Task DeleteSalaryAsync(object id)
 		{
 			await Task.Run(() => { this.DeleteSalary(id); });
+		}
+
+		public SalaryType GetSalaryType(object id)
+		{
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryTypeNode = salaryDoc.SelectSingleNode("/salary-data/salary-types/salary-type[@id='" + id + "']");
+			if (salaryTypeNode == null) {
+				return null;
+			}
+
+			return new SalaryType(salaryTypeNode);
+		}
+
+		public List<SalaryType> GetSalaryTypes()
+		{
+			var salaryTypes = new List<SalaryType>();
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryTypeNodes = salaryDoc.SelectNodes("/salary-data/salary-types/salary-type");
+			foreach(XmlNode salaryTypeNode in salaryTypeNodes) {
+				salaryTypes.Add(new SalaryType(salaryTypeNode));
+			}
+
+			return salaryTypes;
+		}
+
+		public object InsertSalaryType(SalaryType salaryType)
+		{
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+
+			var salaryDataNode = salaryDoc.SelectSingleNode("/salary-data");
+			if (salaryDataNode == null)
+			{
+				throw new InvalidDataException("salary-data node does not exists in xml-file.");
+			}
+
+			var salaryTypesNode = salaryDataNode.SelectSingleNode("./salary-types");
+			if (salaryTypesNode == null)
+			{
+				salaryTypesNode = salaryDoc.CreateElement("salary-types");
+				salaryDataNode.AppendChild(salaryTypesNode);
+			}
+
+			salaryType.Id = this.GetLastSalaryTypeId() + 1;
+			var salaryTypeNode = this.BuildSalaryTypeNode(salaryType, salaryDoc);
+
+			salaryTypesNode.AppendChild(salaryTypeNode);
+			salaryDoc.Save(salaryFilename);
+
+			return salaryType.Id;
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿namespace Salary.NET
+﻿using SalaryLibrary;
+
+namespace Salary.NET
 {
 	partial class UserControlSalaryItems
 	{
@@ -33,7 +35,7 @@
 			this.buttonAdd1 = new System.Windows.Forms.Button();
 			this.buttonRemove1 = new System.Windows.Forms.Button();
 			this.vScrollBar = new System.Windows.Forms.VScrollBar();
-			this.userControlGrossIncome1 = new Salary.NET.UserControlGrossIncome();
+			this.userControlGrossIncome1 = new UserControlGrossIncome(this._salaryTypes);
 			this.groupBox.SuspendLayout();
 			this.panelBackground.SuspendLayout();
 			this.panel.SuspendLayout();
@@ -78,7 +80,7 @@
 			this.buttonAdd1.TabIndex = 1;
 			this.buttonAdd1.Text = "+";
 			this.buttonAdd1.UseVisualStyleBackColor = true;
-			this.buttonAdd1.Click += new System.EventHandler(this.buttonAdd1_Click);
+			this.buttonAdd1.Click += new System.EventHandler(this.ButtonAdd1_Click);
 			// 
 			// buttonRemove1
 			// 
@@ -89,7 +91,7 @@
 			this.buttonRemove1.Text = "-";
 			this.buttonRemove1.UseVisualStyleBackColor = true;
 			this.buttonRemove1.Visible = false;
-			this.buttonRemove1.Click += new System.EventHandler(this.buttonRemove1_Click);
+			this.buttonRemove1.Click += new System.EventHandler(this.ButtonRemove1_Click);
 			// 
 			// vScrollBar
 			// 
@@ -100,7 +102,7 @@
 			this.vScrollBar.Name = "vScrollBar";
 			this.vScrollBar.Size = new System.Drawing.Size(17, 181);
 			this.vScrollBar.TabIndex = 3;
-			this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar_Scroll);
+			this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.VScrollBar_Scroll);
 			// 
 			// userControlGrossIncome1
 			// 
@@ -108,11 +110,11 @@
 			this.userControlGrossIncome1.AmountWidth = 245;
 			this.userControlGrossIncome1.Location = new System.Drawing.Point(3, 3);
 			this.userControlGrossIncome1.Name = "userControlGrossIncome1";
-			this.userControlGrossIncome1.SalaryType = SalaryLibrary.SalaryType.Gehalt;
+			this.userControlGrossIncome1.SalaryType = new SalaryType(1, 2000, "Gehalt");
 			this.userControlGrossIncome1.SalaryTypeWidth = 140;
 			this.userControlGrossIncome1.Size = new System.Drawing.Size(391, 21);
 			this.userControlGrossIncome1.TabIndex = 0;
-			this.userControlGrossIncome1.SalaryItemChanged += new System.EventHandler<SalaryItemChangedEventArgs>(this.userControlGrossIncome1_SalaryItemChanged);
+			this.userControlGrossIncome1.SalaryItemChanged += new System.EventHandler<SalaryItemChangedEventArgs>(this.UserControlGrossIncome1_SalaryItemChanged);
 			// 
 			// UserControlSalaryItems
 			// 

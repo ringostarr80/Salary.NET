@@ -31,11 +31,11 @@ namespace SalaryLibraryNUnitTest
 
 		private Employee GetDefaultEmployee()
 		{
-			var employee1 = new Employee(1, "Max", "Mustermann");
-			employee1.Birthday = new DateTime(1976, 2, 1);
-			employee1.PersonnelNumber = "T01";
-			employee1.Gender = Gender.Male;
-
+			var employee1 = new Employee(1, "Max", "Mustermann") {
+				Birthday = new DateTime(1976, 2, 1),
+				PersonnelNumber = "T01",
+				Gender = Gender.Male
+			};
 			return employee1;
 		}
 
@@ -50,8 +50,9 @@ namespace SalaryLibraryNUnitTest
 			Assert.AreEqual("T01", employee1.PersonnelNumber);
 			Assert.AreEqual(Gender.Male, employee1.Gender);
 
-			var employee2 = new Employee(2, "John", "Doe");
-			employee2.MiddleName = "Dummy";
+			var employee2 = new Employee(2, "John", "Doe") {
+				MiddleName = "Dummy"
+			};
 			Assert.AreEqual(2, employee2.Id);
 			Assert.AreEqual("John", employee2.FirstName);
 			Assert.AreEqual("Dummy", employee2.MiddleName);
@@ -71,11 +72,11 @@ namespace SalaryLibraryNUnitTest
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
 			
 			var employee1 = this.GetDefaultEmployee();
-			var employee2 = new Employee("Erika", "Mustermann");
-			employee2.Birthday = new DateTime(1964, 8, 12);
-			employee2.PersonnelNumber = "T02";
-			employee2.Gender = Gender.Female;
-
+			var employee2 = new Employee("Erika", "Mustermann") {
+				Birthday = new DateTime(1964, 8, 12),
+				PersonnelNumber = "T02",
+				Gender = Gender.Female
+			};
 			var employee1Exists = Settings.DefaultDataBackend.EmployeeExists(employee1.FirstName, employee1.LastName);
 			var employee2Exists = Settings.DefaultDataBackend.EmployeeExists(employee2.FirstName, employee2.LastName);
 			Assert.IsFalse(employee1Exists);
@@ -95,10 +96,10 @@ namespace SalaryLibraryNUnitTest
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
 
 			var employee1 = this.GetDefaultEmployee();
-			var employee2 = new Employee("Erika", "Mustermann");
-			employee2.Birthday = new DateTime(1964, 8, 12);
-			employee2.PersonnelNumber = "T02";
-
+			var employee2 = new Employee("Erika", "Mustermann") {
+				Birthday = new DateTime(1964, 8, 12),
+				PersonnelNumber = "T02"
+			};
 			var employee1Exists = Settings.DefaultDataBackend.EmployeeExists(employee1.FirstName, employee1.LastName);
 			var employee2Exists = Settings.DefaultDataBackend.EmployeeExists(employee2.FirstName, employee2.LastName);
 			Assert.IsFalse(employee1Exists);
@@ -258,8 +259,9 @@ namespace SalaryLibraryNUnitTest
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
 
 			var employee1 = this.GetDefaultEmployee();
-			var employee2 = new Employee(2, "John", "Doe");
-			employee2.MiddleName = "Dummy";
+			var employee2 = new Employee(2, "John", "Doe") {
+				MiddleName = "Dummy"
+			};
 			Settings.DefaultDataBackend.InsertEmployee(employee1);
 			Settings.DefaultDataBackend.InsertEmployee(employee2);
 
@@ -273,8 +275,9 @@ namespace SalaryLibraryNUnitTest
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
 
 			var employee1 = this.GetDefaultEmployee();
-			var employee2 = new Employee(2, "John", "Doe");
-			employee2.MiddleName = "Dummy";
+			var employee2 = new Employee(2, "John", "Doe") {
+				MiddleName = "Dummy"
+			};
 			Settings.DefaultDataBackend.InsertEmployee(employee1);
 			Settings.DefaultDataBackend.InsertEmployee(employee2);
 
@@ -289,8 +292,9 @@ namespace SalaryLibraryNUnitTest
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
 
 			var employee1 = this.GetDefaultEmployee();
-			var employee2 = new Employee(2, "John", "Doe");
-			employee2.MiddleName = "Dummy";
+			var employee2 = new Employee(2, "John", "Doe") {
+				MiddleName = "Dummy"
+			};
 			Settings.DefaultDataBackend.InsertEmployee(employee1);
 			Settings.DefaultDataBackend.InsertEmployee(employee2);
 

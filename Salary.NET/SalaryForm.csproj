@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Salary.NET</RootNamespace>
     <AssemblyName>Salary.NET</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -116,6 +116,9 @@
       <DependentUpon>SalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryForm.en.resx">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaryForm.ja.resx">
       <DependentUpon>SalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryForm.resx">

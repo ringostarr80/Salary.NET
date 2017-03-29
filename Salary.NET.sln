@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryLibraryNUnitTest", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryUWP", "SalaryUWP\SalaryUWP.csproj", "{DDA73094-579F-4360-BCF8-2D2176F6F843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryIOS", "SalaryIOS\SalaryIOS.csproj", "{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -245,38 +243,6 @@ Global
 		{DDA73094-579F-4360-BCF8-2D2176F6F843}.Release|x86.ActiveCfg = Release|x86
 		{DDA73094-579F-4360-BCF8-2D2176F6F843}.Release|x86.Build.0 = Release|x86
 		{DDA73094-579F-4360-BCF8-2D2176F6F843}.Release|x86.Deploy.0 = Release|x86
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|ARM.ActiveCfg = Ad-Hoc|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|iPhoneSimulator.Build.0 = Ad-Hoc|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|x64.ActiveCfg = Ad-Hoc|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Ad-Hoc|x86.ActiveCfg = Ad-Hoc|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|Any CPU.ActiveCfg = AppStore|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|ARM.ActiveCfg = AppStore|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|iPhone.Build.0 = AppStore|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|x64.ActiveCfg = AppStore|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.AppStore|x86.ActiveCfg = AppStore|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|ARM.ActiveCfg = Debug|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|iPhone.Build.0 = Debug|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|x64.ActiveCfg = Debug|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Debug|x86.ActiveCfg = Debug|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|ARM.ActiveCfg = Release|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|iPhone.ActiveCfg = Release|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|iPhone.Build.0 = Release|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|x64.ActiveCfg = Release|iPhone
-		{15B1A5BA-94CC-40B9-857A-2C43EDEF9FBB}.Release|x86.ActiveCfg = Release|iPhone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

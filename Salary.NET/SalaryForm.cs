@@ -29,12 +29,12 @@ namespace Salary.NET
 			this.AdjustSalaryAccountsListView();
 		}
 
-		private void objectListViewEmployees_Resize(object sender, EventArgs e)
+		private void ObjectListViewEmployees_Resize(object sender, EventArgs e)
 		{
 			this.AdjustEmployeesListView();
 		}
 		
-		private void objectListViewSalaryAccounts_Resize(object sender, EventArgs e)
+		private void ObjectListViewSalaryAccounts_Resize(object sender, EventArgs e)
 		{
 			this.AdjustSalaryAccountsListView();
 		}
@@ -82,12 +82,12 @@ namespace Salary.NET
 			this.objectListViewSalaryAccounts.Columns[2].Width = newNetWageWidth;
 		}
 
-		private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+		private void BeendenToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
 
-		private void toolStripMenuItemLanguageSelect_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemLanguageSelect_Click(object sender, EventArgs e)
 		{
 			if (!(sender is ToolStripMenuItem)) {
 				return;
@@ -98,10 +98,13 @@ namespace Salary.NET
 			switch(languageCode) {
 				case "de":
 				case "de-DE":
+				case "":
 					this.toolStripMenuItemLanguageEnglish.Checked = false;
 					this.toolStripMenuItemLanguageEnglish.CheckState = CheckState.Unchecked;
 					this.toolStripMenuItemLanguageGermany.Checked = true;
 					this.toolStripMenuItemLanguageGermany.CheckState = CheckState.Checked;
+					this.toolStripMenuItemLanguageJapanese.Checked = false;
+					this.toolStripMenuItemLanguageJapanese.CheckState = CheckState.Unchecked;
 					break;
 
 				case "en":
@@ -110,6 +113,21 @@ namespace Salary.NET
 					this.toolStripMenuItemLanguageGermany.CheckState = CheckState.Unchecked;
 					this.toolStripMenuItemLanguageEnglish.Checked = true;
 					this.toolStripMenuItemLanguageEnglish.CheckState = CheckState.Checked;
+					this.toolStripMenuItemLanguageJapanese.Checked = false;
+					this.toolStripMenuItemLanguageJapanese.CheckState = CheckState.Unchecked;
+					break;
+
+				case "ja":
+					this.toolStripMenuItemLanguageGermany.Checked = false;
+					this.toolStripMenuItemLanguageGermany.CheckState = CheckState.Unchecked;
+					this.toolStripMenuItemLanguageEnglish.Checked = false;
+					this.toolStripMenuItemLanguageEnglish.CheckState = CheckState.Unchecked;
+					this.toolStripMenuItemLanguageJapanese.Checked = true;
+					this.toolStripMenuItemLanguageJapanese.CheckState = CheckState.Checked;
+					break;
+
+				default:
+					Console.WriteLine("invalid or unknown language-code: " +languageCode);
 					break;
 			}
 
@@ -142,7 +160,7 @@ namespace Salary.NET
 			this.openFileDialog.Filter = this._localizations.GetString("XML_FILE_FILTER");
 		}
 
-		private void toolStripMenuItemXMLFile_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemXMLFile_Click(object sender, EventArgs e)
 		{
 			var dialogResult = this.saveFileDialogNewDb.ShowDialog();
 			if (dialogResult == DialogResult.Cancel) {
@@ -161,7 +179,7 @@ namespace Salary.NET
 			this.toolStripMenuItemEditAdd.Enabled = true;
 		}
 
-		private void toolStripMenuItemOpenXMLFile_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemOpenXMLFile_Click(object sender, EventArgs e)
 		{
 			var dialogResult = this.openFileDialog.ShowDialog();
 			if(dialogResult == DialogResult.Cancel) {
@@ -179,22 +197,24 @@ namespace Salary.NET
 			this.objectListViewEmployees.SetObjects(employees);
 		}
 
-		private void toolStripMenuItemEditAddSalaryAccount_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemEditAddSalaryAccount_Click(object sender, EventArgs e)
 		{
 			if (this._openedEmployee == null) {
 				return;
 			}
 
-			using(var addSalaryAccountForm = new AddSalaryAccountForm(this._openedEmployee)) {
+			var salaryTypes = this._salaryData.GetSalaryTypes();
+			using(var addSalaryAccountForm = new AddSalaryAccountForm(salaryTypes, this._openedEmployee)) {
 				var dialogResult = addSalaryAccountForm.ShowDialog();
 				if (dialogResult == DialogResult.Cancel) {
 					return;
 				}
 				this._salaryData.InsertSalary(addSalaryAccountForm.SalaryAccount);
+				this.objectListViewSalaryAccounts.AddObject(addSalaryAccountForm.SalaryAccount);
 			}
 		}
 
-		private void toolStripMenuItemEditAddEmployee_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemEditAddEmployee_Click(object sender, EventArgs e)
 		{
 			using(var addEmployeeForm = new AddEmployeeForm()) {
 				var dialogResult = addEmployeeForm.ShowDialog();
@@ -208,7 +228,7 @@ namespace Salary.NET
 			}
 		}
 
-		private void objectListViewEmployees_MouseClick(object sender, MouseEventArgs e)
+		private void ObjectListViewEmployees_MouseClick(object sender, MouseEventArgs e)
 		{
 			if(e.Button != MouseButtons.Right) {
 				return;
@@ -220,7 +240,7 @@ namespace Salary.NET
 			this.contextMenuStripEmployees.Show(this.objectListViewEmployees, e.Location);
 		}
 
-		private void objectListViewEmployees_DoubleClick(object sender, EventArgs e)
+		private void ObjectListViewEmployees_DoubleClick(object sender, EventArgs e)
 		{
 			if(this.objectListViewEmployees.SelectedItems.Count != 1) {
 				return;
@@ -231,7 +251,7 @@ namespace Salary.NET
 			this.ShowSalaryAccountsOfEmployee(id);
 		}
 
-		private void toolStripMenuItemShowSalaryAccounts_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemShowSalaryAccounts_Click(object sender, EventArgs e)
 		{
 			if(this.objectListViewEmployees.SelectedItems.Count != 1) {
 				return;
@@ -250,10 +270,11 @@ namespace Salary.NET
 			this.Text = "Salary.NET - " + this._openedDataProvider + " (" + this._openedEmployee.GetInformalSalutation() + ")";
 
 			this.objectListViewSalaryAccounts.Items.Clear();
-			this.objectListViewSalaryAccounts.SetObjects(this._salaryData.GetSalaryAccounts());
+			this.objectListViewSalaryAccounts.SetObjects(this._salaryData.GetSalaryAccounts(id));
+			this.objectListViewSalaryAccounts.Sort(this.olvColumnPeriod, SortOrder.Descending);
 		}
 
-		private void toolStripMenuItemContextEmployeeEdit_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemContextEmployeeEdit_Click(object sender, EventArgs e)
 		{
 			var employee = (Employee)this.objectListViewEmployees.GetModelObject(this.objectListViewEmployees.SelectedIndex);
 
@@ -269,7 +290,7 @@ namespace Salary.NET
 			}
 		}
 
-		private void toolStripMenuItemContextEmployeeDelete_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemContextEmployeeDelete_Click(object sender, EventArgs e)
 		{
 			var item = this.objectListViewEmployees.SelectedItems[0];
 			var firstName = item.SubItems[2].Text;
@@ -292,12 +313,12 @@ namespace Salary.NET
 			this.objectListViewEmployees.Items.Remove(item);
 		}
 
-		private void objectListViewSalaryAccounts_DoubleClick(object sender, EventArgs e)
+		private void ObjectListViewSalaryAccounts_DoubleClick(object sender, EventArgs e)
 		{
 			this.OpenSelectedSalaryAccount();
 		}
 
-		private void toolStripMenuItemSalaryAccountingsEdit_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemSalaryAccountingsEdit_Click(object sender, EventArgs e)
 		{
 			this.OpenSelectedSalaryAccount();
 		}
@@ -311,25 +332,21 @@ namespace Salary.NET
 			var item = this.objectListViewSalaryAccounts.SelectedItems[0];
 			var id = Convert.ToUInt32(item.SubItems[0].Text);
 			var salaryAccount = this._salaryData.GetSalaryAccount(id);
-			using(var addSalaryAccountForm = new AddSalaryAccountForm(salaryAccount)) {
+			var salaryTypes = this._salaryData.GetSalaryTypes();
+			using(var addSalaryAccountForm = new AddSalaryAccountForm(salaryTypes, salaryAccount)) {
 				var dialogResult = addSalaryAccountForm.ShowDialog();
 				if(dialogResult == DialogResult.Cancel) {
 					return;
 				}
-
-				item.SubItems[1].Text = String.Format("{0:0.00} €", addSalaryAccountForm.SalaryAccount.GrossWage);
-				item.SubItems[2].Text = String.Format("{0:0.00} €", addSalaryAccountForm.SalaryAccount.NetWage);
-				var periodString = String.Format("{0}-{1:00}", salaryAccount.PeriodStart.Year, salaryAccount.PeriodStart.Month);
-				if(salaryAccount.PeriodStart.Day != 1 ||
-					salaryAccount.PeriodEnd.Day != DateTime.DaysInMonth(salaryAccount.PeriodStart.Year, salaryAccount.PeriodStart.Month)) {
-					periodString += String.Format("-{0:00} - {1}-{2:00}-{3:00}", salaryAccount.PeriodStart.Day, salaryAccount.PeriodEnd.Year, salaryAccount.PeriodEnd.Month, salaryAccount.PeriodEnd.Day);
-				}
-				item.SubItems[3].Text = periodString;
+				
 				this._salaryData.UpdateSalary(addSalaryAccountForm.SalaryAccount);
+				var modelObject = this.objectListViewSalaryAccounts.GetModelObject(item.Index);
+				this.objectListViewSalaryAccounts.RemoveObject(modelObject);
+				this.objectListViewSalaryAccounts.AddObject(addSalaryAccountForm.SalaryAccount);
 			}
 		}
 
-		private void objectListViewSalaryAccounts_MouseUp(object sender, MouseEventArgs e)
+		private void ObjectListViewSalaryAccounts_MouseUp(object sender, MouseEventArgs e)
 		{
 			if(e.Button != MouseButtons.Right) {
 				return;
@@ -345,7 +362,7 @@ namespace Salary.NET
 			this.contextMenuStripSalaryAccountings.Show(this.objectListViewSalaryAccounts, e.Location);
 		}
 
-		private void toolStripMenuItemSalaryAccountingsDelete_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemSalaryAccountingsDelete_Click(object sender, EventArgs e)
 		{
 			var item = this.objectListViewSalaryAccounts.SelectedItems[0];
 			var id = Convert.ToUInt32(item.SubItems[0].Text);
@@ -359,14 +376,14 @@ namespace Salary.NET
 			this.objectListViewSalaryAccounts.Items.Remove(item);
 		}
 
-		private void toolStripMenuItemSalaryAccountingsCopy_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemSalaryAccountingsCopy_Click(object sender, EventArgs e)
 		{
 			var item = this.objectListViewSalaryAccounts.SelectedItems[0];
 			var id = Convert.ToUInt32(item.SubItems[0].Text);
 			this._clipboardSalaryId = id;
 		}
 
-		private void toolStripMenuItemSalaryAccountingsPaste_Click(object sender, EventArgs e)
+		private void ToolStripMenuItemSalaryAccountingsPaste_Click(object sender, EventArgs e)
 		{
 			if(this._clipboardSalaryId == null) {
 				return;

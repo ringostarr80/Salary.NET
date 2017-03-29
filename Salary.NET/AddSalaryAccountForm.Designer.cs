@@ -50,7 +50,6 @@
 			this.labelPeriod = new System.Windows.Forms.Label();
 			this.comboBoxPeriodYear = new System.Windows.Forms.ComboBox();
 			this.comboBoxPeriodMonth = new System.Windows.Forms.ComboBox();
-			this.userControlSalaryItems1 = new Salary.NET.UserControlSalaryItems();
 			this.checkBoxPeriodFromTo = new System.Windows.Forms.CheckBox();
 			this.comboBoxPeriodFromDay = new System.Windows.Forms.ComboBox();
 			this.comboBoxPeriodToDay = new System.Windows.Forms.ComboBox();
@@ -62,12 +61,17 @@
 			this.textBoxCompulsoryLongTermCareInsurancePercentage = new System.Windows.Forms.TextBox();
 			this.textBoxTotalGrossPercentage = new System.Windows.Forms.TextBox();
 			this.textBoxTotalNetPercentage = new System.Windows.Forms.TextBox();
+			this.userControlSalaryItems1 = new Salary.NET.UserControlSalaryItems(this._salaryTypes);
+			this.labelChurchTax = new System.Windows.Forms.Label();
+			this.numericUpDownChurchTax = new System.Windows.Forms.NumericUpDown();
+			this.textBoxChurchTaxPercentage = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownWageTax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownSolidarityTax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownSicknessInsurance)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnnuityInsurance)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnemploymentInsurance)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownCompulsoryLongTermCareInsurance)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDownChurchTax)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// buttonAdd
@@ -75,14 +79,14 @@
 			resources.ApplyResources(this.buttonAdd, "buttonAdd");
 			this.buttonAdd.Name = "buttonAdd";
 			this.buttonAdd.UseVisualStyleBackColor = true;
-			this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+			this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
 			// 
 			// buttonCancel
 			// 
 			resources.ApplyResources(this.buttonCancel, "buttonCancel");
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.UseVisualStyleBackColor = true;
-			this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+			this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
 			// labelWageTax
 			// 
@@ -99,7 +103,7 @@
             0,
             0});
 			this.numericUpDownWageTax.Name = "numericUpDownWageTax";
-			this.numericUpDownWageTax.ValueChanged += new System.EventHandler(this.numericUpDownWageTax_ValueChanged);
+			this.numericUpDownWageTax.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
 			// 
 			// labelSolidarityTax
 			// 
@@ -116,7 +120,7 @@
             0,
             0});
 			this.numericUpDownSolidarityTax.Name = "numericUpDownSolidarityTax";
-			this.numericUpDownSolidarityTax.ValueChanged += new System.EventHandler(this.numericUpDownWageTax_ValueChanged);
+			this.numericUpDownSolidarityTax.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
 			// 
 			// numericUpDownSicknessInsurance
 			// 
@@ -128,7 +132,7 @@
             0,
             0});
 			this.numericUpDownSicknessInsurance.Name = "numericUpDownSicknessInsurance";
-			this.numericUpDownSicknessInsurance.ValueChanged += new System.EventHandler(this.numericUpDownWageTax_ValueChanged);
+			this.numericUpDownSicknessInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
 			// 
 			// labelSicknessInsurance
 			// 
@@ -145,7 +149,7 @@
             0,
             0});
 			this.numericUpDownAnnuityInsurance.Name = "numericUpDownAnnuityInsurance";
-			this.numericUpDownAnnuityInsurance.ValueChanged += new System.EventHandler(this.numericUpDownWageTax_ValueChanged);
+			this.numericUpDownAnnuityInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
 			// 
 			// labelAnnuityInsurance
 			// 
@@ -162,7 +166,7 @@
             0,
             0});
 			this.numericUpDownUnemploymentInsurance.Name = "numericUpDownUnemploymentInsurance";
-			this.numericUpDownUnemploymentInsurance.ValueChanged += new System.EventHandler(this.numericUpDownWageTax_ValueChanged);
+			this.numericUpDownUnemploymentInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
 			// 
 			// labelUnemploymentInsurance
 			// 
@@ -179,7 +183,7 @@
             0,
             0});
 			this.numericUpDownCompulsoryLongTermCareInsurance.Name = "numericUpDownCompulsoryLongTermCareInsurance";
-			this.numericUpDownCompulsoryLongTermCareInsurance.ValueChanged += new System.EventHandler(this.numericUpDownWageTax_ValueChanged);
+			this.numericUpDownCompulsoryLongTermCareInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
 			// 
 			// labelCompulsoryLongTermCareInsurance
 			// 
@@ -213,7 +217,7 @@
 			resources.ApplyResources(this.buttonEdit, "buttonEdit");
 			this.buttonEdit.Name = "buttonEdit";
 			this.buttonEdit.UseVisualStyleBackColor = true;
-			this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+			this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
 			// 
 			// labelPeriod
 			// 
@@ -226,7 +230,7 @@
 			this.comboBoxPeriodYear.FormattingEnabled = true;
 			resources.ApplyResources(this.comboBoxPeriodYear, "comboBoxPeriodYear");
 			this.comboBoxPeriodYear.Name = "comboBoxPeriodYear";
-			this.comboBoxPeriodYear.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriodYear_SelectedIndexChanged);
+			this.comboBoxPeriodYear.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPeriodYear_SelectedIndexChanged);
 			// 
 			// comboBoxPeriodMonth
 			// 
@@ -247,20 +251,14 @@
             resources.GetString("comboBoxPeriodMonth.Items11")});
 			resources.ApplyResources(this.comboBoxPeriodMonth, "comboBoxPeriodMonth");
 			this.comboBoxPeriodMonth.Name = "comboBoxPeriodMonth";
-			this.comboBoxPeriodMonth.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriodMonth_SelectedIndexChanged);
-			// 
-			// userControlSalaryItems1
-			// 
-			resources.ApplyResources(this.userControlSalaryItems1, "userControlSalaryItems1");
-			this.userControlSalaryItems1.Name = "userControlSalaryItems1";
-			this.userControlSalaryItems1.SalaryItemChanged += new System.EventHandler<Salary.NET.SalaryItemChangedEventArgs>(this.userControlSalaryItems1_SalaryItemChanged);
+			this.comboBoxPeriodMonth.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPeriodMonth_SelectedIndexChanged);
 			// 
 			// checkBoxPeriodFromTo
 			// 
 			resources.ApplyResources(this.checkBoxPeriodFromTo, "checkBoxPeriodFromTo");
 			this.checkBoxPeriodFromTo.Name = "checkBoxPeriodFromTo";
 			this.checkBoxPeriodFromTo.UseVisualStyleBackColor = true;
-			this.checkBoxPeriodFromTo.CheckedChanged += new System.EventHandler(this.checkBoxPeriodFromTo_CheckedChanged);
+			this.checkBoxPeriodFromTo.CheckedChanged += new System.EventHandler(this.CheckBoxPeriodFromTo_CheckedChanged);
 			// 
 			// comboBoxPeriodFromDay
 			// 
@@ -388,10 +386,42 @@
 			this.textBoxTotalNetPercentage.Name = "textBoxTotalNetPercentage";
 			this.textBoxTotalNetPercentage.ReadOnly = true;
 			// 
+			// userControlSalaryItems1
+			// 
+			resources.ApplyResources(this.userControlSalaryItems1, "userControlSalaryItems1");
+			this.userControlSalaryItems1.Name = "userControlSalaryItems1";
+			this.userControlSalaryItems1.SalaryItemChanged += new System.EventHandler<Salary.NET.SalaryItemChangedEventArgs>(this.UserControlSalaryItems1_SalaryItemChanged);
+			// 
+			// labelChurchTax
+			// 
+			resources.ApplyResources(this.labelChurchTax, "labelChurchTax");
+			this.labelChurchTax.Name = "labelChurchTax";
+			// 
+			// numericUpDownChurchTax
+			// 
+			this.numericUpDownChurchTax.DecimalPlaces = 2;
+			resources.ApplyResources(this.numericUpDownChurchTax, "numericUpDownChurchTax");
+			this.numericUpDownChurchTax.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+			this.numericUpDownChurchTax.Name = "numericUpDownChurchTax";
+			this.numericUpDownChurchTax.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			// 
+			// textBoxChurchTaxPercentage
+			// 
+			resources.ApplyResources(this.textBoxChurchTaxPercentage, "textBoxChurchTaxPercentage");
+			this.textBoxChurchTaxPercentage.Name = "textBoxChurchTaxPercentage";
+			this.textBoxChurchTaxPercentage.ReadOnly = true;
+			// 
 			// AddSalaryAccountForm
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.textBoxChurchTaxPercentage);
+			this.Controls.Add(this.numericUpDownChurchTax);
+			this.Controls.Add(this.labelChurchTax);
 			this.Controls.Add(this.textBoxTotalNetPercentage);
 			this.Controls.Add(this.textBoxTotalGrossPercentage);
 			this.Controls.Add(this.textBoxCompulsoryLongTermCareInsurancePercentage);
@@ -435,6 +465,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnnuityInsurance)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownUnemploymentInsurance)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownCompulsoryLongTermCareInsurance)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDownChurchTax)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -476,5 +507,8 @@
 		private System.Windows.Forms.TextBox textBoxCompulsoryLongTermCareInsurancePercentage;
 		private System.Windows.Forms.TextBox textBoxTotalGrossPercentage;
 		private System.Windows.Forms.TextBox textBoxTotalNetPercentage;
+		private System.Windows.Forms.Label labelChurchTax;
+		private System.Windows.Forms.NumericUpDown numericUpDownChurchTax;
+		private System.Windows.Forms.TextBox textBoxChurchTaxPercentage;
 	}
 }

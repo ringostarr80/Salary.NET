@@ -56,7 +56,7 @@
 			// 
 			resources.ApplyResources(this.textBoxFirstName, "textBoxFirstName");
 			this.textBoxFirstName.Name = "textBoxFirstName";
-			this.textBoxFirstName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFirstName_KeyUp);
+			this.textBoxFirstName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBoxFirstName_KeyUp);
 			// 
 			// labelMiddleName
 			// 
@@ -77,7 +77,7 @@
 			// 
 			resources.ApplyResources(this.textBoxLastName, "textBoxLastName");
 			this.textBoxLastName.Name = "textBoxLastName";
-			this.textBoxLastName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxLastName_KeyUp);
+			this.textBoxLastName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBoxLastName_KeyUp);
 			// 
 			// labelPersonnelNumber
 			// 
@@ -104,14 +104,14 @@
 			resources.ApplyResources(this.buttonAdd, "buttonAdd");
 			this.buttonAdd.Name = "buttonAdd";
 			this.buttonAdd.UseVisualStyleBackColor = true;
-			this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+			this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
 			// 
 			// buttonCancel
 			// 
 			resources.ApplyResources(this.buttonCancel, "buttonCancel");
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.UseVisualStyleBackColor = true;
-			this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+			this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
 			// labelId
 			// 
@@ -128,7 +128,7 @@
 			resources.ApplyResources(this.buttonEdit, "buttonEdit");
 			this.buttonEdit.Name = "buttonEdit";
 			this.buttonEdit.UseVisualStyleBackColor = true;
-			this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+			this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
 			// 
 			// labelGender
 			// 

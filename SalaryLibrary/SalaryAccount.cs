@@ -14,7 +14,9 @@ namespace SalaryLibrary
 		private DateTime _periodStart = DateTime.Now;
 		private DateTime _periodEnd = DateTime.Now;
 		private Dictionary<SalaryType, SalaryItem> _salaries = new Dictionary<SalaryType, SalaryItem>();
+		private List<SalaryType> _salaryTypes = new List<SalaryType>();
 		private double _wageTax = 0.0;
+		private double _churchTax = 0.0;
 		private double _solidarityTax = 0.0;
 		private double _sicknessInsurance = 0.0;
 		private double _annuityInsurance = 0.0;
@@ -41,6 +43,10 @@ namespace SalaryLibrary
 		/// Lohnsteuer
 		/// </summary>
 		public double WageTax { get { return this._wageTax; } set { this._wageTax = value; } }
+		/// <summary>
+		/// Kirchensteuer
+		/// </summary>
+		public double ChurchTax { get { return this._churchTax; } set { this._churchTax = value; } }
 		/// <summary>
 		/// Solidaritätszuschlag
 		/// </summary>
@@ -74,7 +80,7 @@ namespace SalaryLibrary
 		public double NetWage {
 			get {
 				var netWage = this.GrossWage;
-				var finalSubtraction = this._salaries.Sum(s => (s.Key == SalaryType.BezugVWLlfd) ? s.Value.Amount : 0.0);
+				var finalSubtraction = this._salaries.Sum(s => s.Key.DiscountOnNetWage ? s.Value.Amount : 0.0);
 
 				netWage -= this.AnnuityInsurance;
 				netWage -= this.CompulsoryLongTermCareInsurance;
@@ -82,36 +88,32 @@ namespace SalaryLibrary
 				netWage -= this.SolidarityTax;
 				netWage -= this.UnemploymentInsurance;
 				netWage -= this.WageTax;
-
+				netWage -= this.ChurchTax;
+				
 				netWage -= finalSubtraction;
 
 				return netWage;
 			}
 		}
 
-		public SalaryAccount(Employee employee)
+		public SalaryAccount(List<SalaryType> salaryTypes, Employee employee)
 		{
-			if(employee == null) {
-				throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");
-			}
-
-			this._employee = employee;
+			this._salaryTypes = salaryTypes ?? throw new ArgumentNullException("salaryTypes", "Parameter \"salaryTypes\" cannot be null.");
+			this._employee = employee ?? throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");
 			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
 		}
 
-		public SalaryAccount(XmlNode node)
+		public SalaryAccount(List<SalaryType> salaryTypes, XmlNode node)
 		{
+			this._salaryTypes = salaryTypes ?? throw new ArgumentNullException("salaryTypes", "Parameter \"salaryTypes\" cannot be null.");
 			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
 			this.ParseNode(node);
 		}
 
-		public SalaryAccount(Employee employee, XmlNode node)
+		public SalaryAccount(List<SalaryType> salaryTypes, Employee employee, XmlNode node)
 		{
-			if(employee == null) {
-				throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");
-			}
-
-			this._employee = employee;
+			this._salaryTypes = salaryTypes ?? throw new ArgumentNullException("salaryTypes", "Parameter \"salaryTypes\" cannot be null.");
+			this._employee = employee ?? throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");
 			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
 
 			this.ParseNode(node);
@@ -188,19 +190,23 @@ namespace SalaryLibrary
 						break;
 
 					case "salaries":
-						if(childNode.ChildNodes != null) {
-							foreach(XmlNode salaryNode in childNode.ChildNodes) {
-								switch(salaryNode.Name) {
-									case "salary":
-										var typeAttr = salaryNode.Attributes.GetNamedItem("type");
-										var amountAttr = salaryNode.Attributes.GetNamedItem("amount");
-										if(typeAttr != null && amountAttr != null) {
-											var salaryType = (SalaryType)Convert.ToInt32(typeAttr.Value);
-											var salaryAmount = Convert.ToDouble(amountAttr.Value, culture);
-											this._salaries.Add(salaryType, new SalaryItem(salaryAmount));
-										}
+						if (childNode.ChildNodes == null) {
+							break;
+						}
+
+						foreach(XmlNode salaryNode in childNode.ChildNodes) {
+							switch(salaryNode.Name) {
+								case "salary":
+									var typeIdAttr = salaryNode.Attributes.GetNamedItem("type-id");
+									var amountAttr = salaryNode.Attributes.GetNamedItem("amount");
+									if (typeIdAttr == null || amountAttr == null) {
 										break;
-								}
+									}
+									var salaryTypeId = Convert.ToUInt32(typeIdAttr.Value);
+									var salaryType = this._salaryTypes.Find(st => Convert.ToUInt32(st.Id) == salaryTypeId);
+									var salaryAmount = Convert.ToDouble(amountAttr.Value, culture);
+									this._salaries.Add(salaryType, new SalaryItem(salaryAmount));
+									break;
 							}
 						}
 						break;
@@ -215,6 +221,10 @@ namespace SalaryLibrary
 
 					case "wage-tax":
 						this.WageTax = Convert.ToDouble(childNode.InnerText, culture);
+						break;
+
+					case "church-tax":
+						this.ChurchTax = Convert.ToDouble(childNode.InnerText, culture);
 						break;
 				}
 			}
@@ -241,7 +251,7 @@ namespace SalaryLibrary
 
 		public static bool operator ==(SalaryAccount a, SalaryAccount b)
 		{
-			if (Object.ReferenceEquals(a, b)) {
+			if (object.ReferenceEquals(a, b)) {
 				return true;
 			}
 
@@ -261,17 +271,19 @@ namespace SalaryLibrary
 				a.SicknessInsurance != b.SicknessInsurance ||
 				a.SolidarityTax != b.SolidarityTax ||
 				a.UnemploymentInsurance != b.UnemploymentInsurance ||
-				a.WageTax != b.WageTax) {
+				a.WageTax != b.WageTax ||
+				a.ChurchTax != b.ChurchTax) {
 				return false;
 			}
 			if (a.Salaries.Count != b.Salaries.Count) {
 				return false;
 			}
 			foreach(var keyValue in a.Salaries) {
-				if(!b.Salaries.ContainsKey(keyValue.Key)) {
+				if (!b.Salaries.Any(s => s.Key.Number == keyValue.Key.Number)) {
 					return false;
 				}
-				if (keyValue.Value != b.Salaries[keyValue.Key]) {
+				var bKeyValue = b.Salaries.Single(s => s.Key.Number == keyValue.Key.Number);
+				if (keyValue.Value != bKeyValue.Value) {
 					return false;
 				}
 			}

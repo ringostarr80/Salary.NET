@@ -3,6 +3,7 @@ using System.IO;
 using NUnit.Framework;
 using SalaryLibrary;
 using SalaryLibrary.SalaryDataProviders;
+using System.Collections.Generic;
 
 namespace SalaryLibraryNUnitTest
 {
@@ -29,10 +30,27 @@ namespace SalaryLibraryNUnitTest
 			}
 		}
 
+		private List<SalaryType> GetDefaultSalaryTypes()
+		{
+			var salaryTypes = new List<SalaryType> {
+				new SalaryType(1, 2000, "Gehalt"),
+				new SalaryType(2, 2033, "Freiwillige Zulage"),
+				new SalaryType(3, 2310, "Erholungsbeihilfe"),
+				new SalaryType(4, 3100, "Bezug VWL lfd", true),
+				new SalaryType(5, 4401, "Brutto Weihnachtsgeld"),
+				new SalaryType(6, 4402, "Netto Weihnachtsgeld"),
+				new SalaryType(7, 9840, "Abzug VWL", true),
+				new SalaryType(8, 10000, "Netto Bezug aus Vormonat")
+			};
+
+			return salaryTypes;
+		}
+
 		private SalaryAccount GetDefaultSalaryAccount()
 		{
 			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee) {
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = new SalaryAccount(defaultSalaryTypes, employee) {
 				SolidarityTax = 21.30,
 				SicknessInsurance = 277.22,
 				AnnuityInsurance = 312.29,
@@ -40,9 +58,32 @@ namespace SalaryLibraryNUnitTest
 				UnemploymentInsurance = 50.10,
 				WageTax = 387.33
 			};
-			salaryAccount.Salaries.Add(SalaryType.Gehalt, new SalaryItem(3300.00));
-			salaryAccount.Salaries.Add(SalaryType.BezugVWLlfd, new SalaryItem(40.00));
+			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
+			var salaryType2 = defaultSalaryTypes.Find(st => st.Number == 3100);
+			salaryAccount.Salaries.Add(salaryType1, new SalaryItem(3300.00));
+			salaryAccount.Salaries.Add(salaryType2, new SalaryItem(40.00));
 			salaryAccount.SetPeriod(2000, 1);
+
+			return salaryAccount;
+		}
+
+		private SalaryAccount GetAlternativeSalaryAccount()
+		{
+			var employee = new Employee(2, "Erika", "Musterfrau");
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = new SalaryAccount(defaultSalaryTypes, employee) {
+				SolidarityTax = 11.30,
+				SicknessInsurance = 237.22,
+				AnnuityInsurance = 272.29,
+				CompulsoryLongTermCareInsurance = 37.60,
+				UnemploymentInsurance = 40.10,
+				WageTax = 297.33
+			};
+			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
+			var salaryType2 = defaultSalaryTypes.Find(st => st.Number == 3100);
+			salaryAccount.Salaries.Add(salaryType1, new SalaryItem(2300.00));
+			salaryAccount.Salaries.Add(salaryType2, new SalaryItem(24.00));
+			salaryAccount.SetPeriod(2005, 5);
 
 			return salaryAccount;
 		}
@@ -51,20 +92,21 @@ namespace SalaryLibraryNUnitTest
 		public void TestSalaryAccountConstructor()
 		{
 			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee);
+			var salaryAccount = new SalaryAccount(this.GetDefaultSalaryTypes(), employee);
 		}
 
 		[Test]
 		public void TestSalaryAccountConstructorException()
 		{
 			Employee employee = null;
-			Assert.Throws<ArgumentNullException>(() => { new SalaryAccount(employee); });
+			Assert.Throws<ArgumentNullException>(() => { new SalaryAccount(this.GetDefaultSalaryTypes(), employee); });
 		}
 
 		[Test]
 		public void TestSalaryAccountClone()
 		{
 			var salaryAccount = this.GetDefaultSalaryAccount();
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
 			var salaryAccountCloned = (SalaryAccount)salaryAccount.Clone();
 			salaryAccountCloned.AnnuityInsurance++;
 			salaryAccountCloned.CompulsoryLongTermCareInsurance++;
@@ -76,7 +118,8 @@ namespace SalaryLibraryNUnitTest
 			Assert.AreEqual(salaryAccount.Salaries.Count, salaryAccountCloned.Salaries.Count);
 
 			salaryAccountCloned.Salaries.Clear();
-			salaryAccountCloned.Salaries.Add(SalaryType.Gehalt, new SalaryItem(1234.56));
+			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
+			salaryAccountCloned.Salaries.Add(salaryType1, new SalaryItem(1234.56));
 			Assert.AreEqual(2, salaryAccount.Salaries.Count);
 			Assert.AreEqual(1, salaryAccountCloned.Salaries.Count);
 
@@ -92,13 +135,13 @@ namespace SalaryLibraryNUnitTest
 		public void TestSalaryAccountProperties()
 		{
 			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee);
-			salaryAccount.SolidarityTax = 21.30;
-			salaryAccount.SicknessInsurance = 277.22;
-			salaryAccount.AnnuityInsurance = 312.29;
-			salaryAccount.CompulsoryLongTermCareInsurance = 47.60;
-			salaryAccount.UnemploymentInsurance = 50.10;
-
+			var salaryAccount = new SalaryAccount(this.GetDefaultSalaryTypes(), employee) {
+				SolidarityTax = 21.30,
+				SicknessInsurance = 277.22,
+				AnnuityInsurance = 312.29,
+				CompulsoryLongTermCareInsurance = 47.60,
+				UnemploymentInsurance = 50.10
+			};
 			Assert.AreEqual(21.30, salaryAccount.SolidarityTax);
 			Assert.AreEqual(277.22, salaryAccount.SicknessInsurance);
 			Assert.AreEqual(312.29, salaryAccount.AnnuityInsurance);
@@ -107,13 +150,37 @@ namespace SalaryLibraryNUnitTest
 		}
 
 		[Test]
+		public void TestSalaryAccountInsertSalaryTypes()
+		{
+			var employee = new Employee(1, "Max", "Mustermann");
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = new SalaryAccount(defaultSalaryTypes, employee);
+			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach(var defaultSalaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(defaultSalaryType);
+			}
+
+			Assert.AreEqual(8, Settings.DefaultDataBackend.GetSalaryTypes().Count);
+
+			var salaryType = Settings.DefaultDataBackend.GetSalaryType(1);
+			Assert.AreEqual(1, salaryType.Id);
+			Assert.AreEqual(2000, salaryType.Number);
+			Assert.AreEqual("Gehalt", salaryType.Name);
+			Assert.AreEqual(false, salaryType.DiscountOnNetWage);
+			Assert.IsTrue(new SalaryType(1, 2000, "Gehalt") == salaryType);
+		}
+
+		[Test]
 		public void TestSalaryAccountAddSalaryItems()
 		{
 			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee);
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = new SalaryAccount(defaultSalaryTypes, employee);
 			Assert.AreEqual(0, salaryAccount.Salaries.Count);
-			salaryAccount.Salaries.Add(SalaryType.Gehalt, new SalaryItem(3300.00));
-			salaryAccount.Salaries.Add(SalaryType.BezugVWLlfd, new SalaryItem(40.00));
+			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
+			var salaryType2 = defaultSalaryTypes.Find(st => st.Number == 3100);
+			salaryAccount.Salaries.Add(salaryType1, new SalaryItem(3300.00));
+			salaryAccount.Salaries.Add(salaryType2, new SalaryItem(40.00));
 			Assert.AreEqual(2, salaryAccount.Salaries.Count);
 		}
 
@@ -121,15 +188,19 @@ namespace SalaryLibraryNUnitTest
 		public void TestSalaryAccountCalculateNetWage()
 		{
 			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee);
-			salaryAccount.Salaries.Add(SalaryType.Gehalt, new SalaryItem(3300.00));
-			salaryAccount.Salaries.Add(SalaryType.BezugVWLlfd, new SalaryItem(40.00));
-			salaryAccount.SolidarityTax = 21.30;
-			salaryAccount.SicknessInsurance = 277.22;
-			salaryAccount.AnnuityInsurance = 312.29;
-			salaryAccount.CompulsoryLongTermCareInsurance = 47.60;
-			salaryAccount.UnemploymentInsurance = 50.10;
-			salaryAccount.WageTax = 387.33;
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = new SalaryAccount(defaultSalaryTypes, employee) {
+				SolidarityTax = 21.30,
+				SicknessInsurance = 277.22,
+				AnnuityInsurance = 312.29,
+				CompulsoryLongTermCareInsurance = 47.60,
+				UnemploymentInsurance = 50.10,
+				WageTax = 387.33
+			};
+			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
+			var salaryType2 = defaultSalaryTypes.Find(st => st.Number == 3100);
+			salaryAccount.Salaries.Add(salaryType1, new SalaryItem(3300.00));
+			salaryAccount.Salaries.Add(salaryType2, new SalaryItem(40.00));
 
 			Assert.AreEqual(2204.16, salaryAccount.NetWage, 0.001);
 		}
@@ -176,9 +247,13 @@ namespace SalaryLibraryNUnitTest
 		[Test]
 		public void TestSalaryAccountSave()
 		{
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
 			var salaryAccount = this.GetDefaultSalaryAccount();
 
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
 			Settings.DefaultDataBackend.InsertEmployee(salaryAccount.Employee);
 			var newId = Settings.DefaultDataBackend.InsertSalary(salaryAccount);
 			var newInsertedSalaryAccount = Settings.DefaultDataBackend.GetSalaryAccount(newId);
@@ -189,7 +264,8 @@ namespace SalaryLibraryNUnitTest
 		public void TestGetSalaryAccounts()
 		{
 			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee) {
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = new SalaryAccount(defaultSalaryTypes, employee) {
 				SolidarityTax = 21.30,
 				SicknessInsurance = 277.22,
 				AnnuityInsurance = 312.29,
@@ -197,10 +273,15 @@ namespace SalaryLibraryNUnitTest
 				UnemploymentInsurance = 50.10,
 				WageTax = 387.33
 			};
-			salaryAccount.Salaries.Add(SalaryType.Gehalt, new SalaryItem(3300.00));
-			salaryAccount.Salaries.Add(SalaryType.BezugVWLlfd, new SalaryItem(40.00));
+			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
+			var salaryType2 = defaultSalaryTypes.Find(st => st.Number == 3100);
+			salaryAccount.Salaries.Add(salaryType1, new SalaryItem(3300.00));
+			salaryAccount.Salaries.Add(salaryType2, new SalaryItem(40.00));
 
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
 			Settings.DefaultDataBackend.InsertEmployee(employee);
 			Settings.DefaultDataBackend.InsertSalary(salaryAccount);
 			var salaryAccounts = Settings.DefaultDataBackend.GetSalaryAccounts();
@@ -210,20 +291,13 @@ namespace SalaryLibraryNUnitTest
 		[Test]
 		public void TestGetSalaryAccountsCallback()
 		{
-			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee) {
-				SolidarityTax = 21.30,
-				SicknessInsurance = 277.22,
-				AnnuityInsurance = 312.29,
-				CompulsoryLongTermCareInsurance = 47.60,
-				UnemploymentInsurance = 50.10,
-				WageTax = 387.33
-			};
-			salaryAccount.Salaries.Add(SalaryType.Gehalt, new SalaryItem(3300.00));
-			salaryAccount.Salaries.Add(SalaryType.BezugVWLlfd, new SalaryItem(40.00));
-
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = this.GetDefaultSalaryAccount();
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
-			Settings.DefaultDataBackend.InsertEmployee(employee);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
+			Settings.DefaultDataBackend.InsertEmployee(salaryAccount.Employee);
 			Settings.DefaultDataBackend.InsertSalary(salaryAccount);
 			var salaryAccounts = Settings.DefaultDataBackend.GetSalaryAccounts((data) => {
 
@@ -234,20 +308,13 @@ namespace SalaryLibraryNUnitTest
 		[Test]
 		public void TestGetSalaryAccountsAsync()
 		{
-			var employee = new Employee(1, "Max", "Mustermann");
-			var salaryAccount = new SalaryAccount(employee) {
-				SolidarityTax = 21.30,
-				SicknessInsurance = 277.22,
-				AnnuityInsurance = 312.29,
-				CompulsoryLongTermCareInsurance = 47.60,
-				UnemploymentInsurance = 50.10,
-				WageTax = 387.33
-			};
-			salaryAccount.Salaries.Add(SalaryType.Gehalt, new SalaryItem(3300.00));
-			salaryAccount.Salaries.Add(SalaryType.BezugVWLlfd, new SalaryItem(40.00));
-
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount = this.GetDefaultSalaryAccount();
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
-			Settings.DefaultDataBackend.InsertEmployee(employee);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
+			Settings.DefaultDataBackend.InsertEmployee(salaryAccount.Employee);
 			Settings.DefaultDataBackend.InsertSalary(salaryAccount);
 			var salaryAccountsAsync = Settings.DefaultDataBackend.GetSalaryAccountsAsync();
 			salaryAccountsAsync.Wait();
@@ -255,10 +322,60 @@ namespace SalaryLibraryNUnitTest
 		}
 
 		[Test]
+		public void TestGetSalaryAccountsByUserId()
+		{
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount1 = this.GetDefaultSalaryAccount();
+			var salaryAccount2 = this.GetAlternativeSalaryAccount();
+
+			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
+			Settings.DefaultDataBackend.InsertEmployee(salaryAccount1.Employee);
+			Settings.DefaultDataBackend.InsertEmployee(salaryAccount2.Employee);
+			Settings.DefaultDataBackend.InsertSalary(salaryAccount1);
+			Settings.DefaultDataBackend.InsertSalary(salaryAccount2);
+			var salaryAccounts1 = Settings.DefaultDataBackend.GetSalaryAccounts(1);
+			var salaryAccounts2 = Settings.DefaultDataBackend.GetSalaryAccounts(2);
+			Assert.AreEqual(1, salaryAccounts1.Count);
+			Assert.AreEqual(1, salaryAccounts2.Count);
+		}
+
+		[Test]
+		public void TestGetSalaryAccountsByUserIdAsync()
+		{
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
+			var salaryAccount1 = this.GetDefaultSalaryAccount();
+			var salaryAccount2 = this.GetAlternativeSalaryAccount();
+
+			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
+			Settings.DefaultDataBackend.InsertEmployee(salaryAccount1.Employee);
+			Settings.DefaultDataBackend.InsertEmployee(salaryAccount2.Employee);
+			Settings.DefaultDataBackend.InsertSalary(salaryAccount1);
+			Settings.DefaultDataBackend.InsertSalary(salaryAccount2);
+			var salaryAccounts1 = Settings.DefaultDataBackend.GetSalaryAccounts(1, (data) => {
+
+			});
+			var salaryAccounts2 = Settings.DefaultDataBackend.GetSalaryAccounts(2, (data) => {
+
+			});
+			Assert.AreEqual(1, salaryAccounts1);
+			Assert.AreEqual(1, salaryAccounts2);
+		}
+
+		[Test]
 		public void TestUpdateSalaryAccount()
 		{
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
 			var salaryAccount = this.GetDefaultSalaryAccount();
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach (var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
 			Settings.DefaultDataBackend.InsertEmployee(salaryAccount.Employee);
 			var id = Settings.DefaultDataBackend.InsertSalary(salaryAccount);
 			var savedSalary = Settings.DefaultDataBackend.GetSalaryAccount(id);
@@ -274,8 +391,12 @@ namespace SalaryLibraryNUnitTest
 		[Test]
 		public void TestDeleteSalaryAccount()
 		{
+			var defaultSalaryTypes = this.GetDefaultSalaryTypes();
 			var salaryAccount = this.GetDefaultSalaryAccount();
 			Settings.DefaultDataBackend = new SalaryDataXml(this._temporaryCombinedXmlFilename);
+			foreach(var salaryType in defaultSalaryTypes) {
+				Settings.DefaultDataBackend.InsertSalaryType(salaryType);
+			}
 			Settings.DefaultDataBackend.InsertEmployee(salaryAccount.Employee);
 			var id = Settings.DefaultDataBackend.InsertSalary(salaryAccount);
 			var salariesCount = Settings.DefaultDataBackend.GetSalaryAccounts().Count;

@@ -75,13 +75,13 @@ namespace Salary.NET
 			this.comboBoxGender.SelectedIndex = genderIndex;
 		}
 
-		private void buttonCancel_Click(object sender, EventArgs e)
+		private void ButtonCancel_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.Cancel;
 			this.Close();
 		}
 
-		private void buttonAdd_Click(object sender, EventArgs e)
+		private void ButtonAdd_Click(object sender, EventArgs e)
 		{
 			var errors = false;
 			if (this.textBoxFirstName.Text.Trim() == String.Empty) {
@@ -107,7 +107,7 @@ namespace Salary.NET
 			this.Close();
 		}
 
-		private void buttonEdit_Click(object sender, EventArgs e)
+		private void ButtonEdit_Click(object sender, EventArgs e)
 		{
 			var errors = false;
 			if(this.textBoxFirstName.Text.Trim() == String.Empty) {
@@ -133,14 +133,14 @@ namespace Salary.NET
 			this.Close();
 		}
 
-		private void textBoxFirstName_KeyUp(object sender, KeyEventArgs e)
+		private void TextBoxFirstName_KeyUp(object sender, KeyEventArgs e)
 		{
 			if (this.textBoxFirstName.Text.Trim() != String.Empty) {
 				this.textBoxFirstName.BackColor = SystemColors.Window;
 			}
 		}
 
-		private void textBoxLastName_KeyUp(object sender, KeyEventArgs e)
+		private void TextBoxLastName_KeyUp(object sender, KeyEventArgs e)
 		{
 			if(this.textBoxLastName.Text.Trim() != String.Empty) {
 				this.textBoxLastName.BackColor = SystemColors.Window;

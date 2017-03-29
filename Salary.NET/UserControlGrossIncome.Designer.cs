@@ -40,7 +40,7 @@
 			this.comboBoxSalaryType.Name = "comboBoxSalaryType";
 			this.comboBoxSalaryType.Size = new System.Drawing.Size(120, 21);
 			this.comboBoxSalaryType.TabIndex = 0;
-			this.comboBoxSalaryType.SelectedIndexChanged += new System.EventHandler(this.comboBoxSalaryType_SelectedIndexChanged);
+			this.comboBoxSalaryType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSalaryType_SelectedIndexChanged);
 			// 
 			// numericUpDownAmount
 			// 
@@ -54,7 +54,7 @@
 			this.numericUpDownAmount.Name = "numericUpDownAmount";
 			this.numericUpDownAmount.Size = new System.Drawing.Size(200, 20);
 			this.numericUpDownAmount.TabIndex = 1;
-			this.numericUpDownAmount.ValueChanged += new System.EventHandler(this.numericUpDownAmount_ValueChanged);
+			this.numericUpDownAmount.ValueChanged += new System.EventHandler(this.NumericUpDownAmount_ValueChanged);
 			// 
 			// UserControlGrossIncome
 			// 

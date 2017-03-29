@@ -25,11 +25,17 @@ namespace SalaryLibrary
 		object InsertSalary(SalaryAccount salary);
 		SalaryAccount GetSalaryAccount(object id);
 		List<SalaryAccount> GetSalaryAccounts();
+		List<SalaryAccount> GetSalaryAccounts(object id);
 		Task<List<SalaryAccount>> GetSalaryAccountsAsync();
 		uint GetSalaryAccounts(Action<SalaryAccount> callback);
+		uint GetSalaryAccounts(object id, Action<SalaryAccount> callback);
 		void UpdateSalary(SalaryAccount salary);
 		Task UpdateSalaryAsync(SalaryAccount salary);
 		void DeleteSalary(object id);
 		Task DeleteSalaryAsync(object id);
+
+		SalaryType GetSalaryType(object id);
+		List<SalaryType> GetSalaryTypes();
+		object InsertSalaryType(SalaryType salaryType);
 	}
 }

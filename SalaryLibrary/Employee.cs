@@ -1,11 +1,10 @@
-﻿using System;
-using System.Xml;
+﻿using System.Xml;
 
 namespace SalaryLibrary
 {
 	public class Employee : Person
 	{
-		protected string _personnelNumber = String.Empty;
+		protected string _personnelNumber = string.Empty;
 
 		/// <summary>
 		/// Personalnummer
