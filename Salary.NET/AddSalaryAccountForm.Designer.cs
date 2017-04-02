@@ -61,7 +61,7 @@
 			this.textBoxCompulsoryLongTermCareInsurancePercentage = new System.Windows.Forms.TextBox();
 			this.textBoxTotalGrossPercentage = new System.Windows.Forms.TextBox();
 			this.textBoxTotalNetPercentage = new System.Windows.Forms.TextBox();
-			this.userControlSalaryItems1 = new Salary.NET.UserControlSalaryItems(this._salaryTypes);
+			this.userControlSalaryItems1 = new Salary.NET.UserControlSalaryItems();
 			this.labelChurchTax = new System.Windows.Forms.Label();
 			this.numericUpDownChurchTax = new System.Windows.Forms.NumericUpDown();
 			this.textBoxChurchTaxPercentage = new System.Windows.Forms.TextBox();

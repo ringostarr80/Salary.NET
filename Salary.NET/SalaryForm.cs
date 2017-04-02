@@ -6,6 +6,9 @@ using System.Threading;
 using System.Windows.Forms;
 using SalaryLibrary;
 using SalaryLibrary.SalaryDataProviders;
+using System.Drawing;
+using ZedGraph;
+using System.Linq;
 
 namespace Salary.NET
 {
@@ -17,6 +20,8 @@ namespace Salary.NET
 		private string _openedDataProvider = String.Empty;
 		private Employee _openedEmployee = null;
 		private object _clipboardSalaryId = null;
+		private BarItem _netBarItem = null;
+		private BarItem _grossBarItem = null;
 
 		public SalaryForm()
 		{
@@ -192,9 +197,15 @@ namespace Salary.NET
 			this.Text = "Salary.NET - " + this._openedDataProvider;
 
 			this.toolStripMenuItemEditAdd.Enabled = true;
+			this.toolStripMenuItemEditChange.Enabled = true;
 
 			var employees = this._salaryData.GetEmployees();
 			this.objectListViewEmployees.SetObjects(employees);
+
+			var salaryTypes = this._salaryData.GetSalaryTypes();
+			if (salaryTypes.HasConflictingElements) {
+				MessageBox.Show("Es gibt Lohnarten, die miteinander in Konflikt stehen.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void ToolStripMenuItemEditAddSalaryAccount_Click(object sender, EventArgs e)
@@ -269,9 +280,31 @@ namespace Salary.NET
 			this._openedEmployee = employee;
 			this.Text = "Salary.NET - " + this._openedDataProvider + " (" + this._openedEmployee.GetInformalSalutation() + ")";
 
+			var salaryAccounts = this._salaryData.GetSalaryAccounts(id);
 			this.objectListViewSalaryAccounts.Items.Clear();
-			this.objectListViewSalaryAccounts.SetObjects(this._salaryData.GetSalaryAccounts(id));
+			this.objectListViewSalaryAccounts.SetObjects(salaryAccounts);
 			this.objectListViewSalaryAccounts.Sort(this.olvColumnPeriod, SortOrder.Descending);
+
+			var graphPane = this.zedGraphControl1.GraphPane;
+			graphPane.CurveList.RemoveAll(cl => true);
+			graphPane.Title.Text = this._openedEmployee.GetInformalSalutation();
+			graphPane.XAxis.Title.Text = "Zeitraum";
+			graphPane.YAxis.Title.Text = "Gehalt";
+			graphPane.XAxis.Type = AxisType.DateAsOrdinal;
+			graphPane.YAxis.Type = AxisType.Linear;
+			graphPane.Fill.Type = FillType.Solid;
+
+			var grossWageData = new StockPointList();
+			var netWageData = new StockPointList();
+			var orderedSalaryAccounts = salaryAccounts.OrderBy(sa => sa.PeriodStart);
+			foreach (var salaryAccount in orderedSalaryAccounts) {
+				netWageData.Add(new XDate(salaryAccount.PeriodStart), salaryAccount.NetWage);
+				grossWageData.Add(new XDate(salaryAccount.PeriodStart), salaryAccount.GrossWage);
+			}
+			this._netBarItem = graphPane.AddBar("Netto-Gehalt", netWageData, Color.Green);
+			this._grossBarItem = graphPane.AddBar("Brutto-Gehalt", grossWageData, Color.Blue);
+			graphPane.BarSettings.Type = BarType.SortedOverlay;
+			graphPane.AxisChange();
 		}
 
 		private void ToolStripMenuItemContextEmployeeEdit_Click(object sender, EventArgs e)
@@ -343,6 +376,7 @@ namespace Salary.NET
 				var modelObject = this.objectListViewSalaryAccounts.GetModelObject(item.Index);
 				this.objectListViewSalaryAccounts.RemoveObject(modelObject);
 				this.objectListViewSalaryAccounts.AddObject(addSalaryAccountForm.SalaryAccount);
+				this.objectListViewSalaryAccounts.SelectedObject = addSalaryAccountForm.SalaryAccount;
 			}
 		}
 
@@ -397,6 +431,32 @@ namespace Salary.NET
 			this._salaryData.InsertSalary(newSalaryAccount);
 
 			this.objectListViewSalaryAccounts.AddObject(newSalaryAccount);
+		}
+
+		private void LohnartenToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			using (var addSalaryTypeForm = new AddSalaryTypeForm()) {
+				var dialogResult = addSalaryTypeForm.ShowDialog();
+				if (dialogResult == DialogResult.Cancel) {
+					return;
+				}
+
+				this._salaryData.InsertSalaryType(addSalaryTypeForm.SalaryType);
+			}
+		}
+
+		private void LohnartenToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			var salaryTypes = this._salaryData.GetSalaryTypes();
+			using (var addSalaryTypeForm = new AddSalaryTypeForm(salaryTypes)) {
+				var dialogResult = addSalaryTypeForm.ShowDialog();
+				if (dialogResult == DialogResult.Cancel) {
+					return;
+				}
+
+				this._salaryData.DeleteSalaryTypes();
+				this._salaryData.InsertSalaryTypes(addSalaryTypeForm.SalaryTypes);
+			}
 		}
 	}
 }

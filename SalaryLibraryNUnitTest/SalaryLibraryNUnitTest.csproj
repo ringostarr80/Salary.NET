@@ -45,6 +45,7 @@
     <Compile Include="EmployeeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryAccountTest.cs" />
+    <Compile Include="SalaryTypesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,7 +7,9 @@ namespace Salary.NET
 {
 	public partial class UserControlGrossIncome : UserControl, ICloneable
 	{
-		private List<SalaryType> _salaryTypes = new List<SalaryType>();
+		private SalaryTypeCollection _salaryTypes = new SalaryTypeCollection();
+
+		public SalaryTypeCollection SalaryTypes { get { return this._salaryTypes; } set { this._salaryTypes = value; } }
 
 		public event EventHandler<SalaryItemChangedEventArgs> SalaryItemChanged;
 
@@ -67,11 +69,13 @@ namespace Salary.NET
 
 		public UserControlGrossIncome()
 		{
+			this._salaryTypes = new SalaryTypeCollection();
+
 			InitializeComponent();
 			this.InitControls();
 		}
 
-		public UserControlGrossIncome(List<SalaryType> salaryTypes)
+		public UserControlGrossIncome(SalaryTypeCollection salaryTypes)
 		{
 			this._salaryTypes = salaryTypes;
 
@@ -79,7 +83,7 @@ namespace Salary.NET
 			this.InitControls();
 		}
 
-		public UserControlGrossIncome(List<SalaryType> salaryTypes, SalaryType salaryType)
+		public UserControlGrossIncome(SalaryTypeCollection salaryTypes, SalaryType salaryType)
 		{
 			this._salaryTypes = salaryTypes;
 			InitializeComponent();
@@ -88,7 +92,7 @@ namespace Salary.NET
 			this.SalaryType = salaryType;
 		}
 
-		public UserControlGrossIncome(List<SalaryType> salaryTypes, SalaryType salaryType, double amount)
+		public UserControlGrossIncome(SalaryTypeCollection salaryTypes, SalaryType salaryType, double amount)
 		{
 			this._salaryTypes = salaryTypes;
 
@@ -112,6 +116,7 @@ namespace Salary.NET
 
 		public void InitControls()
 		{
+			this.comboBoxSalaryType.Items.Clear();
 			foreach(var salaryType in this._salaryTypes) {
 				this.comboBoxSalaryType.Items.Add(new SalaryTypeItem(salaryType));
 			}

@@ -14,7 +14,7 @@ namespace SalaryLibrary
 		private DateTime _periodStart = DateTime.Now;
 		private DateTime _periodEnd = DateTime.Now;
 		private Dictionary<SalaryType, SalaryItem> _salaries = new Dictionary<SalaryType, SalaryItem>();
-		private List<SalaryType> _salaryTypes = new List<SalaryType>();
+		private SalaryTypeCollection _salaryTypes = new SalaryTypeCollection();
 		private double _wageTax = 0.0;
 		private double _churchTax = 0.0;
 		private double _solidarityTax = 0.0;
@@ -73,7 +73,7 @@ namespace SalaryLibrary
 		
 		public double GrossWage {
 			get {
-				return this._salaries.Sum(s => s.Value.Amount);
+				return this._salaries.Sum(s => !s.Key.DiscountOnNetWage ? s.Value.Amount : 0.0);
 			}
 		}
 
@@ -96,21 +96,21 @@ namespace SalaryLibrary
 			}
 		}
 
-		public SalaryAccount(List<SalaryType> salaryTypes, Employee employee)
+		public SalaryAccount(SalaryTypeCollection salaryTypes, Employee employee)
 		{
 			this._salaryTypes = salaryTypes ?? throw new ArgumentNullException("salaryTypes", "Parameter \"salaryTypes\" cannot be null.");
 			this._employee = employee ?? throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");
 			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
 		}
 
-		public SalaryAccount(List<SalaryType> salaryTypes, XmlNode node)
+		public SalaryAccount(SalaryTypeCollection salaryTypes, XmlNode node)
 		{
 			this._salaryTypes = salaryTypes ?? throw new ArgumentNullException("salaryTypes", "Parameter \"salaryTypes\" cannot be null.");
 			this.SetPeriod(DateTime.Now.Year, DateTime.Now.Month);
 			this.ParseNode(node);
 		}
 
-		public SalaryAccount(List<SalaryType> salaryTypes, Employee employee, XmlNode node)
+		public SalaryAccount(SalaryTypeCollection salaryTypes, Employee employee, XmlNode node)
 		{
 			this._salaryTypes = salaryTypes ?? throw new ArgumentNullException("salaryTypes", "Parameter \"salaryTypes\" cannot be null.");
 			this._employee = employee ?? throw new ArgumentNullException("employee", "Parameter \"employee\" cannot be null.");

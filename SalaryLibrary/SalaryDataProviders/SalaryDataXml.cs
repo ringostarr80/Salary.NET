@@ -17,9 +17,9 @@ namespace SalaryLibrary.SalaryDataProviders
 		private XmlDocument _salaryDoc = null;
 		private CultureInfo _culture = CultureInfo.CreateSpecificCulture("en-US");
 		private object _writeLock = new object();
-		private List<SalaryType> _cachedSalaryTypes = null;
+		private SalaryTypeCollection _cachedSalaryTypes = null;
 
-		public List<SalaryType> CachedSalaryTypes {
+		public SalaryTypeCollection CachedSalaryTypes {
 			get {
 				if (this._cachedSalaryTypes == null) {
 					this._cachedSalaryTypes = this.GetSalaryTypes();
@@ -659,9 +659,9 @@ namespace SalaryLibrary.SalaryDataProviders
 			return new SalaryType(salaryTypeNode);
 		}
 
-		public List<SalaryType> GetSalaryTypes()
+		public SalaryTypeCollection GetSalaryTypes()
 		{
-			var salaryTypes = new List<SalaryType>();
+			var salaryTypes = new SalaryTypeCollection();
 			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
 			var salaryTypeNodes = salaryDoc.SelectNodes("/salary-data/salary-types/salary-type");
 			foreach(XmlNode salaryTypeNode in salaryTypeNodes) {
@@ -671,22 +671,44 @@ namespace SalaryLibrary.SalaryDataProviders
 			return salaryTypes;
 		}
 
+		public void DeleteSalaryTypes()
+		{
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryFilename = (this._salaryFilename != string.Empty) ? this._salaryFilename : this._combinedFilename;
+
+			var salaryTypesNode = salaryDoc.SelectSingleNode("/salary-data/salary-types");
+			if (salaryTypesNode == null) {
+				return;
+			}
+			salaryTypesNode.ParentNode.RemoveChild(salaryTypesNode);
+
+			salaryDoc.Save(salaryFilename);
+		}
+
 		public object InsertSalaryType(SalaryType salaryType)
 		{
 			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
-			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+			var salaryFilename = (this._salaryFilename != string.Empty) ? this._salaryFilename : this._combinedFilename;
 
 			var salaryDataNode = salaryDoc.SelectSingleNode("/salary-data");
-			if (salaryDataNode == null)
-			{
+			if (salaryDataNode == null) {
 				throw new InvalidDataException("salary-data node does not exists in xml-file.");
 			}
 
 			var salaryTypesNode = salaryDataNode.SelectSingleNode("./salary-types");
-			if (salaryTypesNode == null)
-			{
+			if (salaryTypesNode == null) {
 				salaryTypesNode = salaryDoc.CreateElement("salary-types");
 				salaryDataNode.AppendChild(salaryTypesNode);
+			}
+
+			var salaryTypeWithNumber = salaryTypesNode.SelectSingleNode("./salary-type[@number='" + salaryType.Number + "']");
+			if (salaryTypeWithNumber != null) {
+				throw new Exception("The salary-type number: '" + salaryType.Number + "' already exists in the database!");
+			}
+
+			var salaryTypeWithName = salaryTypesNode.SelectSingleNode("./salary-type[@name='" + salaryType.Name + "']");
+			if (salaryTypeWithName != null) {
+				throw new Exception("The salary-type name: '" + salaryType.Name + "' already exists in the database!");
 			}
 
 			salaryType.Id = this.GetLastSalaryTypeId() + 1;
@@ -696,6 +718,48 @@ namespace SalaryLibrary.SalaryDataProviders
 			salaryDoc.Save(salaryFilename);
 
 			return salaryType.Id;
+		}
+
+		public object[] InsertSalaryTypes(SalaryTypeCollection salaryTypes)
+		{
+			var newIds = new List<object>();
+
+			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
+			var salaryFilename = (this._salaryFilename != string.Empty) ? this._salaryFilename : this._combinedFilename;
+
+			var salaryDataNode = salaryDoc.SelectSingleNode("/salary-data");
+			if (salaryDataNode == null) {
+				throw new InvalidDataException("salary-data node does not exists in xml-file.");
+			}
+
+			var salaryTypesNode = salaryDataNode.SelectSingleNode("./salary-types");
+			if (salaryTypesNode == null) {
+				salaryTypesNode = salaryDoc.CreateElement("salary-types");
+				salaryDataNode.AppendChild(salaryTypesNode);
+			}
+
+			foreach(var salaryType in salaryTypes) {
+				var salaryTypeWithNumber = salaryTypesNode.SelectSingleNode("./salary-type[@number='" + salaryType.Number + "']");
+				if (salaryTypeWithNumber != null) {
+					throw new Exception("The salary-type number: '" + salaryType.Number + "' already exists in the database!");
+				}
+
+				var salaryTypeWithName = salaryTypesNode.SelectSingleNode("./salary-type[@name='" + salaryType.Name + "']");
+				if (salaryTypeWithName != null) {
+					throw new Exception("The salary-type name: '" + salaryType.Name + "' already exists in the database!");
+				}
+
+				salaryType.Id = this.GetLastSalaryTypeId() + 1;
+				var salaryTypeNode = this.BuildSalaryTypeNode(salaryType, salaryDoc);
+
+				salaryTypesNode.AppendChild(salaryTypeNode);
+
+				newIds.Add(salaryType.Id);
+			}
+
+			salaryDoc.Save(salaryFilename);
+
+			return newIds.ToArray();
 		}
 	}
 }

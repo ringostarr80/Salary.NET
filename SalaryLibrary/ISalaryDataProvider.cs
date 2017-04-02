@@ -35,7 +35,9 @@ namespace SalaryLibrary
 		Task DeleteSalaryAsync(object id);
 
 		SalaryType GetSalaryType(object id);
-		List<SalaryType> GetSalaryTypes();
+		SalaryTypeCollection GetSalaryTypes();
+		void DeleteSalaryTypes();
 		object InsertSalaryType(SalaryType salaryType);
+		object[] InsertSalaryTypes(SalaryTypeCollection salaryTypes);
 	}
 }

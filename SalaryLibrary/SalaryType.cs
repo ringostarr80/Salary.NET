@@ -66,6 +66,11 @@ namespace SalaryLibrary
 			}
 		}
 
+		public override string ToString()
+		{
+			return string.Format("{0} ({1})", this.Number, this.Name);
+		}
+
 		public object Clone()
 		{
 			var clone = (SalaryType)this.MemberwiseClone();

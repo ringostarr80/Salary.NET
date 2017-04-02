@@ -8,7 +8,7 @@ namespace Salary.NET
 {
 	public partial class UserControlSalaryItems : UserControl
 	{
-		private List<SalaryType> _salaryTypes = new List<SalaryType>();
+		private SalaryTypeCollection _salaryTypes = new SalaryTypeCollection();
 		private List<UserControlGrossIncome> _grossIncomeControls = new List<UserControlGrossIncome>();
 		private int _userControlCounter = 1;
 
@@ -40,20 +40,24 @@ namespace Salary.NET
 		public UserControlSalaryItems()
 		{
 			InitializeComponent();
+			this.userControlGrossIncome1.SalaryType = new SalaryType(1, 2000, "Gehalt");
 			this.RefreshPanelSize();
 		}
 
-		public UserControlSalaryItems(List<SalaryType> salaryTypes)
+		public UserControlSalaryItems(SalaryTypeCollection salaryTypes)
 		{
 			this._salaryTypes = salaryTypes;
 
 			InitializeComponent();
+			this.userControlGrossIncome1.SalaryType = new SalaryType(1, 2000, "Gehalt");
 			this.RefreshPanelSize();
 		}
 
-		public void SetSalaryItems(List<SalaryType> salaryTypes, Dictionary<SalaryType, SalaryItem> salaryAccounts)
+		public void SetSalaryItems(SalaryTypeCollection salaryTypes, Dictionary<SalaryType, SalaryItem> salaryAccounts)
 		{
 			this._salaryTypes = salaryTypes;
+			this.userControlGrossIncome1.SalaryTypes = salaryTypes;
+			this.userControlGrossIncome1.InitControls();
 			this.ResetSalaryItems();
 
 			var counter = 0;
@@ -117,11 +121,11 @@ namespace Salary.NET
 		{
 			if (this._salaryTypes.Count > 0) {
 				foreach (var salaryType in this._salaryTypes) {
-					this.userControlGrossIncome1.SalaryType = salaryType;
+					this.AddSalaryItem(salaryType, 0);
 					break;
 				}
 			} else {
-				this.userControlGrossIncome1.SalaryType = new SalaryType(1, 1, "Dummy");
+				this.AddSalaryItem(new SalaryType(1, 1, "Dummy"), 0);
 			}
 		}
 

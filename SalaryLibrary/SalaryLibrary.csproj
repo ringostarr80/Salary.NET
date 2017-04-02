@@ -49,6 +49,7 @@
     <Compile Include="SalaryDataProviders\SalaryDataXml.cs" />
     <Compile Include="SalaryItem.cs" />
     <Compile Include="SalaryType.cs" />
+    <Compile Include="SalaryTypeCollection.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

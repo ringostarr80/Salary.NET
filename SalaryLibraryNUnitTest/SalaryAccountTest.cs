@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+
 using NUnit.Framework;
 using SalaryLibrary;
 using SalaryLibrary.SalaryDataProviders;
-using System.Collections.Generic;
 
 namespace SalaryLibraryNUnitTest
 {
@@ -30,13 +31,13 @@ namespace SalaryLibraryNUnitTest
 			}
 		}
 
-		private List<SalaryType> GetDefaultSalaryTypes()
+		private SalaryTypeCollection GetDefaultSalaryTypes()
 		{
-			var salaryTypes = new List<SalaryType> {
+			var salaryTypes = new SalaryTypeCollection {
 				new SalaryType(1, 2000, "Gehalt"),
 				new SalaryType(2, 2033, "Freiwillige Zulage"),
 				new SalaryType(3, 2310, "Erholungsbeihilfe"),
-				new SalaryType(4, 3100, "Bezug VWL lfd", true),
+				new SalaryType(4, 3100, "Bezug VWL lfd"),
 				new SalaryType(5, 4401, "Brutto Weihnachtsgeld"),
 				new SalaryType(6, 4402, "Netto Weihnachtsgeld"),
 				new SalaryType(7, 9840, "Abzug VWL", true),
@@ -199,8 +200,10 @@ namespace SalaryLibraryNUnitTest
 			};
 			var salaryType1 = defaultSalaryTypes.Find(st => st.Number == 2000);
 			var salaryType2 = defaultSalaryTypes.Find(st => st.Number == 3100);
+			var salaryType3 = defaultSalaryTypes.Find(st => st.Number == 9840);
 			salaryAccount.Salaries.Add(salaryType1, new SalaryItem(3300.00));
 			salaryAccount.Salaries.Add(salaryType2, new SalaryItem(40.00));
+			salaryAccount.Salaries.Add(salaryType3, new SalaryItem(40.00));
 
 			Assert.AreEqual(2204.16, salaryAccount.NetWage, 0.001);
 		}

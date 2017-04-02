@@ -9,7 +9,7 @@ namespace Salary.NET
 	public partial class AddSalaryAccountForm : Form
 	{
 		private Employee _employee = null;
-		private List<SalaryType> _salaryTypes = null;
+		private SalaryTypeCollection _salaryTypes = null;
 		private SalaryAccount _salaryAccount = null;
 
 		public SalaryAccount SalaryAccount { get { return this._salaryAccount; } }
@@ -23,7 +23,7 @@ namespace Salary.NET
 			this.RefreshNetAndGrossWage();
 		}
 
-		public AddSalaryAccountForm(List<SalaryType> salaryTypes, Employee employee)
+		public AddSalaryAccountForm(SalaryTypeCollection salaryTypes, Employee employee)
 		{
 			this._salaryTypes = salaryTypes;
 			this._employee = employee;
@@ -35,7 +35,7 @@ namespace Salary.NET
 			this.RefreshNetAndGrossWage();
 		}
 
-		public AddSalaryAccountForm(List<SalaryType> salaryTypes, SalaryAccount salaryAccount)
+		public AddSalaryAccountForm(SalaryTypeCollection salaryTypes, SalaryAccount salaryAccount)
 		{
 			this._salaryTypes = salaryTypes;
 			this._employee = salaryAccount.Employee;

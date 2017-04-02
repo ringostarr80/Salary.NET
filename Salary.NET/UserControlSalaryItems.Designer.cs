@@ -1,4 +1,5 @@
-﻿using SalaryLibrary;
+﻿using System.Windows.Forms;
+using SalaryLibrary;
 
 namespace Salary.NET
 {
@@ -29,13 +30,13 @@ namespace Salary.NET
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.groupBox = new System.Windows.Forms.GroupBox();
-			this.panelBackground = new System.Windows.Forms.Panel();
-			this.panel = new System.Windows.Forms.Panel();
-			this.buttonAdd1 = new System.Windows.Forms.Button();
-			this.buttonRemove1 = new System.Windows.Forms.Button();
-			this.vScrollBar = new System.Windows.Forms.VScrollBar();
-			this.userControlGrossIncome1 = new UserControlGrossIncome(this._salaryTypes);
+			this.groupBox = new GroupBox();
+			this.panelBackground = new Panel();
+			this.panel = new Panel();
+			this.buttonAdd1 = new Button();
+			this.buttonRemove1 = new Button();
+			this.vScrollBar = new VScrollBar();
+			this.userControlGrossIncome1 = new UserControlGrossIncome();
 			this.groupBox.SuspendLayout();
 			this.panelBackground.SuspendLayout();
 			this.panel.SuspendLayout();
@@ -110,7 +111,6 @@ namespace Salary.NET
 			this.userControlGrossIncome1.AmountWidth = 245;
 			this.userControlGrossIncome1.Location = new System.Drawing.Point(3, 3);
 			this.userControlGrossIncome1.Name = "userControlGrossIncome1";
-			this.userControlGrossIncome1.SalaryType = new SalaryType(1, 2000, "Gehalt");
 			this.userControlGrossIncome1.SalaryTypeWidth = 140;
 			this.userControlGrossIncome1.Size = new System.Drawing.Size(391, 21);
 			this.userControlGrossIncome1.TabIndex = 0;
