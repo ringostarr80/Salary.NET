@@ -338,6 +338,7 @@
 			this.objectListViewSalaryAccounts.UseCompatibleStateImageBehavior = false;
 			this.objectListViewSalaryAccounts.View = System.Windows.Forms.View.Details;
 			this.objectListViewSalaryAccounts.DoubleClick += new System.EventHandler(this.ObjectListViewSalaryAccounts_DoubleClick);
+			this.objectListViewSalaryAccounts.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ObjectListViewSalaryAccounts_KeyUp);
 			this.objectListViewSalaryAccounts.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ObjectListViewSalaryAccounts_MouseUp);
 			this.objectListViewSalaryAccounts.Resize += new System.EventHandler(this.ObjectListViewSalaryAccounts_Resize);
 			// 

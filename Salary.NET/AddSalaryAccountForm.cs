@@ -277,5 +277,11 @@ namespace Salary.NET
 				} while(daysInMonth > this.comboBoxPeriodFromDay.Items.Count);
 			}
 		}
+
+		private void NumericUpDown_Enter(object sender, EventArgs e)
+		{
+			var numericUpDown = (NumericUpDown)sender;
+			numericUpDown.Select(0, numericUpDown.Value.ToString().Length + 3);
+		}
 	}
 }

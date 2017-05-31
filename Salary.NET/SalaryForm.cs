@@ -413,8 +413,22 @@ namespace Salary.NET
 		private void ToolStripMenuItemSalaryAccountingsCopy_Click(object sender, EventArgs e)
 		{
 			var item = this.objectListViewSalaryAccounts.SelectedItems[0];
-			var id = Convert.ToUInt32(item.SubItems[0].Text);
-			this._clipboardSalaryId = id;
+			this._clipboardSalaryId = Convert.ToUInt32(item.SubItems[0].Text);
+		}
+
+		private void ObjectListViewSalaryAccounts_KeyUp(object sender, KeyEventArgs e)
+		{
+			if (e.Control) {
+				if (e.KeyCode == Keys.C) {
+					if (this.objectListViewSalaryAccounts.SelectedIndex == -1) {
+						return;
+					}
+
+					this.ToolStripMenuItemSalaryAccountingsCopy_Click(sender, e);
+				} else if (e.KeyCode == Keys.V) {
+					this.ToolStripMenuItemSalaryAccountingsPaste_Click(sender, e);
+				}
+			}
 		}
 
 		private void ToolStripMenuItemSalaryAccountingsPaste_Click(object sender, EventArgs e)

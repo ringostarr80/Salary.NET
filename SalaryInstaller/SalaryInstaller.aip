@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="13.8.1" version="13.8.1" Modules="enterprise" RootPath="." Language="en" Id="{5BF4397C-F6F9-4C2B-B8E7-2C7AB7B28B39}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="webmaster@ringoleese.de"/>
+    <ROW Property="Manufacturer" Value="Ringo Leese"/>
+    <ROW Property="ProductCode" Value="1033:{7D13C69A-8B20-473B-A6F9-0D8EEDC9F873} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Salary.NET"/>
+    <ROW Property="ProductVersion" Value="0.0.2.0" Type="32" TargetFile="Salary.NET.exe"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{D378E355-FDCE-44D9-92B6-59E311DC31A0}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de"/>
+    <ROW Directory="en_Dir" Directory_Parent="APPDIR" DefaultDir="en"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
+    <ROW Directory="fr_Dir" Directory_Parent="APPDIR" DefaultDir="fr"/>
+    <ROW Directory="hu_Dir" Directory_Parent="APPDIR" DefaultDir="hu"/>
+    <ROW Directory="it_Dir" Directory_Parent="APPDIR" DefaultDir="it"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
+    <ROW Directory="pt_Dir" Directory_Parent="APPDIR" DefaultDir="pt"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
+    <ROW Directory="sk_Dir" Directory_Parent="APPDIR" DefaultDir="sk"/>
+    <ROW Directory="sv_Dir" Directory_Parent="APPDIR" DefaultDir="sv"/>
+    <ROW Directory="tr_Dir" Directory_Parent="APPDIR" DefaultDir="tr"/>
+    <ROW Directory="zhcn_Dir" Directory_Parent="APPDIR" DefaultDir="zh-cn"/>
+    <ROW Directory="zhtw_Dir" Directory_Parent="APPDIR" DefaultDir="zh-tw"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="ObjectListView.dll" ComponentId="{635FCC23-3304-4E2C-8D35-42C2728BAB30}" Directory_="APPDIR" Attributes="0" KeyPath="ObjectListView.dll"/>
+    <ROW Component="ObjectListView.xml" ComponentId="{B5DBCDEC-9A3C-4F15-8987-EC11A85BD541}" Directory_="APPDIR" Attributes="0" KeyPath="ObjectListView.xml" Type="0"/>
+    <ROW Component="ProductInformation" ComponentId="{C491FC7E-7C6F-40E8-8191-9B804EB2E1B5}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="Salary.NET.exe" ComponentId="{B1E8EB1A-1AF9-40C3-A4C0-4683116F90FD}" Directory_="APPDIR" Attributes="0" KeyPath="Salary.NET.exe"/>
+    <ROW Component="Salary.NET.resources.dll" ComponentId="{170CC464-5313-4C02-BD5B-F6F13B152CD4}" Directory_="de_Dir" Attributes="0" KeyPath="Salary.NET.resources.dll"/>
+    <ROW Component="Salary.NET.resources.dll_1" ComponentId="{6B917128-A808-4051-9BBB-F11E61F44347}" Directory_="en_Dir" Attributes="0" KeyPath="Salary.NET.resources.dll_1"/>
+    <ROW Component="Salary.NET.resources.dll_2" ComponentId="{A3EA82D6-0856-4835-931C-D0D7A09BB064}" Directory_="ja_Dir" Attributes="0" KeyPath="Salary.NET.resources.dll_2"/>
+    <ROW Component="SalaryLibrary.dll" ComponentId="{B4AEF78A-97F6-4E7F-9C3B-9517A32E8C05}" Directory_="APPDIR" Attributes="0" KeyPath="SalaryLibrary.dll"/>
+    <ROW Component="ZedGraph.dll" ComponentId="{EC44A665-10CF-4549-A10C-51888AF66943}" Directory_="APPDIR" Attributes="0" KeyPath="ZedGraph.dll"/>
+    <ROW Component="ZedGraph.resources.dll" ComponentId="{654B2C42-1D35-45A5-8CF5-33C6F7E45ACD}" Directory_="de_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll"/>
+    <ROW Component="ZedGraph.resources.dll_1" ComponentId="{7C7E35A6-93A2-45A1-AF0A-8FB0FFF4DA2D}" Directory_="es_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_1"/>
+    <ROW Component="ZedGraph.resources.dll_10" ComponentId="{5241535D-4A34-4FE7-BCFE-780023B2C8B0}" Directory_="tr_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_10"/>
+    <ROW Component="ZedGraph.resources.dll_11" ComponentId="{B87DC9FA-EFC6-4B3B-861F-3186238540AC}" Directory_="zhcn_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_11"/>
+    <ROW Component="ZedGraph.resources.dll_12" ComponentId="{633EB123-05FF-4F59-AF93-E15B305C8E8D}" Directory_="zhtw_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_12"/>
+    <ROW Component="ZedGraph.resources.dll_2" ComponentId="{EDBEBF2C-FFFF-41D9-9049-47AB7083856A}" Directory_="fr_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_2"/>
+    <ROW Component="ZedGraph.resources.dll_3" ComponentId="{125D6B56-B9BA-4829-9297-2EBD89D1CB9E}" Directory_="hu_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_3"/>
+    <ROW Component="ZedGraph.resources.dll_4" ComponentId="{0FC0CDA4-67E2-48C6-A605-EFEC48B9B977}" Directory_="it_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_4"/>
+    <ROW Component="ZedGraph.resources.dll_5" ComponentId="{321D2802-97CA-4940-ADFA-8A7E1A5690A0}" Directory_="ja_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_5"/>
+    <ROW Component="ZedGraph.resources.dll_6" ComponentId="{B1DC9C50-1BEC-456D-BD72-E3AD14E3989E}" Directory_="pt_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_6"/>
+    <ROW Component="ZedGraph.resources.dll_7" ComponentId="{03C3CEB1-DA74-4A67-97FD-332F84BF3304}" Directory_="ru_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_7"/>
+    <ROW Component="ZedGraph.resources.dll_8" ComponentId="{459683FB-DF0B-4D2D-B612-A99E37BA4F85}" Directory_="sk_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_8"/>
+    <ROW Component="ZedGraph.resources.dll_9" ComponentId="{BB45E5A0-50D8-4186-B695-AFA1B692C054}" Directory_="sv_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_9"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ObjectListView.dll ObjectListView.xml ProductInformation Salary.NET.exe Salary.NET.resources.dll Salary.NET.resources.dll_1 Salary.NET.resources.dll_2 SalaryLibrary.dll ZedGraph.dll ZedGraph.resources.dll ZedGraph.resources.dll_1 ZedGraph.resources.dll_10 ZedGraph.resources.dll_11 ZedGraph.resources.dll_12 ZedGraph.resources.dll_2 ZedGraph.resources.dll_3 ZedGraph.resources.dll_4 ZedGraph.resources.dll_5 ZedGraph.resources.dll_6 ZedGraph.resources.dll_7 ZedGraph.resources.dll_8 ZedGraph.resources.dll_9"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="ObjectListView.dll" Component_="ObjectListView.dll" FileName="OBJECT~1.DLL|ObjectListView.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ObjectListView.dll" SelfReg="false" NextFile="ObjectListView.xml"/>
+    <ROW File="ObjectListView.xml" Component_="ObjectListView.xml" FileName="OBJECT~1.XML|ObjectListView.xml" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ObjectListView.xml" SelfReg="false" NextFile="Salary.NET.exe"/>
+    <ROW File="Salary.NET.exe" Component_="Salary.NET.exe" FileName="SALARY~1.EXE|Salary.NET.exe" Attributes="0" SourcePath="..\Salary.NET\bin\Release\Salary.NET.exe" SelfReg="false" NextFile="Salary.NET.exe.config" DigSign="true"/>
+    <ROW File="Salary.NET.exe.config" Component_="ObjectListView.xml" FileName="SALARY~1.CON|Salary.NET.exe.config" Attributes="0" SourcePath="..\Salary.NET\bin\Release\Salary.NET.exe.config" SelfReg="false" NextFile="SalaryLibrary.dll"/>
+    <ROW File="Salary.NET.resources.dll" Component_="Salary.NET.resources.dll" FileName="SALARY~1.DLL|Salary.NET.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\de\Salary.NET.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll"/>
+    <ROW File="Salary.NET.resources.dll_1" Component_="Salary.NET.resources.dll_1" FileName="SALARY~1.DLL|Salary.NET.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\en\Salary.NET.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_1"/>
+    <ROW File="Salary.NET.resources.dll_2" Component_="Salary.NET.resources.dll_2" FileName="SALARY~1.DLL|Salary.NET.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ja\Salary.NET.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_5"/>
+    <ROW File="SalaryLibrary.dll" Component_="SalaryLibrary.dll" FileName="SALARY~1.DLL|SalaryLibrary.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\SalaryLibrary.dll" SelfReg="false" NextFile="ZedGraph.dll"/>
+    <ROW File="ZedGraph.dll" Component_="ZedGraph.dll" FileName="ZedGraph.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ZedGraph.dll" SelfReg="false" NextFile="ZedGraph.xml"/>
+    <ROW File="ZedGraph.resources.dll" Component_="ZedGraph.resources.dll" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\de\ZedGraph.resources.dll" SelfReg="false" NextFile="Salary.NET.resources.dll_1"/>
+    <ROW File="ZedGraph.resources.dll_1" Component_="ZedGraph.resources.dll_1" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\es\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_2"/>
+    <ROW File="ZedGraph.resources.dll_10" Component_="ZedGraph.resources.dll_10" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\tr\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_11"/>
+    <ROW File="ZedGraph.resources.dll_11" Component_="ZedGraph.resources.dll_11" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\zh-cn\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_12"/>
+    <ROW File="ZedGraph.resources.dll_12" Component_="ZedGraph.resources.dll_12" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\zh-tw\ZedGraph.resources.dll" SelfReg="false"/>
+    <ROW File="ZedGraph.resources.dll_2" Component_="ZedGraph.resources.dll_2" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\fr\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_3"/>
+    <ROW File="ZedGraph.resources.dll_3" Component_="ZedGraph.resources.dll_3" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\hu\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_4"/>
+    <ROW File="ZedGraph.resources.dll_4" Component_="ZedGraph.resources.dll_4" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\it\ZedGraph.resources.dll" SelfReg="false" NextFile="Salary.NET.resources.dll_2"/>
+    <ROW File="ZedGraph.resources.dll_5" Component_="ZedGraph.resources.dll_5" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ja\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_6"/>
+    <ROW File="ZedGraph.resources.dll_6" Component_="ZedGraph.resources.dll_6" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\pt\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_7"/>
+    <ROW File="ZedGraph.resources.dll_7" Component_="ZedGraph.resources.dll_7" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ru\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_8"/>
+    <ROW File="ZedGraph.resources.dll_8" Component_="ZedGraph.resources.dll_8" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\sk\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_9"/>
+    <ROW File="ZedGraph.resources.dll_9" Component_="ZedGraph.resources.dll_9" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\Salary.NET\bin\Release\sv\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_10"/>
+    <ROW File="ZedGraph.xml" Component_="ObjectListView.xml" FileName="ZedGraph.xml" Attributes="0" SourcePath="..\Salary.NET\bin\Release\ZedGraph.xml" SelfReg="false" NextFile="Salary.NET.resources.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

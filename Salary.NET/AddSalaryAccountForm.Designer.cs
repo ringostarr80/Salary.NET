@@ -104,6 +104,7 @@
             0});
 			this.numericUpDownWageTax.Name = "numericUpDownWageTax";
 			this.numericUpDownWageTax.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownWageTax.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// labelSolidarityTax
 			// 
@@ -121,6 +122,7 @@
             0});
 			this.numericUpDownSolidarityTax.Name = "numericUpDownSolidarityTax";
 			this.numericUpDownSolidarityTax.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownSolidarityTax.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// numericUpDownSicknessInsurance
 			// 
@@ -133,6 +135,7 @@
             0});
 			this.numericUpDownSicknessInsurance.Name = "numericUpDownSicknessInsurance";
 			this.numericUpDownSicknessInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownSicknessInsurance.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// labelSicknessInsurance
 			// 
@@ -150,6 +153,7 @@
             0});
 			this.numericUpDownAnnuityInsurance.Name = "numericUpDownAnnuityInsurance";
 			this.numericUpDownAnnuityInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownAnnuityInsurance.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// labelAnnuityInsurance
 			// 
@@ -167,6 +171,7 @@
             0});
 			this.numericUpDownUnemploymentInsurance.Name = "numericUpDownUnemploymentInsurance";
 			this.numericUpDownUnemploymentInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownUnemploymentInsurance.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// labelUnemploymentInsurance
 			// 
@@ -184,6 +189,7 @@
             0});
 			this.numericUpDownCompulsoryLongTermCareInsurance.Name = "numericUpDownCompulsoryLongTermCareInsurance";
 			this.numericUpDownCompulsoryLongTermCareInsurance.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownCompulsoryLongTermCareInsurance.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// labelCompulsoryLongTermCareInsurance
 			// 
@@ -408,6 +414,7 @@
             0});
 			this.numericUpDownChurchTax.Name = "numericUpDownChurchTax";
 			this.numericUpDownChurchTax.ValueChanged += new System.EventHandler(this.NumericUpDownWageTax_ValueChanged);
+			this.numericUpDownChurchTax.Enter += new System.EventHandler(this.NumericUpDown_Enter);
 			// 
 			// textBoxChurchTaxPercentage
 			// 

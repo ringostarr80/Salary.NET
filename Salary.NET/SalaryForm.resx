@@ -121,39 +121,11 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="toolStripMenuItemXMLFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 22</value>
   </data>
-  <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 25</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="menuStripMain.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Name" xml:space="preserve">
-    <value>menuStripMain</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStripMain.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="toolStripMenuItemFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9pt</value>
-  </data>
-  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 21</value>
-  </data>
-  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
-    <value>&amp;Datei</value>
+  <data name="toolStripMenuItemXMLFile.Text" xml:space="preserve">
+    <value>&amp;XML-Datei</value>
   </data>
   <data name="toolStripMenuItemNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
@@ -161,10 +133,10 @@
   <data name="toolStripMenuItemNew.Text" xml:space="preserve">
     <value>&amp;Neu</value>
   </data>
-  <data name="toolStripMenuItemXMLFile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItemOpenXMLFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 22</value>
   </data>
-  <data name="toolStripMenuItemXMLFile.Text" xml:space="preserve">
+  <data name="toolStripMenuItemOpenXMLFile.Text" xml:space="preserve">
     <value>&amp;XML-Datei</value>
   </data>
   <data name="toolStripMenuItemOpen.Size" type="System.Drawing.Size, System.Drawing">
@@ -172,12 +144,6 @@
   </data>
   <data name="toolStripMenuItemOpen.Text" xml:space="preserve">
     <value>&amp;Öffnen</value>
-  </data>
-  <data name="toolStripMenuItemOpenXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
-  </data>
-  <data name="toolStripMenuItemOpenXMLFile.Text" xml:space="preserve">
-    <value>&amp;XML-Datei</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 6</value>
@@ -188,23 +154,14 @@
   <data name="toolStripMenuItemClose.Text" xml:space="preserve">
     <value>&amp;Beenden</value>
   </data>
-  <data name="toolStripMenuItemEdit.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="toolStripMenuItemFile.Font" type="System.Drawing.Font, System.Drawing">
     <value>Noto Sans, 9pt</value>
   </data>
-  <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 21</value>
+  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 21</value>
   </data>
-  <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
-    <value>&amp;Bearbeiten</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
-    <value>&amp;Hinzufügen</value>
+  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
+    <value>&amp;Datei</value>
   </data>
   <data name="toolStripMenuItemEditAddEmployee.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 22</value>
@@ -224,6 +181,22 @@
   <data name="toolStripMenuItemAddSalaryTypes.Text" xml:space="preserve">
     <value>&amp;Lohnarten</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="toolStripMenuItemEditAdd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
+    <value>&amp;Hinzufügen</value>
+  </data>
+  <data name="toolStripMenuItemChangeSalaryTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="toolStripMenuItemChangeSalaryTypes.Text" xml:space="preserve">
+    <value>&amp;Lohnarten</value>
+  </data>
   <data name="toolStripMenuItemEditChange.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -233,26 +206,14 @@
   <data name="toolStripMenuItemEditChange.Text" xml:space="preserve">
     <value>&amp;Ändern</value>
   </data>
-  <data name="toolStripMenuItemChangeSalaryTypes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="toolStripMenuItemChangeSalaryTypes.Text" xml:space="preserve">
-    <value>&amp;Lohnarten</value>
-  </data>
-  <data name="toolStripMenuItemOptions.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="toolStripMenuItemEdit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Noto Sans, 9pt</value>
   </data>
-  <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 21</value>
+  <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 21</value>
   </data>
-  <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
-    <value>&amp;Optionen</value>
-  </data>
-  <data name="toolStripMenuItemLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
-  </data>
-  <data name="toolStripMenuItemLanguage.Text" xml:space="preserve">
-    <value>&amp;Sprache</value>
+  <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
+    <value>&amp;Bearbeiten</value>
   </data>
   <data name="toolStripMenuItemLanguageGermany.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>
@@ -275,6 +236,48 @@
   <data name="toolStripMenuItemLanguageJapanese.Text" xml:space="preserve">
     <value>&amp;日本語</value>
   </data>
+  <data name="toolStripMenuItemLanguageJapanese.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuItemLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 22</value>
+  </data>
+  <data name="toolStripMenuItemLanguage.Text" xml:space="preserve">
+    <value>&amp;Sprache</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Noto Sans, 9pt</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
+    <value>&amp;Optionen</value>
+  </data>
+  <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>624, 25</value>
+  </data>
+  <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStripMain.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.Name" xml:space="preserve">
+    <value>menuStripMain</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStripMain.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="saveFileDialogNewDb.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
   </metadata>
@@ -284,6 +287,40 @@
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>322, 17</value>
   </metadata>
+  <data name="olvColumnHeaderId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="olvColumnHeaderPersonnelNumber.Text" xml:space="preserve">
+    <value>Personalnummer</value>
+  </data>
+  <data name="olvColumnHeaderPersonnelNumber.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="olvColumnHeaderFirstName.Text" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="olvColumnHeaderLastName.Text" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="olvColumnHeaderBirthday.Text" xml:space="preserve">
+    <value>Geburtstag</value>
+  </data>
+  <data name="olvColumnHeaderBirthday.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="objectListViewEmployees.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="objectListViewEmployees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="objectListViewEmployees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 450</value>
+  </data>
+  <data name="objectListViewEmployees.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;objectListViewEmployees.Name" xml:space="preserve">
     <value>objectListViewEmployees</value>
   </data>
@@ -299,7 +336,6 @@
   <data name="tabPageEmployees.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPageEmployees.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -327,6 +363,39 @@
   <metadata name="tabPageSalaries.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="olvColumnId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="olvColumnGross.Text" xml:space="preserve">
+    <value>Brutto</value>
+  </data>
+  <data name="olvColumnGross.Width" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <data name="olvColumnNet.Text" xml:space="preserve">
+    <value>Netto</value>
+  </data>
+  <data name="olvColumnNet.Width" type="System.Int32, mscorlib">
+    <value>137</value>
+  </data>
+  <data name="olvColumnPeriod.Text" xml:space="preserve">
+    <value>Zeitraum</value>
+  </data>
+  <data name="olvColumnPeriod.Width" type="System.Int32, mscorlib">
+    <value>182</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 450</value>
+  </data>
+  <data name="objectListViewSalaryAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;objectListViewSalaryAccounts.Name" xml:space="preserve">
     <value>objectListViewSalaryAccounts</value>
   </data>
@@ -438,108 +507,9 @@
   <data name="&gt;&gt;tabControlMain.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="objectListViewEmployees.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="objectListViewEmployees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="objectListViewEmployees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 450</value>
-  </data>
-  <data name="objectListViewEmployees.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;objectListViewEmployees.Name" xml:space="preserve">
-    <value>objectListViewEmployees</value>
-  </data>
-  <data name="&gt;&gt;objectListViewEmployees.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
-  </data>
-  <data name="&gt;&gt;objectListViewEmployees.Parent" xml:space="preserve">
-    <value>tabPageEmployees</value>
-  </data>
-  <data name="&gt;&gt;objectListViewEmployees.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="olvColumnHeaderId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="olvColumnHeaderPersonnelNumber.Text" xml:space="preserve">
-    <value>Personalnummer</value>
-  </data>
-  <data name="olvColumnHeaderPersonnelNumber.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="olvColumnHeaderFirstName.Text" xml:space="preserve">
-    <value>Vorname</value>
-  </data>
-  <data name="olvColumnHeaderLastName.Text" xml:space="preserve">
-    <value>Nachname</value>
-  </data>
-  <data name="olvColumnHeaderBirthday.Text" xml:space="preserve">
-    <value>Geburtstag</value>
-  </data>
-  <data name="olvColumnHeaderBirthday.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="objectListViewSalaryAccounts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="objectListViewSalaryAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="objectListViewSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 450</value>
-  </data>
-  <data name="objectListViewSalaryAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;objectListViewSalaryAccounts.Name" xml:space="preserve">
-    <value>objectListViewSalaryAccounts</value>
-  </data>
-  <data name="&gt;&gt;objectListViewSalaryAccounts.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
-  </data>
-  <data name="&gt;&gt;objectListViewSalaryAccounts.Parent" xml:space="preserve">
-    <value>tabPageSalaries</value>
-  </data>
-  <data name="&gt;&gt;objectListViewSalaryAccounts.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="olvColumnId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="olvColumnGross.Text" xml:space="preserve">
-    <value>Brutto</value>
-  </data>
-  <data name="olvColumnGross.Width" type="System.Int32, mscorlib">
-    <value>96</value>
-  </data>
-  <data name="olvColumnNet.Text" xml:space="preserve">
-    <value>Netto</value>
-  </data>
-  <data name="olvColumnNet.Width" type="System.Int32, mscorlib">
-    <value>137</value>
-  </data>
-  <data name="olvColumnPeriod.Text" xml:space="preserve">
-    <value>Zeitraum</value>
-  </data>
-  <data name="olvColumnPeriod.Width" type="System.Int32, mscorlib">
-    <value>182</value>
-  </data>
   <metadata name="contextMenuStripEmployees.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>455, 17</value>
   </metadata>
-  <data name="contextMenuStripEmployees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripEmployees.Name" xml:space="preserve">
-    <value>contextMenuStripEmployees</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripEmployees.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="toolStripMenuItemShowSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
@@ -558,18 +528,18 @@
   <data name="toolStripMenuItemContextEmployeeDelete.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
   </data>
+  <data name="contextMenuStripEmployees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripEmployees.Name" xml:space="preserve">
+    <value>contextMenuStripEmployees</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripEmployees.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="contextMenuStripSalaryAccountings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>662, 17</value>
   </metadata>
-  <data name="contextMenuStripSalaryAccountings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 92</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripSalaryAccountings.Name" xml:space="preserve">
-    <value>contextMenuStripSalaryAccountings</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripSalaryAccountings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="toolStripMenuItemSalaryAccountingsEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 22</value>
   </data>
@@ -593,6 +563,15 @@
   </data>
   <data name="toolStripMenuItemSalaryAccountingsDelete.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
+  </data>
+  <data name="contextMenuStripSalaryAccountings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 92</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripSalaryAccountings.Name" xml:space="preserve">
+    <value>contextMenuStripSalaryAccountings</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripSalaryAccountings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -136,5 +136,11 @@ namespace Salary.NET
 		{
 			this.OnSalaryItemChanged(new SalaryItemChangedEventArgs(this.SalaryType, this.Amount));
 		}
+
+		private void numericUpDownAmount_Enter(object sender, EventArgs e)
+		{
+			var numericUpDown = (NumericUpDown)sender;
+			numericUpDown.Select(0, numericUpDown.Value.ToString().Length + 3);
+		}
 	}
 }

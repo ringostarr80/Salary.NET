@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Salary.NET" Language="1033" Version="0.0.2.0" Manufacturer="Ringo Leese" UpgradeCode="f501f82f-95ba-4eac-9e57-4a92258b6af7">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="Salary.NET" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Salary.NET" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="ProductComponent">
+				<File Source="$(var.SalaryForm.TargetPath)" KeyPath="yes" />
+			</Component>
+			<Component Id="SalaryLibrary.dll">
+				<File Source="$(var.SalaryForm.TargetDir)SalaryLibrary.dll" KeyPath="yes"/>
+			</Component>
+			<Component Id="ObjectListView.dll">
+				<File Source="$(var.SalaryForm.TargetDir)ObjectListView.dll" KeyPath="yes"/>
+			</Component>
+			<Component Id="ZedGraph.dll">
+				<File Source="$(var.SalaryForm.TargetDir)ZedGraph.dll" KeyPath="yes"/>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
