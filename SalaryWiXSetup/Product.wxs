@@ -1,38 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="Salary.NET" Language="1033" Version="0.0.2.0" Manufacturer="Ringo Leese" UpgradeCode="f501f82f-95ba-4eac-9e57-4a92258b6af7">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+	<Product Name="Salary.NET" Manufacturer="Ringo Leese"
+			 Language="1033" Version="0.0.3.0"
+			 Id="E77D04B7-5ECD-4C21-8DCA-254f2E3B207C"
+			 UpgradeCode="f501f82f-95ba-4eac-9e57-4a92258b6af7">
+		<Package Id="*" Keywords="Installer" Description="Salary.NET Installer" Manufacturer="Ringo Leese" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->
 		<MediaTemplate />
 
-		<Feature Id="ProductFeature" Title="Salary.NET" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-		</Feature>
-	</Product>
-
-	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="Salary.NET" />
+			<?if $(sys.BUILDARCH)=x64?>
+			<Directory Id="ProgramFiles64Folder" Name="PFiles">
+			<?else?>
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+			<?endif?>
+				<Directory Id="INSTALLFOLDER" Name="Salary.NET">
+					<Component Id="MainExecutable" Guid="E77D04B7-5ECD-4C21-8DCA-000000000001">
+						<File Id="Salary.NET.exe" Name="Salary.NET.exe" Source="$(var.SalaryForm.TargetDir)Salary.NET.exe" KeyPath="yes">
+							<Shortcut Id="startmenuSalaryNET" Directory="ProgramMenuDir" Name="Salary.NET" WorkingDirectory='INSTALLFOLDER' Icon="Salary.NET.exe" IconIndex="0" Advertise="yes" />
+							<Shortcut Id="desktopSalaryNET" Directory="DesktopFolder" Name="Salary.NET" WorkingDirectory='INSTALLFOLDER' Icon="Salary.NET.exe" IconIndex="0" Advertise="yes" />
+						</File>
+						<File Id="SalaryLibrary.dll" Name="SalaryLibrary.dll" Source="$(var.SalaryForm.TargetDir)SalaryLibrary.dll"/>
+						<File Id="ObjectListView.dll" Name="ObjectListView.dll" Source="$(var.SalaryForm.TargetDir)ObjectListView.dll"/>
+						<File Id="ZedGraph.dll" Name="ZedGraph.dll" Source="$(var.SalaryForm.TargetDir)ZedGraph.dll"/>
+					</Component>
+					<Directory Id="LanguageDe" Name="de">
+						<Component Id="LanguageResourcesDe" Guid="E77D04B7-5ECD-4C21-8DCA-000000000002">
+							<File Id="de_Salary.NET.resources.dll" Name="Salary.NET.resources.dll" Source="$(var.SalaryForm.TargetDir)de\Salary.NET.resources.dll" KeyPath="yes" />
+							<File Id="de_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)de\ZedGraph.resources.dll"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageEn" Name="en">
+						<Component Id="LanguageResourcesEn" Guid="E77D04B7-5ECD-4C21-8DCA-000000000003">
+							<File Id="en_Salary.NET.resources.dll" Name="Salary.NET.resources.dll" Source="$(var.SalaryForm.TargetDir)en\Salary.NET.resources.dll" KeyPath="yes" />
+						</Component>
+					</Directory>
+					<Directory Id="LanguageEs" Name="es">
+						<Component Id="LanguageResourcesEs" Guid="E77D04B7-5ECD-4C21-8DCA-000000000004">
+							<File Id="es_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)es\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageFr" Name="fr">
+						<Component Id="LanguageResourcesFr" Guid="E77D04B7-5ECD-4C21-8DCA-000000000005">
+							<File Id="fr_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)fr\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageHu" Name="hu">
+						<Component Id="LanguageResourcesHu" Guid="E77D04B7-5ECD-4C21-8DCA-000000000006">
+							<File Id="hu_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)hu\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageIt" Name="it">
+						<Component Id="LanguageResourcesIt" Guid="E77D04B7-5ECD-4C21-8DCA-000000000007">
+							<File Id="it_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)it\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageJa" Name="ja">
+						<Component Id="LanguageResourcesJa" Guid="E77D04B7-5ECD-4C21-8DCA-000000000008">
+							<File Id="ja_Salary.NET.resources.dll" Name="Salary.NET.resources.dll" Source="$(var.SalaryForm.TargetDir)ja\Salary.NET.resources.dll" KeyPath="yes" />
+							<File Id="ja_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)ja\ZedGraph.resources.dll"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguagePt" Name="pt">
+						<Component Id="LanguageResourcesPt" Guid="E77D04B7-5ECD-4C21-8DCA-000000000009">
+							<File Id="pt_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)pt\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageRu" Name="ru">
+						<Component Id="LanguageResourcesRu" Guid="E77D04B7-5ECD-4C21-8DCA-000000000010">
+							<File Id="ru_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)ru\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageSk" Name="sk">
+						<Component Id="LanguageResourcesSk" Guid="E77D04B7-5ECD-4C21-8DCA-000000000011">
+							<File Id="sk_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)sk\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageSv" Name="sv">
+						<Component Id="LanguageResourcesSv" Guid="E77D04B7-5ECD-4C21-8DCA-000000000012">
+							<File Id="sv_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)sv\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageTr" Name="tr">
+						<Component Id="LanguageResourcesTr" Guid="E77D04B7-5ECD-4C21-8DCA-000000000013">
+							<File Id="tr_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)tr\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageZhCn" Name="zh-cn">
+						<Component Id="LanguageResourcesZhCn" Guid="E77D04B7-5ECD-4C21-8DCA-000000000014">
+							<File Id="zh_cn_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)zh-cn\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+					<Directory Id="LanguageZhTw" Name="zh-tw">
+						<Component Id="LanguageResourcesZhTw" Guid="E77D04B7-5ECD-4C21-8DCA-000000000015">
+							<File Id="zh_tw_ZedGraph.resources.dll" Name="ZedGraph.resources.dll" Source="$(var.SalaryForm.TargetDir)zh-tw\ZedGraph.resources.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+				</Directory>
+			<?if $(sys.BUILDARCH)=x64?>
 			</Directory>
-		</Directory>
-	</Fragment>
+			<?else?>
+			</Directory>
+			<?endif?>
+			
+			<Directory Id="ProgramMenuFolder" Name="Programs">
+				<Directory Id="ProgramMenuDir" Name="Salary.NET">
+					<Component Id="ProgramMenuDir">
+						<RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+						<RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" KeyPath="yes" />
+					</Component>
+				</Directory>
+			</Directory>
 
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<Component Id="ProductComponent">
-				<File Source="$(var.SalaryForm.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="SalaryLibrary.dll">
-				<File Source="$(var.SalaryForm.TargetDir)SalaryLibrary.dll" KeyPath="yes"/>
-			</Component>
-			<Component Id="ObjectListView.dll">
-				<File Source="$(var.SalaryForm.TargetDir)ObjectListView.dll" KeyPath="yes"/>
-			</Component>
-			<Component Id="ZedGraph.dll">
-				<File Source="$(var.SalaryForm.TargetDir)ZedGraph.dll" KeyPath="yes"/>
-			</Component>
-		</ComponentGroup>
-	</Fragment>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+
+		<Feature Id="Complete" Level="1">
+			<ComponentRef Id="MainExecutable"/>
+			<ComponentRef Id="LanguageResourcesDe"/>
+			<ComponentRef Id="LanguageResourcesEn"/>
+			<ComponentRef Id="LanguageResourcesEs"/>
+			<ComponentRef Id="LanguageResourcesFr"/>
+			<ComponentRef Id="LanguageResourcesHu"/>
+			<ComponentRef Id="LanguageResourcesIt"/>
+			<ComponentRef Id="LanguageResourcesJa"/>
+			<ComponentRef Id="LanguageResourcesPt"/>
+			<ComponentRef Id="LanguageResourcesRu"/>
+			<ComponentRef Id="LanguageResourcesSk"/>
+			<ComponentRef Id="LanguageResourcesSv"/>
+			<ComponentRef Id="LanguageResourcesTr"/>
+			<ComponentRef Id="LanguageResourcesZhCn"/>
+			<ComponentRef Id="LanguageResourcesZhTw"/>
+			<ComponentRef Id="ProgramMenuDir"/>
+		</Feature>
+
+		<Icon Id="Salary.NET.exe" SourceFile="$(var.SalaryForm.TargetDir)Salary.NET.exe" />
+	</Product>
 </Wix>

@@ -180,6 +180,7 @@
 			this.Controls.Add(this.labelNumber);
 			this.Controls.Add(this.numericUpDownNumber);
 			this.Name = "AddSalaryTypeForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Lohnart hinzufügen";
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumber)).EndInit();
 			this.ResumeLayout(false);
