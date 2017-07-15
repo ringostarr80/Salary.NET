@@ -126,6 +126,12 @@
   <data name="ERROR" xml:space="preserve">
     <value>Fehler</value>
   </data>
+  <data name="INCOME" xml:space="preserve">
+    <value>Gehalt</value>
+  </data>
+  <data name="PERIOD" xml:space="preserve">
+    <value>Zeitraum</value>
+  </data>
   <data name="WARNING" xml:space="preserve">
     <value>Warnung</value>
   </data>

@@ -55,7 +55,7 @@
 			this.numericUpDownAmount.Size = new System.Drawing.Size(200, 20);
 			this.numericUpDownAmount.TabIndex = 1;
 			this.numericUpDownAmount.ValueChanged += new System.EventHandler(this.NumericUpDownAmount_ValueChanged);
-			this.numericUpDownAmount.Enter += new System.EventHandler(this.numericUpDownAmount_Enter);
+			this.numericUpDownAmount.Enter += new System.EventHandler(this.NumericUpDownAmount_Enter);
 			// 
 			// UserControlGrossIncome
 			// 

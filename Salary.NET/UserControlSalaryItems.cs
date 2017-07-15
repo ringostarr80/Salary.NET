@@ -53,12 +53,17 @@ namespace Salary.NET
 			this.RefreshPanelSize();
 		}
 
-		public void SetSalaryItems(SalaryTypeCollection salaryTypes, Dictionary<SalaryType, SalaryItem> salaryAccounts)
+		public void SetSalaryTypes(SalaryTypeCollection salaryTypes)
 		{
 			this._salaryTypes = salaryTypes;
 			this.userControlGrossIncome1.SalaryTypes = salaryTypes;
 			this.userControlGrossIncome1.InitControls();
 			this.ResetSalaryItems();
+		}
+
+		public void SetSalaryItems(SalaryTypeCollection salaryTypes, Dictionary<SalaryType, SalaryItem> salaryAccounts)
+		{
+			this.SetSalaryTypes(salaryTypes);
 
 			var counter = 0;
 			foreach(var keyValue in salaryAccounts) {

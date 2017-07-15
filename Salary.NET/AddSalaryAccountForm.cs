@@ -29,6 +29,8 @@ namespace Salary.NET
 			this._employee = employee;
 
 			InitializeComponent();
+
+			this.userControlSalaryItems1.SetSalaryTypes(salaryTypes);
 			this.buttonAdd.Visible = true;
 			this.buttonEdit.Visible = false;
 			this.InitControls();

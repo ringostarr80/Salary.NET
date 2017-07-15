@@ -88,6 +88,24 @@ namespace Salary.NET {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gehalt ähnelt.
+        /// </summary>
+        internal static string INCOME {
+            get {
+                return ResourceManager.GetString("INCOME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zeitraum ähnelt.
+        /// </summary>
+        internal static string PERIOD {
+            get {
+                return ResourceManager.GetString("PERIOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Warnung ähnelt.
         /// </summary>
         internal static string WARNING {

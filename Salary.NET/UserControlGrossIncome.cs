@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using SalaryLibrary;
 
@@ -77,7 +76,9 @@ namespace Salary.NET
 
 		public UserControlGrossIncome(SalaryTypeCollection salaryTypes)
 		{
-			this._salaryTypes = salaryTypes;
+			if (salaryTypes != null) {
+				this._salaryTypes = salaryTypes;
+			}
 
 			InitializeComponent();
 			this.InitControls();
@@ -85,7 +86,10 @@ namespace Salary.NET
 
 		public UserControlGrossIncome(SalaryTypeCollection salaryTypes, SalaryType salaryType)
 		{
-			this._salaryTypes = salaryTypes;
+			if (salaryTypes != null) {
+				this._salaryTypes = salaryTypes;
+			}
+			
 			InitializeComponent();
 			this.InitControls();
 
@@ -94,7 +98,9 @@ namespace Salary.NET
 
 		public UserControlGrossIncome(SalaryTypeCollection salaryTypes, SalaryType salaryType, double amount)
 		{
-			this._salaryTypes = salaryTypes;
+			if (salaryTypes != null) {
+				this._salaryTypes = salaryTypes;
+			}
 
 			InitializeComponent();
 			this.InitControls();
@@ -137,7 +143,7 @@ namespace Salary.NET
 			this.OnSalaryItemChanged(new SalaryItemChangedEventArgs(this.SalaryType, this.Amount));
 		}
 
-		private void numericUpDownAmount_Enter(object sender, EventArgs e)
+		private void NumericUpDownAmount_Enter(object sender, EventArgs e)
 		{
 			var numericUpDown = (NumericUpDown)sender;
 			numericUpDown.Select(0, numericUpDown.Value.ToString().Length + 3);

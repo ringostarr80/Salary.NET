@@ -95,6 +95,7 @@ namespace Salary.NET
 		private void ToolStripMenuItemLanguageSelect_Click(object sender, EventArgs e)
 		{
 			if (!(sender is ToolStripMenuItem)) {
+				Console.WriteLine("if (!(sender is ToolStripMenuItem))");
 				return;
 			}
 
@@ -136,6 +137,7 @@ namespace Salary.NET
 					break;
 			}
 
+			Console.WriteLine("languageCode:" + languageCode);
 			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(languageCode);
 
 			this.toolStripMenuItemFile.Text = this._resourceManager.GetString("toolStripMenuItemFile.Text");
@@ -147,6 +149,7 @@ namespace Salary.NET
 
 			this.toolStripMenuItemEdit.Text = this._resourceManager.GetString("toolStripMenuItemEdit.Text");
 			this.toolStripMenuItemEditAdd.Text = this._resourceManager.GetString("toolStripMenuItemEditAdd.Text");
+			this.toolStripMenuItemEditChange.Text = this._resourceManager.GetString("toolStripMenuItemEditChange.Text");
 			this.toolStripMenuItemEditAddEmployee.Text = this._resourceManager.GetString("toolStripMenuItemEditAddEmployee.Text");
 			this.toolStripMenuItemEditAddSalaryAccount.Text = this._resourceManager.GetString("toolStripMenuItemEditAddSalaryAccount.Text");
 			this.toolStripMenuItemShowSalaryAccounts.Text = this._resourceManager.GetString("toolStripMenuItemShowSalaryAccounts.Text");
@@ -154,10 +157,14 @@ namespace Salary.NET
 			this.toolStripMenuItemOptions.Text = this._resourceManager.GetString("toolStripMenuItemOptions.Text");
 			this.toolStripMenuItemLanguage.Text = this._resourceManager.GetString("toolStripMenuItemLanguage.Text");
 
-			this.olvColumnHeaderPersonnelNumber.Text = this._resourceManager.GetString("columnHeaderPersonnelNumber.Text");
-			this.olvColumnHeaderFirstName.Text = this._resourceManager.GetString("columnHeaderFirstName.Text");
-			this.olvColumnHeaderLastName.Text = this._resourceManager.GetString("columnHeaderLastName.Text");
-			this.olvColumnHeaderBirthday.Text = this._resourceManager.GetString("columnHeaderBirthday.Text");
+			this.olvColumnHeaderPersonnelNumber.Text = this._resourceManager.GetString("olvColumnHeaderPersonnelNumber.Text");
+			this.olvColumnHeaderFirstName.Text = this._resourceManager.GetString("olvColumnHeaderFirstName.Text");
+			this.olvColumnHeaderLastName.Text = this._resourceManager.GetString("olvColumnHeaderLastName.Text");
+			this.olvColumnHeaderBirthday.Text = this._resourceManager.GetString("olvColumnHeaderBirthday.Text");
+
+			this.olvColumnGross.Text = this._resourceManager.GetString("olvColumnGross.Text");
+			this.olvColumnNet.Text = this._resourceManager.GetString("olvColumnNet.Text");
+			this.olvColumnPeriod.Text = this._resourceManager.GetString("olvColumnPeriod.Text");
 
 			this.tabPageEmployees.Text = this._resourceManager.GetString("tabPageEmployees.Text");
 			this.tabPageSalaries.Text = this._resourceManager.GetString("tabPageSalaries.Text");
@@ -215,7 +222,7 @@ namespace Salary.NET
 			}
 
 			var salaryTypes = this._salaryData.GetSalaryTypes();
-			using(var addSalaryAccountForm = new AddSalaryAccountForm(salaryTypes, this._openedEmployee)) {
+			using (var addSalaryAccountForm = new AddSalaryAccountForm(salaryTypes, this._openedEmployee)) {
 				var dialogResult = addSalaryAccountForm.ShowDialog();
 				if (dialogResult == DialogResult.Cancel) {
 					return;
@@ -288,8 +295,8 @@ namespace Salary.NET
 			var graphPane = this.zedGraphControl1.GraphPane;
 			graphPane.CurveList.RemoveAll(cl => true);
 			graphPane.Title.Text = this._openedEmployee.GetInformalSalutation();
-			graphPane.XAxis.Title.Text = "Zeitraum";
-			graphPane.YAxis.Title.Text = "Gehalt";
+			graphPane.XAxis.Title.Text = this._localizations.GetString("PERIOD");
+			graphPane.YAxis.Title.Text = this._localizations.GetString("INCOME");
 			graphPane.XAxis.Type = AxisType.DateAsOrdinal;
 			graphPane.YAxis.Type = AxisType.Linear;
 			graphPane.Fill.Type = FillType.Solid;
@@ -366,7 +373,7 @@ namespace Salary.NET
 			var id = Convert.ToUInt32(item.SubItems[0].Text);
 			var salaryAccount = this._salaryData.GetSalaryAccount(id);
 			var salaryTypes = this._salaryData.GetSalaryTypes();
-			using(var addSalaryAccountForm = new AddSalaryAccountForm(salaryTypes, salaryAccount)) {
+			using (var addSalaryAccountForm = new AddSalaryAccountForm(salaryTypes, salaryAccount)) {
 				var dialogResult = addSalaryAccountForm.ShowDialog();
 				if(dialogResult == DialogResult.Cancel) {
 					return;
