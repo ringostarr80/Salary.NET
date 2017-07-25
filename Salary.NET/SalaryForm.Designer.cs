@@ -49,6 +49,9 @@
 			this.toolStripMenuItemLanguageGermany = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemLanguageEnglish = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemLanguageJapanese = new System.Windows.Forms.ToolStripMenuItem();
+			this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aufUpdatesUberprufenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.uberSalaryNETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveFileDialogNewDb = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.tabControlMain = new System.Windows.Forms.TabControl();
@@ -92,7 +95,8 @@
 			this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile,
             this.toolStripMenuItemEdit,
-            this.toolStripMenuItemOptions});
+            this.toolStripMenuItemOptions,
+            this.hilfeToolStripMenuItem});
 			resources.ApplyResources(this.menuStripMain, "menuStripMain");
 			this.menuStripMain.Name = "menuStripMain";
 			// 
@@ -229,6 +233,26 @@
 			this.toolStripMenuItemLanguageJapanese.Name = "toolStripMenuItemLanguageJapanese";
 			this.toolStripMenuItemLanguageJapanese.Tag = "ja";
 			this.toolStripMenuItemLanguageJapanese.Click += new System.EventHandler(this.ToolStripMenuItemLanguageSelect_Click);
+			// 
+			// hilfeToolStripMenuItem
+			// 
+			this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aufUpdatesUberprufenToolStripMenuItem,
+            this.uberSalaryNETToolStripMenuItem});
+			this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
+			resources.ApplyResources(this.hilfeToolStripMenuItem, "hilfeToolStripMenuItem");
+			// 
+			// aufUpdatesUberprufenToolStripMenuItem
+			// 
+			this.aufUpdatesUberprufenToolStripMenuItem.Name = "aufUpdatesUberprufenToolStripMenuItem";
+			resources.ApplyResources(this.aufUpdatesUberprufenToolStripMenuItem, "aufUpdatesUberprufenToolStripMenuItem");
+			this.aufUpdatesUberprufenToolStripMenuItem.Click += new System.EventHandler(this.AufUpdatesUberprufenToolStripMenuItem_Click);
+			// 
+			// uberSalaryNETToolStripMenuItem
+			// 
+			this.uberSalaryNETToolStripMenuItem.Name = "uberSalaryNETToolStripMenuItem";
+			resources.ApplyResources(this.uberSalaryNETToolStripMenuItem, "uberSalaryNETToolStripMenuItem");
+			this.uberSalaryNETToolStripMenuItem.Click += new System.EventHandler(this.UberSalaryNETToolStripMenuItem_Click);
 			// 
 			// saveFileDialogNewDb
 			// 
@@ -522,6 +546,9 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemChangeSalaryTypes;
 		private System.Windows.Forms.TabPage tabPageGraph;
 		private ZedGraph.ZedGraphControl zedGraphControl1;
+		private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem uberSalaryNETToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aufUpdatesUberprufenToolStripMenuItem;
 	}
 }
 

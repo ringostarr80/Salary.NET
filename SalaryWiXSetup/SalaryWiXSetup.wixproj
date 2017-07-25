@@ -64,4 +64,10 @@
 	<Target Name="AfterBuild">
 	</Target>
 	-->
+  <Target Name="SignCabs">
+    <Exec Command="Signtool.exe sign /a &quot;%(SignCabs.FullPath)&quot;" />
+  </Target>
+  <Target Name="SignMsi">
+    <Exec Command="signtool.exe sign /a &quot;%(SignMsi.FullPath)&quot;" />
+  </Target>
 </Project>

@@ -479,5 +479,19 @@ namespace Salary.NET
 				this._salaryData.InsertSalaryTypes(addSalaryTypeForm.SalaryTypes);
 			}
 		}
+
+		private void UberSalaryNETToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			using (var aboutForm = new AboutForm()) {
+				aboutForm.ShowDialog();
+			}
+		}
+
+		private void AufUpdatesUberprufenToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			using (var updateForm = new CheckForUpdateForm()) {
+				updateForm.ShowDialog();
+			}
+		}
 	}
 }
