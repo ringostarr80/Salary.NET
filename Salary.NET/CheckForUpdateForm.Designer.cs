@@ -34,6 +34,9 @@
 			this.labelInstalledVersionValue = new System.Windows.Forms.Label();
 			this.labelLatestVersion = new System.Windows.Forms.Label();
 			this.labelLatestVersionValue = new System.Windows.Forms.Label();
+			this.buttonInstallUpdate = new System.Windows.Forms.Button();
+			this.labelUpdateStatus = new System.Windows.Forms.Label();
+			this.labelUpdateStatusValue = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// buttonClose
@@ -63,10 +66,30 @@
 			resources.ApplyResources(this.labelLatestVersionValue, "labelLatestVersionValue");
 			this.labelLatestVersionValue.Name = "labelLatestVersionValue";
 			// 
+			// buttonInstallUpdate
+			// 
+			resources.ApplyResources(this.buttonInstallUpdate, "buttonInstallUpdate");
+			this.buttonInstallUpdate.Name = "buttonInstallUpdate";
+			this.buttonInstallUpdate.UseVisualStyleBackColor = true;
+			this.buttonInstallUpdate.Click += new System.EventHandler(this.ButtonInstallUpdate_Click);
+			// 
+			// labelUpdateStatus
+			// 
+			resources.ApplyResources(this.labelUpdateStatus, "labelUpdateStatus");
+			this.labelUpdateStatus.Name = "labelUpdateStatus";
+			// 
+			// labelUpdateStatusValue
+			// 
+			resources.ApplyResources(this.labelUpdateStatusValue, "labelUpdateStatusValue");
+			this.labelUpdateStatusValue.Name = "labelUpdateStatusValue";
+			// 
 			// CheckForUpdateForm
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.labelUpdateStatusValue);
+			this.Controls.Add(this.labelUpdateStatus);
+			this.Controls.Add(this.buttonInstallUpdate);
 			this.Controls.Add(this.labelLatestVersionValue);
 			this.Controls.Add(this.labelLatestVersion);
 			this.Controls.Add(this.labelInstalledVersionValue);
@@ -92,5 +115,8 @@
 		private System.Windows.Forms.Label labelInstalledVersionValue;
 		private System.Windows.Forms.Label labelLatestVersion;
 		private System.Windows.Forms.Label labelLatestVersionValue;
+		private System.Windows.Forms.Button buttonInstallUpdate;
+		private System.Windows.Forms.Label labelUpdateStatus;
+		private System.Windows.Forms.Label labelUpdateStatusValue;
 	}
 }

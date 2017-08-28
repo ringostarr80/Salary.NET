@@ -5,12 +5,17 @@ using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
+using System.IO;
+using System.IO.Compression;
 
 namespace Salary.NET
 {
 	public partial class CheckForUpdateForm : Form
 	{
 		private SalaryVersionInfo _latestSalaryVersion = null;
+		private string _updateExecutable = string.Empty;
+
+		public string UpdateExecutable { get { return this._updateExecutable; } }
 
 		public CheckForUpdateForm()
 		{
@@ -69,8 +74,51 @@ namespace Salary.NET
 					this._latestSalaryVersion = orderedVersions.First();
 					
 					this.labelLatestVersionValue.Text = this._latestSalaryVersion.Version.ToString();
+
+					if (this._latestSalaryVersion.Version > Assembly.GetEntryAssembly().GetName().Version) {
+						this.buttonInstallUpdate.Enabled = true;
+					}
 				};
 				webClient.DownloadStringAsync(new Uri("https://salary.ringoleese.de/api/salary.net/"));
+			}
+		}
+
+		private void ButtonInstallUpdate_Click(object sender, EventArgs e)
+		{
+			this.labelUpdateStatusValue.Text = "downloading...";
+			var downloadPath = Path.GetTempPath();
+			using(var webClient = new WebClient()) {
+				var uri = new Uri(this._latestSalaryVersion.Url);
+				var downloadFilename = downloadPath + uri.Segments[uri.Segments.Length - 1];
+
+				webClient.DownloadProgressChanged += (senderW, eW) => {
+					this.labelUpdateStatusValue.Text = "downloading... (" + eW.ProgressPercentage + "%)";
+				};
+				webClient.DownloadFileCompleted += (senderW, eW) => {
+					var archive = ZipFile.OpenRead(downloadFilename);
+					var totalFiles = archive.Entries.Count;
+					var extractingFile = 0;
+					string foundExecutable = null;
+					this.labelUpdateStatusValue.Text = "extracting...";
+					foreach(var entry in archive.Entries) {
+						extractingFile++;
+						this.labelUpdateStatusValue.Text = "extracting... (file " + extractingFile + "/" + totalFiles + ")";
+						entry.ExtractToFile(downloadPath + entry.Name, true);
+						if (entry.Name.EndsWith(".msi")) {
+							foundExecutable = entry.Name;
+						}
+					}
+					this.labelUpdateStatusValue.Text = "extracting... ready.";
+					if (foundExecutable == null) {
+						this.labelUpdateStatusValue.Text = "extracting... no executable found.";
+						return;
+					}
+
+					this._updateExecutable = downloadPath + foundExecutable;
+					this.Close();
+				};
+
+				webClient.DownloadFileAsync(uri, downloadFilename);
 			}
 		}
 	}

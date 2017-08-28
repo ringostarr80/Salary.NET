@@ -128,13 +128,10 @@
   <data name="&gt;&gt;labelNameValue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="labelProcessorArchitecture.Text" xml:space="preserve">
-    <value>Prozessor Architektur:</value>
+  <data name="linkLabelLicenseValue.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;labelProcessorArchitectureValue.Name" xml:space="preserve">
-    <value>labelProcessorArchitectureValue</value>
-  </data>
-  <data name="labelWebsite.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelProcessorArchitecture.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;linkLabelWebsite.Parent" xml:space="preserve">
@@ -149,8 +146,8 @@
   <data name="&gt;&gt;labelProcessorArchitecture.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelDeveloperValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelReleaseDateValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 49</value>
   </data>
   <data name="&gt;&gt;labelProcessorArchitectureValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -167,11 +164,14 @@
   <data name="&gt;&gt;labelProcessorArchitecture.Name" xml:space="preserve">
     <value>labelProcessorArchitecture</value>
   </data>
-  <data name="&gt;&gt;labelName.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;labelVersion.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;labelLicense.Name" xml:space="preserve">
     <value>labelLicense</value>
+  </data>
+  <data name="labelReleaseDateValue.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutForm</value>
@@ -182,26 +182,29 @@
   <data name="&gt;&gt;labelVersion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelReleaseDateValue.Text" xml:space="preserve">
-    <value>17.07.2017</value>
+  <data name="&gt;&gt;linkLabelLicenseValue.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 168</value>
   </data>
+  <data name="labelWebsite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="labelLicense.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 109</value>
   </data>
-  <data name="&gt;&gt;labelName.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;linkLabelWebsite.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="labelProcessorArchitecture.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 129</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>384, 206</value>
+  </data>
   <data name="labelNameValue.Text" xml:space="preserve">
     <value>-</value>
-  </data>
-  <data name="labelDeveloper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
   </data>
   <data name="labelReleaseDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 49</value>
@@ -209,14 +212,11 @@
   <data name="labelProcessorArchitectureValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>139, 129</value>
   </data>
-  <data name="&gt;&gt;linkLabelLicenseValue.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;labelNameValue.Name" xml:space="preserve">
+    <value>labelNameValue</value>
   </data>
   <data name="labelProcessorArchitecture.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelNameValue.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
     <value>buttonClose</value>
@@ -230,12 +230,18 @@
   <data name="labelDeveloperValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>139, 89</value>
   </data>
+  <data name="labelWebsite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 69</value>
+  </data>
   <data name="&gt;&gt;labelWebsite.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;labelName.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -246,8 +252,8 @@
   <data name="&gt;&gt;labelLicense.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelReleaseDate.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;labelDeveloper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelName.Name" xml:space="preserve">
     <value>labelName</value>
@@ -258,8 +264,8 @@
   <data name="labelVersionValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>139, 29</value>
   </data>
-  <data name="labelWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+  <data name="&gt;&gt;labelReleaseDate.Name" xml:space="preserve">
+    <value>labelReleaseDate</value>
   </data>
   <data name="labelName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -267,8 +273,8 @@
   <data name="labelDeveloperValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 69</value>
+  <data name="labelDeveloper.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;labelProcessorArchitectureValue.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -276,14 +282,17 @@
   <data name="&gt;&gt;linkLabelWebsite.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="labelWebsite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
   <data name="&gt;&gt;labelVersion.Name" xml:space="preserve">
     <value>labelVersion</value>
   </data>
-  <data name="&gt;&gt;labelWebsite.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;labelDeveloperValue.Name" xml:space="preserve">
+    <value>labelDeveloperValue</value>
   </data>
-  <data name="&gt;&gt;labelDeveloper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;labelProcessorArchitectureValue.Name" xml:space="preserve">
+    <value>labelProcessorArchitectureValue</value>
   </data>
   <data name="&gt;&gt;labelVersionValue.Name" xml:space="preserve">
     <value>labelVersionValue</value>
@@ -297,23 +306,20 @@
   <data name="labelVersion.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="linkLabelWebsite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 69</value>
+  </data>
   <data name="labelName.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;labelProcessorArchitecture.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="linkLabelWebsite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 13</value>
   </data>
   <data name="&gt;&gt;labelDeveloperValue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>Name:</value>
-  </data>
   <data name="labelDeveloper.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
-  </data>
-  <data name="&gt;&gt;labelVersion.ZOrder" xml:space="preserve">
-    <value>13</value>
   </data>
   <data name="linkLabelWebsite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -348,8 +354,8 @@
   <data name="labelReleaseDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 13</value>
   </data>
-  <data name="&gt;&gt;labelReleaseDate.Name" xml:space="preserve">
-    <value>labelReleaseDate</value>
+  <data name="labelProcessorArchitecture.Text" xml:space="preserve">
+    <value>Prozessor Architektur:</value>
   </data>
   <data name="linkLabelLicenseValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -357,23 +363,20 @@
   <data name="labelVersionValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>10, 13</value>
   </data>
-  <data name="labelReleaseDateValue.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;labelName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="linkLabelLicenseValue.Text" xml:space="preserve">
     <value>https://opensource.org/licenses/MIT</value>
   </data>
-  <data name="labelReleaseDateValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 49</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;linkLabelLicenseValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labelName.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
-  <data name="labelProcessorArchitecture.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="labelName.Text" xml:space="preserve">
+    <value>Name:</value>
   </data>
   <data name="&gt;&gt;labelReleaseDateValue.Parent" xml:space="preserve">
     <value>$this</value>
@@ -393,13 +396,10 @@
   <data name="linkLabelLicenseValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 13</value>
   </data>
-  <data name="labelReleaseDateValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="labelReleaseDateValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
   </data>
   <data name="labelProcessorArchitectureValue.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="labelVersionValue.Text" xml:space="preserve">
     <value>-</value>
   </data>
   <data name="labelProcessorArchitectureValue.Size" type="System.Drawing.Size, System.Drawing">
@@ -411,20 +411,20 @@
   <data name="&gt;&gt;labelDeveloper.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;labelNameValue.Name" xml:space="preserve">
-    <value>labelNameValue</value>
-  </data>
   <data name="labelProcessorArchitectureValue.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="labelDeveloperValue.Text" xml:space="preserve">
     <value>Ringo Leese &lt;webmaster@ringoleese.de&gt;</value>
   </data>
-  <data name="&gt;&gt;linkLabelWebsite.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="labelDeveloper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
   </data>
   <data name="labelWebsite.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
+  </data>
+  <data name="&gt;&gt;labelWebsite.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="labelLicense.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -432,8 +432,17 @@
   <data name="labelLicense.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;labelReleaseDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelReleaseDate.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
   <data name="&gt;&gt;labelReleaseDate.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 29</value>
@@ -444,23 +453,20 @@
   <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;linkLabelLicenseValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="labelDeveloper.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 89</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;labelDeveloperValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelReleaseDateValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+  <data name="&gt;&gt;labelDeveloperValue.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;labelVersionValue.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="linkLabelLicenseValue.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="labelVersionValue.Text" xml:space="preserve">
+    <value>-</value>
   </data>
   <data name="labelDeveloper.Text" xml:space="preserve">
     <value>Entwickler:</value>
@@ -474,17 +480,17 @@
   <data name="labelName.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 9</value>
   </data>
+  <data name="labelReleaseDate.Text" xml:space="preserve">
+    <value>Veröffentlichungsdatum:</value>
+  </data>
   <data name="&gt;&gt;labelLicense.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;labelName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="linkLabelWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 13</value>
-  </data>
-  <data name="labelReleaseDate.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="labelReleaseDate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;labelLicense.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -498,23 +504,17 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Über Salary.NET</value>
   </data>
-  <data name="labelReleaseDate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelDeveloper.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;labelVersionValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="linkLabelWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 69</value>
+  <data name="&gt;&gt;labelName.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelDeveloperValue.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="labelReleaseDateValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 206</value>
+  <data name="labelReleaseDateValue.Text" xml:space="preserve">
+    <value>28.08.2017</value>
   </data>
   <data name="&gt;&gt;labelProcessorArchitecture.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -522,11 +522,11 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelDeveloperValue.Name" xml:space="preserve">
-    <value>labelDeveloperValue</value>
+  <data name="&gt;&gt;labelProcessorArchitecture.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="labelReleaseDate.Text" xml:space="preserve">
-    <value>Veröffentlichungsdatum:</value>
+  <data name="&gt;&gt;labelNameValue.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="labelNameValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>10, 13</value>

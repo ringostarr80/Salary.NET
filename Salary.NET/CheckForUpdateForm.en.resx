@@ -117,34 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CONFIRM_EMPLOYEE_DELETION" xml:space="preserve">
-    <value>Willst du wirklich den Mitarbeiter "%s" löschen?</value>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Close</value>
   </data>
-  <data name="CONFIRM_SALARY_ACCOUNTING_DELETION" xml:space="preserve">
-    <value>Willst du wirklich die Gehaltsabrechnung mit der Id "%s" löschen?</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelInstalledVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
   </data>
-  <data name="EDIT_SALARY_TYPES" xml:space="preserve">
-    <value>Lohnarten bearbeiten</value>
+  <data name="labelInstalledVersion.Text" xml:space="preserve">
+    <value>Installed Version:</value>
   </data>
-  <data name="ERROR" xml:space="preserve">
-    <value>Fehler</value>
+  <data name="labelLatestVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
   </data>
-  <data name="INCOME" xml:space="preserve">
-    <value>Gehalt</value>
+  <data name="labelLatestVersion.Text" xml:space="preserve">
+    <value>Newest Version:</value>
   </data>
-  <data name="PERIOD" xml:space="preserve">
-    <value>Zeitraum</value>
-  </data>
-  <data name="WARNING" xml:space="preserve">
-    <value>Warnung</value>
-  </data>
-  <data name="XML_FILE_ALREADY_EXISTS" xml:space="preserve">
-    <value>Die XML-Datei "%s" existiert bereits.</value>
-  </data>
-  <data name="XML_FILE_DOESNT_EXISTS" xml:space="preserve">
-    <value>Die XML-Datei "%s" existiert nicht.</value>
-  </data>
-  <data name="XML_FILE_FILTER" xml:space="preserve">
-    <value>XML-Dateien|*.xml|Alle Dateien|*.*</value>
+  <data name="buttonInstallUpdate.Text" xml:space="preserve">
+    <value>Install Update</value>
   </data>
 </root>

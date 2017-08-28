@@ -117,34 +117,152 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;labelInstalledVersionValue.Name" xml:space="preserve">
+    <value>labelInstalledVersionValue</value>
+  </data>
+  <data name="&gt;&gt;labelLatestVersion.Name" xml:space="preserve">
+    <value>labelLatestVersion</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 226</value>
+  <data name="labelLatestVersionValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatusValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelLatestVersion.Text" xml:space="preserve">
+    <value>Aktuelle Version:</value>
   </data>
   <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Schließen</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CheckForUpdateForm</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelLatestVersionValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonInstallUpdate.Name" xml:space="preserve">
+    <value>buttonInstallUpdate</value>
+  </data>
+  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 226</value>
+  </data>
+  <data name="labelLatestVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="&gt;&gt;labelLatestVersionValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelLatestVersionValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonInstallUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 24</value>
+  </data>
+  <data name="labelLatestVersionValue.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;buttonInstallUpdate.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
     <value>buttonClose</value>
   </data>
+  <data name="&gt;&gt;labelInstalledVersionValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelInstalledVersion.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labelLatestVersion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelLatestVersion.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
+  <data name="buttonInstallUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 23</value>
+  </data>
+  <data name="labelUpdateStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 49</value>
+  </data>
+  <data name="labelLatestVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="labelInstalledVersionValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatusValue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="buttonInstallUpdate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="labelInstalledVersionValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="labelInstalledVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="labelUpdateStatusValue.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;labelInstalledVersionValue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelLatestVersionValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 29</value>
+  </data>
+  <data name="&gt;&gt;labelInstalledVersionValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInstalledVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInstalledVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="labelLatestVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 29</value>
+  </data>
+  <data name="labelInstalledVersionValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelUpdateStatusValue.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatus.Name" xml:space="preserve">
+    <value>labelUpdateStatus</value>
+  </data>
+  <data name="labelUpdateStatus.Text" xml:space="preserve">
+    <value>Update-Status:</value>
+  </data>
+  <data name="labelUpdateStatusValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 49</value>
   </data>
   <data name="labelInstalledVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 9</value>
@@ -152,125 +270,88 @@
   <data name="labelInstalledVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 13</value>
   </data>
-  <data name="labelInstalledVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="labelInstalledVersion.Text" xml:space="preserve">
-    <value>Installierte Version:</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersion.Name" xml:space="preserve">
-    <value>labelInstalledVersion</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersion.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersion.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelInstalledVersionValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelInstalledVersionValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 9</value>
-  </data>
-  <data name="labelInstalledVersionValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 13</value>
-  </data>
-  <data name="labelInstalledVersionValue.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="labelInstalledVersionValue.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersionValue.Name" xml:space="preserve">
-    <value>labelInstalledVersionValue</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersionValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersionValue.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelInstalledVersionValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="labelLatestVersion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelLatestVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 29</value>
-  </data>
-  <data name="labelLatestVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
-  </data>
-  <data name="labelLatestVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="labelLatestVersion.Text" xml:space="preserve">
-    <value>Aktuelle Version:</value>
-  </data>
-  <data name="&gt;&gt;labelLatestVersion.Name" xml:space="preserve">
-    <value>labelLatestVersion</value>
-  </data>
-  <data name="&gt;&gt;labelLatestVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelLatestVersion.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelLatestVersion.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="labelLatestVersionValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelLatestVersionValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 29</value>
-  </data>
-  <data name="labelLatestVersionValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 13</value>
-  </data>
-  <data name="labelLatestVersionValue.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="labelLatestVersionValue.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;labelLatestVersionValue.Name" xml:space="preserve">
-    <value>labelLatestVersionValue</value>
-  </data>
-  <data name="&gt;&gt;labelLatestVersionValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelLatestVersionValue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelLatestVersionValue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelLatestVersionValue.Name" xml:space="preserve">
+    <value>labelLatestVersionValue</value>
+  </data>
+  <data name="&gt;&gt;labelInstalledVersion.Name" xml:space="preserve">
+    <value>labelInstalledVersion</value>
+  </data>
+  <data name="&gt;&gt;labelLatestVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInstalledVersionValue.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="labelLatestVersionValue.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;buttonInstallUpdate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatusValue.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="buttonInstallUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 261</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="&gt;&gt;buttonInstallUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Update</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>CheckForUpdateForm</value>
+  <data name="labelInstalledVersion.Text" xml:space="preserve">
+    <value>Installierte Version:</value>
+  </data>
+  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelUpdateStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="labelUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="&gt;&gt;labelInstalledVersion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelUpdateStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelUpdateStatusValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateStatusValue.Name" xml:space="preserve">
+    <value>labelUpdateStatusValue</value>
+  </data>
+  <data name="labelLatestVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>484, 261</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="buttonInstallUpdate.Text" xml:space="preserve">
+    <value>Update installieren</value>
+  </data>
+  <data name="labelInstalledVersionValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 9</value>
+  </data>
+  <data name="labelUpdateStatusValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Resources;
 using System.Windows.Forms;
 
 using SalaryLibrary;
-using System.Collections.Generic;
 
 namespace Salary.NET
 {
@@ -10,6 +10,7 @@ namespace Salary.NET
 	{
 		private SalaryType _salaryType = null;
 		private SalaryTypeCollection _salaryTypes = null;
+		private ResourceManager _localizations = new ResourceManager("Salary.NET.Strings", typeof(SalaryForm).Assembly);
 
 		public SalaryType SalaryType { get { return this._salaryType; } }
 		public SalaryTypeCollection SalaryTypes { get { return this._salaryTypes; } }
@@ -28,7 +29,7 @@ namespace Salary.NET
 
 			InitializeComponent();
 
-			this.Text = "Lohnart bearbeiten";
+			this.Text = this._localizations.GetString("EDIT_SALARY_TYPES");
 			this.labelSalaryTypes.Visible = true;
 			this.comboBoxSalaryTypes.Visible = true;
 			this.buttonAdd.Visible = false;

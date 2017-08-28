@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSalaryTypeForm));
 			this.numericUpDownNumber = new System.Windows.Forms.NumericUpDown();
 			this.labelNumber = new System.Windows.Forms.Label();
 			this.labelName = new System.Windows.Forms.Label();
@@ -45,128 +46,88 @@
 			// 
 			// numericUpDownNumber
 			// 
-			this.numericUpDownNumber.Location = new System.Drawing.Point(218, 39);
+			resources.ApplyResources(this.numericUpDownNumber, "numericUpDownNumber");
 			this.numericUpDownNumber.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
 			this.numericUpDownNumber.Name = "numericUpDownNumber";
-			this.numericUpDownNumber.Size = new System.Drawing.Size(274, 20);
-			this.numericUpDownNumber.TabIndex = 0;
 			this.numericUpDownNumber.ValueChanged += new System.EventHandler(this.NumericUpDownNumber_ValueChanged);
 			// 
 			// labelNumber
 			// 
-			this.labelNumber.AutoSize = true;
-			this.labelNumber.Location = new System.Drawing.Point(12, 41);
+			resources.ApplyResources(this.labelNumber, "labelNumber");
 			this.labelNumber.Name = "labelNumber";
-			this.labelNumber.Size = new System.Drawing.Size(49, 13);
-			this.labelNumber.TabIndex = 1;
-			this.labelNumber.Text = "Nummer:";
 			// 
 			// labelName
 			// 
-			this.labelName.AutoSize = true;
-			this.labelName.Location = new System.Drawing.Point(12, 68);
+			resources.ApplyResources(this.labelName, "labelName");
 			this.labelName.Name = "labelName";
-			this.labelName.Size = new System.Drawing.Size(72, 13);
-			this.labelName.TabIndex = 2;
-			this.labelName.Text = "Bezeichnung:";
 			// 
 			// textBoxName
 			// 
-			this.textBoxName.Location = new System.Drawing.Point(218, 65);
+			resources.ApplyResources(this.textBoxName, "textBoxName");
 			this.textBoxName.Name = "textBoxName";
-			this.textBoxName.Size = new System.Drawing.Size(274, 20);
-			this.textBoxName.TabIndex = 3;
 			this.textBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
 			// 
 			// labelDiscountOnNetWage
 			// 
-			this.labelDiscountOnNetWage.AutoSize = true;
-			this.labelDiscountOnNetWage.Location = new System.Drawing.Point(12, 95);
+			resources.ApplyResources(this.labelDiscountOnNetWage, "labelDiscountOnNetWage");
 			this.labelDiscountOnNetWage.Name = "labelDiscountOnNetWage";
-			this.labelDiscountOnNetWage.Size = new System.Drawing.Size(169, 13);
-			this.labelDiscountOnNetWage.TabIndex = 4;
-			this.labelDiscountOnNetWage.Text = "vom Nettobetrag wieder abziehen:";
 			// 
 			// checkBoxDiscountOnNetWage
 			// 
-			this.checkBoxDiscountOnNetWage.AutoSize = true;
-			this.checkBoxDiscountOnNetWage.Location = new System.Drawing.Point(357, 94);
+			resources.ApplyResources(this.checkBoxDiscountOnNetWage, "checkBoxDiscountOnNetWage");
 			this.checkBoxDiscountOnNetWage.Name = "checkBoxDiscountOnNetWage";
-			this.checkBoxDiscountOnNetWage.Size = new System.Drawing.Size(15, 14);
-			this.checkBoxDiscountOnNetWage.TabIndex = 5;
 			this.checkBoxDiscountOnNetWage.UseVisualStyleBackColor = true;
 			this.checkBoxDiscountOnNetWage.CheckedChanged += new System.EventHandler(this.CheckBoxDiscountOnNetWage_CheckedChanged);
 			// 
 			// buttonAdd
 			// 
-			this.buttonAdd.Location = new System.Drawing.Point(106, 126);
+			resources.ApplyResources(this.buttonAdd, "buttonAdd");
 			this.buttonAdd.Name = "buttonAdd";
-			this.buttonAdd.Size = new System.Drawing.Size(85, 23);
-			this.buttonAdd.TabIndex = 6;
-			this.buttonAdd.Text = "Hinzufügen";
 			this.buttonAdd.UseVisualStyleBackColor = true;
 			this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
 			// 
 			// buttonCancel
 			// 
-			this.buttonCancel.Location = new System.Drawing.Point(297, 126);
+			resources.ApplyResources(this.buttonCancel, "buttonCancel");
 			this.buttonCancel.Name = "buttonCancel";
-			this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-			this.buttonCancel.TabIndex = 7;
-			this.buttonCancel.Text = "Abbrechen";
 			this.buttonCancel.UseVisualStyleBackColor = true;
 			this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
 			// buttonEdit
 			// 
-			this.buttonEdit.Location = new System.Drawing.Point(106, 126);
+			resources.ApplyResources(this.buttonEdit, "buttonEdit");
 			this.buttonEdit.Name = "buttonEdit";
-			this.buttonEdit.Size = new System.Drawing.Size(85, 23);
-			this.buttonEdit.TabIndex = 8;
-			this.buttonEdit.Text = "Übernehmen";
 			this.buttonEdit.UseVisualStyleBackColor = true;
 			this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
 			// 
 			// comboBoxSalaryTypes
 			// 
+			resources.ApplyResources(this.comboBoxSalaryTypes, "comboBoxSalaryTypes");
 			this.comboBoxSalaryTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxSalaryTypes.FormattingEnabled = true;
-			this.comboBoxSalaryTypes.Location = new System.Drawing.Point(218, 11);
 			this.comboBoxSalaryTypes.Name = "comboBoxSalaryTypes";
-			this.comboBoxSalaryTypes.Size = new System.Drawing.Size(193, 21);
-			this.comboBoxSalaryTypes.TabIndex = 9;
-			this.comboBoxSalaryTypes.Visible = false;
 			this.comboBoxSalaryTypes.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSalaryTypes_SelectedIndexChanged);
 			// 
 			// labelSalaryTypes
 			// 
-			this.labelSalaryTypes.AutoSize = true;
-			this.labelSalaryTypes.Location = new System.Drawing.Point(12, 15);
+			resources.ApplyResources(this.labelSalaryTypes, "labelSalaryTypes");
 			this.labelSalaryTypes.Name = "labelSalaryTypes";
-			this.labelSalaryTypes.Size = new System.Drawing.Size(58, 13);
-			this.labelSalaryTypes.TabIndex = 10;
-			this.labelSalaryTypes.Text = "Lohnarten:";
-			this.labelSalaryTypes.Visible = false;
 			// 
 			// buttonDelete
 			// 
-			this.buttonDelete.Location = new System.Drawing.Point(417, 10);
+			resources.ApplyResources(this.buttonDelete, "buttonDelete");
 			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-			this.buttonDelete.TabIndex = 11;
-			this.buttonDelete.Text = "Löschen";
 			this.buttonDelete.UseVisualStyleBackColor = true;
 			this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
 			// 
 			// AddSalaryTypeForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(504, 157);
 			this.Controls.Add(this.buttonDelete);
 			this.Controls.Add(this.labelSalaryTypes);
 			this.Controls.Add(this.comboBoxSalaryTypes);
@@ -180,8 +141,6 @@
 			this.Controls.Add(this.labelNumber);
 			this.Controls.Add(this.numericUpDownNumber);
 			this.Name = "AddSalaryTypeForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Lohnart hinzufügen";
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumber)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

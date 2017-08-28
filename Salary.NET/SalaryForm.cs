@@ -9,6 +9,7 @@ using SalaryLibrary.SalaryDataProviders;
 using System.Drawing;
 using ZedGraph;
 using System.Linq;
+using System.Diagnostics;
 
 namespace Salary.NET
 {
@@ -22,6 +23,7 @@ namespace Salary.NET
 		private object _clipboardSalaryId = null;
 		private BarItem _netBarItem = null;
 		private BarItem _grossBarItem = null;
+		private string _updateExecutable = string.Empty;
 
 		public SalaryForm()
 		{
@@ -137,7 +139,6 @@ namespace Salary.NET
 					break;
 			}
 
-			Console.WriteLine("languageCode:" + languageCode);
 			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(languageCode);
 
 			this.toolStripMenuItemFile.Text = this._resourceManager.GetString("toolStripMenuItemFile.Text");
@@ -153,9 +154,15 @@ namespace Salary.NET
 			this.toolStripMenuItemEditAddEmployee.Text = this._resourceManager.GetString("toolStripMenuItemEditAddEmployee.Text");
 			this.toolStripMenuItemEditAddSalaryAccount.Text = this._resourceManager.GetString("toolStripMenuItemEditAddSalaryAccount.Text");
 			this.toolStripMenuItemShowSalaryAccounts.Text = this._resourceManager.GetString("toolStripMenuItemShowSalaryAccounts.Text");
+			this.toolStripMenuItemAddSalaryTypes.Text = this._resourceManager.GetString("toolStripMenuItemAddSalaryTypes.Text");
+			this.toolStripMenuItemChangeSalaryTypes.Text = this._resourceManager.GetString("toolStripMenuItemChangeSalaryTypes.Text");
 
 			this.toolStripMenuItemOptions.Text = this._resourceManager.GetString("toolStripMenuItemOptions.Text");
 			this.toolStripMenuItemLanguage.Text = this._resourceManager.GetString("toolStripMenuItemLanguage.Text");
+
+			this.toolStripMenuItemHelp.Text = this._resourceManager.GetString("toolStripMenuItemHelp.Text");
+			this.toolStripMenuItemCheckForUpdates.Text = this._resourceManager.GetString("toolStripMenuItemCheckForUpdates.Text");
+			this.toolStripMenuItemAboutSalaryNET.Text = this._resourceManager.GetString("toolStripMenuItemAboutSalaryNET.Text");
 
 			this.olvColumnHeaderPersonnelNumber.Text = this._resourceManager.GetString("olvColumnHeaderPersonnelNumber.Text");
 			this.olvColumnHeaderFirstName.Text = this._resourceManager.GetString("olvColumnHeaderFirstName.Text");
@@ -211,7 +218,7 @@ namespace Salary.NET
 
 			var salaryTypes = this._salaryData.GetSalaryTypes();
 			if (salaryTypes.HasConflictingElements) {
-				MessageBox.Show("Es gibt Lohnarten, die miteinander in Konflikt stehen.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Es gibt Lohnarten, die miteinander in Konflikt stehen.", this._localizations.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -491,6 +498,18 @@ namespace Salary.NET
 		{
 			using (var updateForm = new CheckForUpdateForm()) {
 				updateForm.ShowDialog();
+				if (updateForm.UpdateExecutable != string.Empty) {
+					this._updateExecutable = updateForm.UpdateExecutable;
+					this.Close();
+				}
+			}
+		}
+
+		private void SalaryForm_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			if (this._updateExecutable != string.Empty) {
+				var psi = new ProcessStartInfo("msiexec", "/i \"" + this._updateExecutable + "\" REINSTALL=ALL REINSTALLMODE=vomus");
+				Process.Start(psi);
 			}
 		}
 	}

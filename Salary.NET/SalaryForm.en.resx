@@ -118,11 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripMenuItemXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 21</value>
   </data>
-  <data name="toolStripMenuItemXMLFile.Text" xml:space="preserve">
-    <value>&amp;XML-File</value>
+  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 21</value>
+  </data>
+  <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 21</value>
+  </data>
+  <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
+    <value>&amp;Options</value>
+  </data>
+  <data name="toolStripMenuItemHelp.Text" xml:space="preserve">
+    <value>&amp;Help</value>
   </data>
   <data name="toolStripMenuItemNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
@@ -130,10 +145,10 @@
   <data name="toolStripMenuItemNew.Text" xml:space="preserve">
     <value>&amp;New</value>
   </data>
-  <data name="toolStripMenuItemOpenXMLFile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItemXMLFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 22</value>
   </data>
-  <data name="toolStripMenuItemOpenXMLFile.Text" xml:space="preserve">
+  <data name="toolStripMenuItemXMLFile.Text" xml:space="preserve">
     <value>&amp;XML-File</value>
   </data>
   <data name="toolStripMenuItemOpen.Size" type="System.Drawing.Size, System.Drawing">
@@ -141,6 +156,12 @@
   </data>
   <data name="toolStripMenuItemOpen.Text" xml:space="preserve">
     <value>&amp;Open</value>
+  </data>
+  <data name="toolStripMenuItemOpenXMLFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="toolStripMenuItemOpenXMLFile.Text" xml:space="preserve">
+    <value>&amp;XML-File</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 6</value>
@@ -151,11 +172,8 @@
   <data name="toolStripMenuItemClose.Text" xml:space="preserve">
     <value>&amp;Close</value>
   </data>
-  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 21</value>
-  </data>
-  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
-    <value>&amp;File</value>
+  <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
+    <value>&amp;Add</value>
   </data>
   <data name="toolStripMenuItemEditAddEmployee.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 22</value>
@@ -173,52 +191,34 @@
     <value>159, 22</value>
   </data>
   <data name="toolStripMenuItemAddSalaryTypes.Text" xml:space="preserve">
-    <value>&amp;Income types</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
-    <value>&amp;Add</value>
-  </data>
-  <data name="toolStripMenuItemChangeSalaryTypes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="toolStripMenuItemChangeSalaryTypes.Text" xml:space="preserve">
-    <value>&amp;Income types</value>
-  </data>
-  <data name="toolStripMenuItemEditChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
+    <value>&amp;Salary types</value>
   </data>
   <data name="toolStripMenuItemEditChange.Text" xml:space="preserve">
     <value>&amp;Edit</value>
   </data>
-  <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 21</value>
-  </data>
-  <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
+  <data name="toolStripMenuItemChangeSalaryTypes.Text" xml:space="preserve">
+    <value>&amp;Salary types</value>
   </data>
   <data name="toolStripMenuItemLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemLanguage.Text" xml:space="preserve">
     <value>&amp;Language</value>
   </data>
-  <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 21</value>
+  <data name="toolStripMenuItemCheckForUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 22</value>
   </data>
-  <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
-    <value>&amp;Options</value>
+  <data name="toolStripMenuItemCheckForUpdates.Text" xml:space="preserve">
+    <value>Check for &amp;Updates...</value>
   </data>
-  <data name="uberSalaryNETToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
+  <data name="toolStripMenuItemAboutSalaryNET.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 22</value>
   </data>
-  <data name="uberSalaryNETToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;About Salary.NET</value>
+  <data name="toolStripMenuItemAboutSalaryNET.Text" xml:space="preserve">
+    <value>&amp;Info about Salary.NET...</value>
   </data>
-  <data name="hilfeToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
+  <data name="tabPageEmployees.Text" xml:space="preserve">
+    <value>Employees</value>
   </data>
   <data name="olvColumnHeaderPersonnelNumber.Text" xml:space="preserve">
     <value>Personnelnumber</value>
@@ -232,8 +232,8 @@
   <data name="olvColumnHeaderBirthday.Text" xml:space="preserve">
     <value>Birthday</value>
   </data>
-  <data name="tabPageEmployees.Text" xml:space="preserve">
-    <value>Employees</value>
+  <data name="tabPageSalaries.Text" xml:space="preserve">
+    <value>Salary Accounts</value>
   </data>
   <data name="olvColumnGross.Text" xml:space="preserve">
     <value>Gross</value>
@@ -244,8 +244,8 @@
   <data name="olvColumnPeriod.Text" xml:space="preserve">
     <value>Period</value>
   </data>
-  <data name="tabPageSalaries.Text" xml:space="preserve">
-    <value>Salary Accounts</value>
+  <data name="contextMenuStripEmployees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 70</value>
   </data>
   <data name="toolStripMenuItemShowSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
@@ -265,8 +265,8 @@
   <data name="toolStripMenuItemContextEmployeeDelete.Text" xml:space="preserve">
     <value>&amp;Delete</value>
   </data>
-  <data name="contextMenuStripEmployees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 70</value>
+  <data name="contextMenuStripSalaryAccountings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 92</value>
   </data>
   <data name="toolStripMenuItemSalaryAccountingsEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
@@ -285,9 +285,6 @@
   </data>
   <data name="toolStripMenuItemSalaryAccountingsDelete.Text" xml:space="preserve">
     <value>&amp;Delete</value>
-  </data>
-  <data name="contextMenuStripSalaryAccountings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 92</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
