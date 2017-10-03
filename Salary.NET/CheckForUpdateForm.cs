@@ -95,12 +95,23 @@ namespace Salary.NET
 					this.labelUpdateStatusValue.Text = "downloading... (" + eW.ProgressPercentage + "%)";
 				};
 				webClient.DownloadFileCompleted += (senderW, eW) => {
+					if (eW.Cancelled) {
+						return;
+					}
+					if (eW.Error != null) {
+						return;
+					}
+					
 					var archive = ZipFile.OpenRead(downloadFilename);
 					var totalFiles = archive.Entries.Count;
 					var extractingFile = 0;
 					string foundExecutable = null;
 					this.labelUpdateStatusValue.Text = "extracting...";
 					foreach(var entry in archive.Entries) {
+						if (entry.Name == string.Empty) {
+							continue;
+						}
+
 						extractingFile++;
 						this.labelUpdateStatusValue.Text = "extracting... (file " + extractingFile + "/" + totalFiles + ")";
 						entry.ExtractToFile(downloadPath + entry.Name, true);
@@ -113,7 +124,7 @@ namespace Salary.NET
 						this.labelUpdateStatusValue.Text = "extracting... no executable found.";
 						return;
 					}
-
+					
 					this._updateExecutable = downloadPath + foundExecutable;
 					this.Close();
 				};

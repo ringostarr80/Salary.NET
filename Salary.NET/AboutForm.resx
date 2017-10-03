@@ -514,7 +514,7 @@
     <value>True</value>
   </data>
   <data name="labelReleaseDateValue.Text" xml:space="preserve">
-    <value>28.08.2017</value>
+    <value>03.10.2017</value>
   </data>
   <data name="&gt;&gt;labelProcessorArchitecture.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -542,5 +542,8 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
   </metadata>
 </root>

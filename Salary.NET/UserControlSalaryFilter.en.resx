@@ -117,41 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelProcessorArchitecture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
+  <data name="checkBoxGrossWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 17</value>
   </data>
-  <data name="labelProcessorArchitecture.Text" xml:space="preserve">
-    <value>Processor Architecture:</value>
+  <data name="checkBoxGrossWage.Text" xml:space="preserve">
+    <value>Gross</value>
   </data>
-  <data name="labelLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+  <data name="checkBoxNetWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 17</value>
   </data>
-  <data name="labelLicense.Text" xml:space="preserve">
-    <value>License:</value>
+  <data name="checkBoxNetWage.Text" xml:space="preserve">
+    <value>Net</value>
   </data>
-  <data name="labelDeveloper.Text" xml:space="preserve">
-    <value>Developer:</value>
+  <data name="checkBoxPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
   </data>
-  <data name="labelReleaseDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="labelReleaseDate.Text" xml:space="preserve">
-    <value>Release date:</value>
-  </data>
-  <data name="labelReleaseDateValue.Text" xml:space="preserve">
-    <value>2017-10-03</value>
-  </data>
-  <data name="labelWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="labelWebsite.Text" xml:space="preserve">
-    <value>Website:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>About Salary.NET</value>
+  <data name="checkBoxPeriod.Text" xml:space="preserve">
+    <value>Time-Period</value>
   </data>
 </root>

@@ -63,6 +63,8 @@
 			this.olvColumnHeaderLastName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
 			this.olvColumnHeaderBirthday = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
 			this.tabPageSalaries = new System.Windows.Forms.TabPage();
+			this.splitContainerSalaryAccounts = new System.Windows.Forms.SplitContainer();
+			this.userControlSalaryFilter = new Salary.NET.UserControlSalaryFilter();
 			this.objectListViewSalaryAccounts = new BrightIdeasSoftware.ObjectListView();
 			this.olvColumnId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
 			this.olvColumnGross = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -84,6 +86,10 @@
 			this.tabPageEmployees.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.objectListViewEmployees)).BeginInit();
 			this.tabPageSalaries.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainerSalaryAccounts)).BeginInit();
+			this.splitContainerSalaryAccounts.Panel1.SuspendLayout();
+			this.splitContainerSalaryAccounts.Panel2.SuspendLayout();
+			this.splitContainerSalaryAccounts.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.objectListViewSalaryAccounts)).BeginInit();
 			this.tabPageGraph.SuspendLayout();
 			this.contextMenuStripEmployees.SuspendLayout();
@@ -92,138 +98,138 @@
 			// 
 			// menuStripMain
 			// 
-			resources.ApplyResources(this.menuStripMain, "menuStripMain");
 			this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile,
             this.toolStripMenuItemEdit,
             this.toolStripMenuItemOptions,
             this.toolStripMenuItemHelp});
+			resources.ApplyResources(this.menuStripMain, "menuStripMain");
 			this.menuStripMain.Name = "menuStripMain";
 			// 
 			// toolStripMenuItemFile
 			// 
-			resources.ApplyResources(this.toolStripMenuItemFile, "toolStripMenuItemFile");
 			this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemNew,
             this.toolStripMenuItemOpen,
             this.toolStripSeparator1,
             this.toolStripMenuItemClose});
+			resources.ApplyResources(this.toolStripMenuItemFile, "toolStripMenuItemFile");
 			this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
 			// 
 			// toolStripMenuItemNew
 			// 
-			resources.ApplyResources(this.toolStripMenuItemNew, "toolStripMenuItemNew");
 			this.toolStripMenuItemNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemXMLFile});
 			this.toolStripMenuItemNew.Name = "toolStripMenuItemNew";
+			resources.ApplyResources(this.toolStripMenuItemNew, "toolStripMenuItemNew");
 			// 
 			// toolStripMenuItemXMLFile
 			// 
-			resources.ApplyResources(this.toolStripMenuItemXMLFile, "toolStripMenuItemXMLFile");
 			this.toolStripMenuItemXMLFile.Name = "toolStripMenuItemXMLFile";
+			resources.ApplyResources(this.toolStripMenuItemXMLFile, "toolStripMenuItemXMLFile");
 			this.toolStripMenuItemXMLFile.Click += new System.EventHandler(this.ToolStripMenuItemXMLFile_Click);
 			// 
 			// toolStripMenuItemOpen
 			// 
-			resources.ApplyResources(this.toolStripMenuItemOpen, "toolStripMenuItemOpen");
 			this.toolStripMenuItemOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemOpenXMLFile});
 			this.toolStripMenuItemOpen.Name = "toolStripMenuItemOpen";
+			resources.ApplyResources(this.toolStripMenuItemOpen, "toolStripMenuItemOpen");
 			// 
 			// toolStripMenuItemOpenXMLFile
 			// 
-			resources.ApplyResources(this.toolStripMenuItemOpenXMLFile, "toolStripMenuItemOpenXMLFile");
 			this.toolStripMenuItemOpenXMLFile.Name = "toolStripMenuItemOpenXMLFile";
+			resources.ApplyResources(this.toolStripMenuItemOpenXMLFile, "toolStripMenuItemOpenXMLFile");
 			this.toolStripMenuItemOpenXMLFile.Click += new System.EventHandler(this.ToolStripMenuItemOpenXMLFile_Click);
 			// 
 			// toolStripSeparator1
 			// 
-			resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
 			// 
 			// toolStripMenuItemClose
 			// 
-			resources.ApplyResources(this.toolStripMenuItemClose, "toolStripMenuItemClose");
 			this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
+			resources.ApplyResources(this.toolStripMenuItemClose, "toolStripMenuItemClose");
 			this.toolStripMenuItemClose.Click += new System.EventHandler(this.BeendenToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItemEdit
 			// 
-			resources.ApplyResources(this.toolStripMenuItemEdit, "toolStripMenuItemEdit");
 			this.toolStripMenuItemEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemEditAdd,
             this.toolStripMenuItemEditChange});
+			resources.ApplyResources(this.toolStripMenuItemEdit, "toolStripMenuItemEdit");
 			this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
 			// 
 			// toolStripMenuItemEditAdd
 			// 
-			resources.ApplyResources(this.toolStripMenuItemEditAdd, "toolStripMenuItemEditAdd");
 			this.toolStripMenuItemEditAdd.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemEditAddEmployee,
             this.toolStripMenuItemEditAddSalaryAccount,
             this.toolStripMenuItemAddSalaryTypes});
+			resources.ApplyResources(this.toolStripMenuItemEditAdd, "toolStripMenuItemEditAdd");
 			this.toolStripMenuItemEditAdd.Name = "toolStripMenuItemEditAdd";
 			// 
 			// toolStripMenuItemEditAddEmployee
 			// 
-			resources.ApplyResources(this.toolStripMenuItemEditAddEmployee, "toolStripMenuItemEditAddEmployee");
 			this.toolStripMenuItemEditAddEmployee.Name = "toolStripMenuItemEditAddEmployee";
+			resources.ApplyResources(this.toolStripMenuItemEditAddEmployee, "toolStripMenuItemEditAddEmployee");
 			this.toolStripMenuItemEditAddEmployee.Click += new System.EventHandler(this.ToolStripMenuItemEditAddEmployee_Click);
 			// 
 			// toolStripMenuItemEditAddSalaryAccount
 			// 
-			resources.ApplyResources(this.toolStripMenuItemEditAddSalaryAccount, "toolStripMenuItemEditAddSalaryAccount");
 			this.toolStripMenuItemEditAddSalaryAccount.Name = "toolStripMenuItemEditAddSalaryAccount";
+			resources.ApplyResources(this.toolStripMenuItemEditAddSalaryAccount, "toolStripMenuItemEditAddSalaryAccount");
 			this.toolStripMenuItemEditAddSalaryAccount.Click += new System.EventHandler(this.ToolStripMenuItemEditAddSalaryAccount_Click);
 			// 
 			// toolStripMenuItemAddSalaryTypes
 			// 
-			resources.ApplyResources(this.toolStripMenuItemAddSalaryTypes, "toolStripMenuItemAddSalaryTypes");
 			this.toolStripMenuItemAddSalaryTypes.Name = "toolStripMenuItemAddSalaryTypes";
+			resources.ApplyResources(this.toolStripMenuItemAddSalaryTypes, "toolStripMenuItemAddSalaryTypes");
 			this.toolStripMenuItemAddSalaryTypes.Click += new System.EventHandler(this.LohnartenToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItemEditChange
 			// 
-			resources.ApplyResources(this.toolStripMenuItemEditChange, "toolStripMenuItemEditChange");
 			this.toolStripMenuItemEditChange.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemChangeSalaryTypes});
+			resources.ApplyResources(this.toolStripMenuItemEditChange, "toolStripMenuItemEditChange");
 			this.toolStripMenuItemEditChange.Name = "toolStripMenuItemEditChange";
 			// 
 			// toolStripMenuItemChangeSalaryTypes
 			// 
-			resources.ApplyResources(this.toolStripMenuItemChangeSalaryTypes, "toolStripMenuItemChangeSalaryTypes");
 			this.toolStripMenuItemChangeSalaryTypes.Name = "toolStripMenuItemChangeSalaryTypes";
+			resources.ApplyResources(this.toolStripMenuItemChangeSalaryTypes, "toolStripMenuItemChangeSalaryTypes");
 			this.toolStripMenuItemChangeSalaryTypes.Click += new System.EventHandler(this.LohnartenToolStripMenuItem1_Click);
 			// 
 			// toolStripMenuItemOptions
 			// 
-			resources.ApplyResources(this.toolStripMenuItemOptions, "toolStripMenuItemOptions");
 			this.toolStripMenuItemOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemLanguage});
+			resources.ApplyResources(this.toolStripMenuItemOptions, "toolStripMenuItemOptions");
 			this.toolStripMenuItemOptions.Name = "toolStripMenuItemOptions";
 			// 
 			// toolStripMenuItemLanguage
 			// 
-			resources.ApplyResources(this.toolStripMenuItemLanguage, "toolStripMenuItemLanguage");
 			this.toolStripMenuItemLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemLanguageGermany,
             this.toolStripMenuItemLanguageEnglish,
             this.toolStripMenuItemLanguageJapanese});
 			this.toolStripMenuItemLanguage.Name = "toolStripMenuItemLanguage";
+			resources.ApplyResources(this.toolStripMenuItemLanguage, "toolStripMenuItemLanguage");
 			// 
 			// toolStripMenuItemLanguageGermany
 			// 
-			resources.ApplyResources(this.toolStripMenuItemLanguageGermany, "toolStripMenuItemLanguageGermany");
 			this.toolStripMenuItemLanguageGermany.Checked = true;
 			this.toolStripMenuItemLanguageGermany.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.toolStripMenuItemLanguageGermany.Name = "toolStripMenuItemLanguageGermany";
+			resources.ApplyResources(this.toolStripMenuItemLanguageGermany, "toolStripMenuItemLanguageGermany");
 			this.toolStripMenuItemLanguageGermany.Tag = "de";
 			this.toolStripMenuItemLanguageGermany.Click += new System.EventHandler(this.ToolStripMenuItemLanguageSelect_Click);
 			// 
 			// toolStripMenuItemLanguageEnglish
 			// 
-			resources.ApplyResources(this.toolStripMenuItemLanguageEnglish, "toolStripMenuItemLanguageEnglish");
 			this.toolStripMenuItemLanguageEnglish.Name = "toolStripMenuItemLanguageEnglish";
+			resources.ApplyResources(this.toolStripMenuItemLanguageEnglish, "toolStripMenuItemLanguageEnglish");
 			this.toolStripMenuItemLanguageEnglish.Tag = "en";
 			this.toolStripMenuItemLanguageEnglish.Click += new System.EventHandler(this.ToolStripMenuItemLanguageSelect_Click);
 			// 
@@ -236,51 +242,46 @@
 			// 
 			// toolStripMenuItemHelp
 			// 
-			resources.ApplyResources(this.toolStripMenuItemHelp, "toolStripMenuItemHelp");
 			this.toolStripMenuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemCheckForUpdates,
             this.toolStripMenuItemAboutSalaryNET});
 			this.toolStripMenuItemHelp.Name = "toolStripMenuItemHelp";
+			resources.ApplyResources(this.toolStripMenuItemHelp, "toolStripMenuItemHelp");
 			// 
 			// toolStripMenuItemCheckForUpdates
 			// 
-			resources.ApplyResources(this.toolStripMenuItemCheckForUpdates, "toolStripMenuItemCheckForUpdates");
 			this.toolStripMenuItemCheckForUpdates.Name = "toolStripMenuItemCheckForUpdates";
+			resources.ApplyResources(this.toolStripMenuItemCheckForUpdates, "toolStripMenuItemCheckForUpdates");
 			this.toolStripMenuItemCheckForUpdates.Click += new System.EventHandler(this.AufUpdatesUberprufenToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItemAboutSalaryNET
 			// 
-			resources.ApplyResources(this.toolStripMenuItemAboutSalaryNET, "toolStripMenuItemAboutSalaryNET");
 			this.toolStripMenuItemAboutSalaryNET.Name = "toolStripMenuItemAboutSalaryNET";
+			resources.ApplyResources(this.toolStripMenuItemAboutSalaryNET, "toolStripMenuItemAboutSalaryNET");
 			this.toolStripMenuItemAboutSalaryNET.Click += new System.EventHandler(this.UberSalaryNETToolStripMenuItem_Click);
 			// 
 			// saveFileDialogNewDb
 			// 
 			resources.ApplyResources(this.saveFileDialogNewDb, "saveFileDialogNewDb");
 			// 
-			// openFileDialog
-			// 
-			resources.ApplyResources(this.openFileDialog, "openFileDialog");
-			// 
 			// tabControlMain
 			// 
-			resources.ApplyResources(this.tabControlMain, "tabControlMain");
 			this.tabControlMain.Controls.Add(this.tabPageEmployees);
 			this.tabControlMain.Controls.Add(this.tabPageSalaries);
 			this.tabControlMain.Controls.Add(this.tabPageGraph);
+			resources.ApplyResources(this.tabControlMain, "tabControlMain");
 			this.tabControlMain.Name = "tabControlMain";
 			this.tabControlMain.SelectedIndex = 0;
 			// 
 			// tabPageEmployees
 			// 
-			resources.ApplyResources(this.tabPageEmployees, "tabPageEmployees");
 			this.tabPageEmployees.Controls.Add(this.objectListViewEmployees);
+			resources.ApplyResources(this.tabPageEmployees, "tabPageEmployees");
 			this.tabPageEmployees.Name = "tabPageEmployees";
 			this.tabPageEmployees.UseVisualStyleBackColor = true;
 			// 
 			// objectListViewEmployees
 			// 
-			resources.ApplyResources(this.objectListViewEmployees, "objectListViewEmployees");
 			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderId);
 			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderPersonnelNumber);
 			this.objectListViewEmployees.AllColumns.Add(this.olvColumnHeaderFirstName);
@@ -295,12 +296,12 @@
             this.olvColumnHeaderLastName,
             this.olvColumnHeaderBirthday});
 			this.objectListViewEmployees.Cursor = System.Windows.Forms.Cursors.Default;
+			resources.ApplyResources(this.objectListViewEmployees, "objectListViewEmployees");
 			this.objectListViewEmployees.FullRowSelect = true;
 			this.objectListViewEmployees.GridLines = true;
 			this.objectListViewEmployees.HideSelection = false;
 			this.objectListViewEmployees.MultiSelect = false;
 			this.objectListViewEmployees.Name = "objectListViewEmployees";
-			this.objectListViewEmployees.OverlayText.Text = resources.GetString("resource.Text");
 			this.objectListViewEmployees.ShowGroups = false;
 			this.objectListViewEmployees.UseAlternatingBackColors = true;
 			this.objectListViewEmployees.UseCompatibleStateImageBehavior = false;
@@ -337,14 +338,34 @@
 			// 
 			// tabPageSalaries
 			// 
+			this.tabPageSalaries.Controls.Add(this.splitContainerSalaryAccounts);
 			resources.ApplyResources(this.tabPageSalaries, "tabPageSalaries");
-			this.tabPageSalaries.Controls.Add(this.objectListViewSalaryAccounts);
 			this.tabPageSalaries.Name = "tabPageSalaries";
 			this.tabPageSalaries.UseVisualStyleBackColor = true;
 			// 
+			// splitContainerSalaryAccounts
+			// 
+			resources.ApplyResources(this.splitContainerSalaryAccounts, "splitContainerSalaryAccounts");
+			this.splitContainerSalaryAccounts.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+			this.splitContainerSalaryAccounts.Name = "splitContainerSalaryAccounts";
+			// 
+			// splitContainerSalaryAccounts.Panel1
+			// 
+			this.splitContainerSalaryAccounts.Panel1.Controls.Add(this.userControlSalaryFilter);
+			// 
+			// splitContainerSalaryAccounts.Panel2
+			// 
+			this.splitContainerSalaryAccounts.Panel2.Controls.Add(this.objectListViewSalaryAccounts);
+			// 
+			// userControlSalaryFilter
+			// 
+			resources.ApplyResources(this.userControlSalaryFilter, "userControlSalaryFilter");
+			this.userControlSalaryFilter.Name = "userControlSalaryFilter";
+			this.userControlSalaryFilter.FilterChanged += new System.EventHandler(this.UserControlSalaryFilter_FilterChanged);
+			this.userControlSalaryFilter.Resize += new System.EventHandler(this.UserControlSalaryFilter_Resize);
+			// 
 			// objectListViewSalaryAccounts
 			// 
-			resources.ApplyResources(this.objectListViewSalaryAccounts, "objectListViewSalaryAccounts");
 			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnId);
 			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnGross);
 			this.objectListViewSalaryAccounts.AllColumns.Add(this.olvColumnNet);
@@ -357,15 +378,16 @@
             this.olvColumnNet,
             this.olvColumnPeriod});
 			this.objectListViewSalaryAccounts.Cursor = System.Windows.Forms.Cursors.Default;
+			resources.ApplyResources(this.objectListViewSalaryAccounts, "objectListViewSalaryAccounts");
 			this.objectListViewSalaryAccounts.FullRowSelect = true;
 			this.objectListViewSalaryAccounts.GridLines = true;
 			this.objectListViewSalaryAccounts.HideSelection = false;
 			this.objectListViewSalaryAccounts.MultiSelect = false;
 			this.objectListViewSalaryAccounts.Name = "objectListViewSalaryAccounts";
-			this.objectListViewSalaryAccounts.OverlayText.Text = resources.GetString("resource.Text1");
 			this.objectListViewSalaryAccounts.ShowGroups = false;
 			this.objectListViewSalaryAccounts.UseAlternatingBackColors = true;
 			this.objectListViewSalaryAccounts.UseCompatibleStateImageBehavior = false;
+			this.objectListViewSalaryAccounts.UseFiltering = true;
 			this.objectListViewSalaryAccounts.View = System.Windows.Forms.View.Details;
 			this.objectListViewSalaryAccounts.DoubleClick += new System.EventHandler(this.ObjectListViewSalaryAccounts_DoubleClick);
 			this.objectListViewSalaryAccounts.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ObjectListViewSalaryAccounts_KeyUp);
@@ -396,8 +418,8 @@
 			// 
 			// tabPageGraph
 			// 
-			resources.ApplyResources(this.tabPageGraph, "tabPageGraph");
 			this.tabPageGraph.Controls.Add(this.zedGraphControl1);
+			resources.ApplyResources(this.tabPageGraph, "tabPageGraph");
 			this.tabPageGraph.Name = "tabPageGraph";
 			this.tabPageGraph.UseVisualStyleBackColor = true;
 			// 
@@ -420,63 +442,63 @@
 			// 
 			// contextMenuStripEmployees
 			// 
-			resources.ApplyResources(this.contextMenuStripEmployees, "contextMenuStripEmployees");
 			this.contextMenuStripEmployees.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemShowSalaryAccounts,
             this.toolStripMenuItemContextEmployeeEdit,
             this.toolStripMenuItemContextEmployeeDelete});
 			this.contextMenuStripEmployees.Name = "contextMenuStripEmployees";
+			resources.ApplyResources(this.contextMenuStripEmployees, "contextMenuStripEmployees");
 			// 
 			// toolStripMenuItemShowSalaryAccounts
 			// 
-			resources.ApplyResources(this.toolStripMenuItemShowSalaryAccounts, "toolStripMenuItemShowSalaryAccounts");
 			this.toolStripMenuItemShowSalaryAccounts.Name = "toolStripMenuItemShowSalaryAccounts";
+			resources.ApplyResources(this.toolStripMenuItemShowSalaryAccounts, "toolStripMenuItemShowSalaryAccounts");
 			this.toolStripMenuItemShowSalaryAccounts.Click += new System.EventHandler(this.ToolStripMenuItemShowSalaryAccounts_Click);
 			// 
 			// toolStripMenuItemContextEmployeeEdit
 			// 
-			resources.ApplyResources(this.toolStripMenuItemContextEmployeeEdit, "toolStripMenuItemContextEmployeeEdit");
 			this.toolStripMenuItemContextEmployeeEdit.Name = "toolStripMenuItemContextEmployeeEdit";
+			resources.ApplyResources(this.toolStripMenuItemContextEmployeeEdit, "toolStripMenuItemContextEmployeeEdit");
 			this.toolStripMenuItemContextEmployeeEdit.Click += new System.EventHandler(this.ToolStripMenuItemContextEmployeeEdit_Click);
 			// 
 			// toolStripMenuItemContextEmployeeDelete
 			// 
-			resources.ApplyResources(this.toolStripMenuItemContextEmployeeDelete, "toolStripMenuItemContextEmployeeDelete");
 			this.toolStripMenuItemContextEmployeeDelete.Name = "toolStripMenuItemContextEmployeeDelete";
+			resources.ApplyResources(this.toolStripMenuItemContextEmployeeDelete, "toolStripMenuItemContextEmployeeDelete");
 			this.toolStripMenuItemContextEmployeeDelete.Click += new System.EventHandler(this.ToolStripMenuItemContextEmployeeDelete_Click);
 			// 
 			// contextMenuStripSalaryAccountings
 			// 
-			resources.ApplyResources(this.contextMenuStripSalaryAccountings, "contextMenuStripSalaryAccountings");
 			this.contextMenuStripSalaryAccountings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemSalaryAccountingsEdit,
             this.toolStripMenuItemSalaryAccountingsCopy,
             this.toolStripMenuItemSalaryAccountingsPaste,
             this.toolStripMenuItemSalaryAccountingsDelete});
 			this.contextMenuStripSalaryAccountings.Name = "contextMenuStripSalaryAccountings";
+			resources.ApplyResources(this.contextMenuStripSalaryAccountings, "contextMenuStripSalaryAccountings");
 			// 
 			// toolStripMenuItemSalaryAccountingsEdit
 			// 
-			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsEdit, "toolStripMenuItemSalaryAccountingsEdit");
 			this.toolStripMenuItemSalaryAccountingsEdit.Name = "toolStripMenuItemSalaryAccountingsEdit";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsEdit, "toolStripMenuItemSalaryAccountingsEdit");
 			this.toolStripMenuItemSalaryAccountingsEdit.Click += new System.EventHandler(this.ToolStripMenuItemSalaryAccountingsEdit_Click);
 			// 
 			// toolStripMenuItemSalaryAccountingsCopy
 			// 
-			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsCopy, "toolStripMenuItemSalaryAccountingsCopy");
 			this.toolStripMenuItemSalaryAccountingsCopy.Name = "toolStripMenuItemSalaryAccountingsCopy";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsCopy, "toolStripMenuItemSalaryAccountingsCopy");
 			this.toolStripMenuItemSalaryAccountingsCopy.Click += new System.EventHandler(this.ToolStripMenuItemSalaryAccountingsCopy_Click);
 			// 
 			// toolStripMenuItemSalaryAccountingsPaste
 			// 
-			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsPaste, "toolStripMenuItemSalaryAccountingsPaste");
 			this.toolStripMenuItemSalaryAccountingsPaste.Name = "toolStripMenuItemSalaryAccountingsPaste";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsPaste, "toolStripMenuItemSalaryAccountingsPaste");
 			this.toolStripMenuItemSalaryAccountingsPaste.Click += new System.EventHandler(this.ToolStripMenuItemSalaryAccountingsPaste_Click);
 			// 
 			// toolStripMenuItemSalaryAccountingsDelete
 			// 
-			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsDelete, "toolStripMenuItemSalaryAccountingsDelete");
 			this.toolStripMenuItemSalaryAccountingsDelete.Name = "toolStripMenuItemSalaryAccountingsDelete";
+			resources.ApplyResources(this.toolStripMenuItemSalaryAccountingsDelete, "toolStripMenuItemSalaryAccountingsDelete");
 			this.toolStripMenuItemSalaryAccountingsDelete.Click += new System.EventHandler(this.ToolStripMenuItemSalaryAccountingsDelete_Click);
 			// 
 			// SalaryForm
@@ -495,6 +517,10 @@
 			this.tabPageEmployees.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.objectListViewEmployees)).EndInit();
 			this.tabPageSalaries.ResumeLayout(false);
+			this.splitContainerSalaryAccounts.Panel1.ResumeLayout(false);
+			this.splitContainerSalaryAccounts.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainerSalaryAccounts)).EndInit();
+			this.splitContainerSalaryAccounts.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.objectListViewSalaryAccounts)).EndInit();
 			this.tabPageGraph.ResumeLayout(false);
 			this.contextMenuStripEmployees.ResumeLayout(false);
@@ -556,6 +582,8 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAboutSalaryNET;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCheckForUpdates;
+		private UserControlSalaryFilter userControlSalaryFilter;
+		private System.Windows.Forms.SplitContainer splitContainerSalaryAccounts;
 	}
 }
 

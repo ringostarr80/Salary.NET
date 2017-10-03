@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="labelMinGrossWage.Text" xml:space="preserve">
+    <value>min:</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="numericUpDownMinGrossWage.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelMinPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="labelMinNetWage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxNetWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNetWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMinNetWage.Name" xml:space="preserve">
+    <value>labelMinNetWage</value>
+  </data>
+  <data name="labelMaxPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="labelMinGrossWage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelMaxNetWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelMinPeriod.Text" xml:space="preserve">
+    <value>min:</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMaxPeriod.Name" xml:space="preserve">
+    <value>dateTimePickerMaxPeriod</value>
+  </data>
+  <data name="checkBoxPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="labelMinGrossWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinNetWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxGrossWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="&gt;&gt;labelMinId.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;labelMinGrossWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMinId.Name" xml:space="preserve">
+    <value>labelMinId</value>
+  </data>
+  <data name="&gt;&gt;labelMinNetWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelMinPeriod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMaxNetWage.Text" xml:space="preserve">
+    <value>max:</value>
+  </data>
+  <data name="&gt;&gt;labelMaxGrossWage.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dateTimePickerMaxPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 92</value>
+  </data>
+  <data name="numericUpDownMaxId.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMaxGrossWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="labelMaxNetWage.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMaxPeriod.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMinGrossWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 17</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinNetWage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelMaxId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelMinPeriod.Name" xml:space="preserve">
+    <value>labelMinPeriod</value>
+  </data>
+  <data name="checkBoxNetWage.Text" xml:space="preserve">
+    <value>Netto</value>
+  </data>
+  <data name="labelMinNetWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 73</value>
+  </data>
+  <data name="labelMinNetWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="numericUpDownMaxNetWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 71</value>
+  </data>
+  <data name="&gt;&gt;labelMaxNetWage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNetWage.Name" xml:space="preserve">
+    <value>checkBoxNetWage</value>
+  </data>
+  <data name="&gt;&gt;labelMaxPeriod.Name" xml:space="preserve">
+    <value>labelMaxPeriod</value>
+  </data>
+  <data name="checkBoxPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 95</value>
+  </data>
+  <data name="labelMaxPeriod.Text" xml:space="preserve">
+    <value>max:</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriod.Name" xml:space="preserve">
+    <value>checkBoxPeriod</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxNetWage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNetWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGrossWage.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxGrossWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMaxPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 96</value>
+  </data>
+  <data name="&gt;&gt;labelMaxNetWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="numericUpDownMinGrossWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMinPeriod.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinId.Name" xml:space="preserve">
+    <value>numericUpDownMinId</value>
+  </data>
+  <data name="dateTimePickerMinPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="numericUpDownMinId.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkBoxPeriod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMaxGrossWage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxNetWage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelMaxPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="dateTimePickerMinPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 92</value>
+  </data>
+  <data name="checkBoxGrossWage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxNetWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 72</value>
+  </data>
+  <data name="checkBoxPeriod.Text" xml:space="preserve">
+    <value>Zeitraum</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMinPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="numericUpDownMaxId.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinGrossWage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="numericUpDownMaxNetWage.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelMaxId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMaxId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMinPeriod.Name" xml:space="preserve">
+    <value>dateTimePickerMinPeriod</value>
+  </data>
+  <data name="&gt;&gt;labelMaxId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinGrossWage.Name" xml:space="preserve">
+    <value>numericUpDownMinGrossWage</value>
+  </data>
+  <data name="labelMinNetWage.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxGrossWage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="numericUpDownMaxId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="checkBoxGrossWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 49</value>
+  </data>
+  <data name="numericUpDownMaxNetWage.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="labelMinGrossWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 50</value>
+  </data>
+  <data name="numericUpDownMinId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMinGrossWage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxNetWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="numericUpDownMinId.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelMinId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="numericUpDownMaxId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 25</value>
+  </data>
+  <data name="checkBoxGrossWage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelMaxNetWage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelMinPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxNetWage.Name" xml:space="preserve">
+    <value>numericUpDownMaxNetWage</value>
+  </data>
+  <data name="&gt;&gt;labelMaxGrossWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UserControlSalaryFilter</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNetWage.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="labelMinId.Text" xml:space="preserve">
+    <value>min:</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="checkBoxGrossWage.Text" xml:space="preserve">
+    <value>Brutto</value>
+  </data>
+  <data name="&gt;&gt;labelMaxId.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="labelMaxGrossWage.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="checkBoxFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelMinNetWage.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="numericUpDownMinNetWage.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="numericUpDownMaxNetWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="checkBoxNetWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxId.Name" xml:space="preserve">
+    <value>numericUpDownMaxId</value>
+  </data>
+  <data name="checkBoxFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMinId.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="numericUpDownMinGrossWage.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;labelMinGrossWage.Name" xml:space="preserve">
+    <value>labelMinGrossWage</value>
+  </data>
+  <data name="&gt;&gt;labelMinPeriod.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelMaxNetWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 73</value>
+  </data>
+  <data name="checkBoxId.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="numericUpDownMaxGrossWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="numericUpDownMaxGrossWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 48</value>
+  </data>
+  <data name="numericUpDownMinId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 25</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPeriod.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="labelMinId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMinPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="numericUpDownMinNetWage.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>397, 124</value>
+  </data>
+  <data name="&gt;&gt;labelMaxPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGrossWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="labelMaxId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 27</value>
+  </data>
+  <data name="dateTimePickerMaxPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinNetWage.Name" xml:space="preserve">
+    <value>numericUpDownMinNetWage</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelMaxId.Text" xml:space="preserve">
+    <value>max:</value>
+  </data>
+  <data name="numericUpDownMaxGrossWage.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelMaxPeriod.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinGrossWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelMaxId.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="numericUpDownMinNetWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="labelMaxGrossWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 50</value>
+  </data>
+  <data name="&gt;&gt;labelMaxPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelMaxGrossWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinId.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxId.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="checkBoxId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 26</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinGrossWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMinNetWage.Text" xml:space="preserve">
+    <value>min:</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="labelMaxNetWage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxGrossWage.Name" xml:space="preserve">
+    <value>numericUpDownMaxGrossWage</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMinNetWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="numericUpDownMinNetWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 71</value>
+  </data>
+  <data name="&gt;&gt;labelMinNetWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMaxId.Name" xml:space="preserve">
+    <value>labelMaxId</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownMaxGrossWage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMaxPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerMaxPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMinId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 27</value>
+  </data>
+  <data name="labelMaxGrossWage.Text" xml:space="preserve">
+    <value>max:</value>
+  </data>
+  <data name="numericUpDownMaxGrossWage.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="labelMinPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;labelMinId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelMinGrossWage.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="checkBoxFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;labelMaxNetWage.Name" xml:space="preserve">
+    <value>labelMaxNetWage</value>
+  </data>
+  <data name="labelMinPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 96</value>
+  </data>
+  <data name="&gt;&gt;labelMinPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxId.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;checkBoxId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="numericUpDownMinGrossWage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 48</value>
+  </data>
+  <data name="labelMinId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="checkBoxFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="dateTimePickerMaxPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="&gt;&gt;labelMaxGrossWage.Name" xml:space="preserve">
+    <value>labelMaxGrossWage</value>
+  </data>
+  <data name="labelMaxPeriod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dateTimePickerMinPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilter.Name" xml:space="preserve">
+    <value>checkBoxFilter</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGrossWage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGrossWage.Name" xml:space="preserve">
+    <value>checkBoxGrossWage</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilter.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;checkBoxId.Name" xml:space="preserve">
+    <value>checkBoxId</value>
+  </data>
+  <data name="checkBoxNetWage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

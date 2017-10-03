@@ -10,6 +10,7 @@ using System.Drawing;
 using ZedGraph;
 using System.Linq;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Salary.NET
 {
@@ -74,6 +75,17 @@ namespace Salary.NET
 			var idWidth = this.objectListViewSalaryAccounts.Columns[0].Width;
 			var periodWidth = this.objectListViewSalaryAccounts.Columns[3].Width;
 
+			/*
+			this.userControlSalaryFilter.Left = 0;
+			this.userControlSalaryFilter.Top = 0;
+			this.userControlSalaryFilter.Width = this.tabPageSalaries.Width;
+
+			this.objectListViewSalaryAccounts.Left = 0;
+			this.objectListViewSalaryAccounts.Top = this.userControlSalaryFilter.Height;
+			this.objectListViewSalaryAccounts.Width = this.tabPageSalaries.Width;
+			this.objectListViewSalaryAccounts.Height = this.tabPageSalaries.Height - this.objectListViewSalaryAccounts.Top;
+			*/
+
 			var minGrossWageWidth = 100;
 			var minNetWageWidth = 100;
 			var buffer = listViewWidth - (idWidth + 1 + periodWidth + 1 + minGrossWageWidth + 1 + minNetWageWidth + 1);
@@ -87,6 +99,13 @@ namespace Salary.NET
 			var newNetWageWidth = minNetWageWidth + buffer / 2;
 			this.objectListViewSalaryAccounts.Columns[1].Width = newGrossWageWidth;
 			this.objectListViewSalaryAccounts.Columns[2].Width = newNetWageWidth;
+		}
+
+		private void UserControlSalaryFilter_Resize(object sender, EventArgs e)
+		{
+			this.splitContainerSalaryAccounts.SplitterDistance = this.userControlSalaryFilter.Height;
+			//this.objectListViewSalaryAccounts.Top = this.userControlSalaryFilter.Height;
+			//this.objectListViewSalaryAccounts.Height = this.tabPageSalaries.Height - this.userControlSalaryFilter.Height;
 		}
 
 		private void BeendenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,6 +196,8 @@ namespace Salary.NET
 			this.tabPageSalaries.Text = this._resourceManager.GetString("tabPageSalaries.Text");
 			this.saveFileDialogNewDb.Filter = this._localizations.GetString("XML_FILE_FILTER");
 			this.openFileDialog.Filter = this._localizations.GetString("XML_FILE_FILTER");
+
+			this.userControlSalaryFilter.ChangeLocalization(languageCode);
 		}
 
 		private void ToolStripMenuItemXMLFile_Click(object sender, EventArgs e)
@@ -299,6 +320,16 @@ namespace Salary.NET
 			this.objectListViewSalaryAccounts.SetObjects(salaryAccounts);
 			this.objectListViewSalaryAccounts.Sort(this.olvColumnPeriod, SortOrder.Descending);
 
+			this.RefreshGraphControl();
+		}
+
+		private void RefreshGraphControl()
+		{
+			List<SalaryAccount> salaryAccounts = new List<SalaryAccount>();
+			foreach(var obj in this.objectListViewSalaryAccounts.FilteredObjects) {
+				salaryAccounts.Add((SalaryAccount)obj);
+			}
+
 			var graphPane = this.zedGraphControl1.GraphPane;
 			graphPane.CurveList.RemoveAll(cl => true);
 			graphPane.Title.Text = this._openedEmployee.GetInformalSalutation();
@@ -311,7 +342,8 @@ namespace Salary.NET
 			var grossWageData = new StockPointList();
 			var netWageData = new StockPointList();
 			var orderedSalaryAccounts = salaryAccounts.OrderBy(sa => sa.PeriodStart);
-			foreach (var salaryAccount in orderedSalaryAccounts) {
+			foreach (var salaryAccount in orderedSalaryAccounts)
+			{
 				netWageData.Add(new XDate(salaryAccount.PeriodStart), salaryAccount.NetWage);
 				grossWageData.Add(new XDate(salaryAccount.PeriodStart), salaryAccount.GrossWage);
 			}
@@ -511,6 +543,12 @@ namespace Salary.NET
 				var psi = new ProcessStartInfo("msiexec", "/i \"" + this._updateExecutable + "\" REINSTALL=ALL REINSTALLMODE=vomus");
 				Process.Start(psi);
 			}
+		}
+
+		private void UserControlSalaryFilter_FilterChanged(object sender, EventArgs e)
+		{
+			this.objectListViewSalaryAccounts.ModelFilter = ((SalaryFilterEventArgs)e).ModelFilter;
+			this.RefreshGraphControl();
 		}
 	}
 }

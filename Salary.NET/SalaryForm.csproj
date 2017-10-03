@@ -178,6 +178,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SalaryFilterEventArgs.cs" />
     <Compile Include="SalaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +200,12 @@
     </Compile>
     <Compile Include="UserControlGrossIncome.Designer.cs">
       <DependentUpon>UserControlGrossIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSalaryFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSalaryFilter.Designer.cs">
+      <DependentUpon>UserControlSalaryFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlSalaryItems.cs">
       <SubType>UserControl</SubType>
@@ -257,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlGrossIncome.resx">
       <DependentUpon>UserControlGrossIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSalaryFilter.en.resx">
+      <DependentUpon>UserControlSalaryFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSalaryFilter.resx">
+      <DependentUpon>UserControlSalaryFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlSalaryItems.resx">
       <DependentUpon>UserControlSalaryItems.cs</DependentUpon>
