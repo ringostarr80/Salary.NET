@@ -11,6 +11,7 @@ namespace SalaryLibrary
 	{
 		private object _id = null;
 		private Employee _employee = null;
+		private Employer _employer = null;
 		private DateTime _periodStart = DateTime.Now;
 		private DateTime _periodEnd = DateTime.Now;
 		private Dictionary<SalaryType, SalaryItem> _salaries = new Dictionary<SalaryType, SalaryItem>();
@@ -25,6 +26,7 @@ namespace SalaryLibrary
 
 		public object Id { get { return this._id; } set { this._id = value; } }
 		public Employee Employee { get { return this._employee; } }
+		public Employer Employer { get { return this._employer; } }
 		public DateTime PeriodStart { get { return this._periodStart; } set { this._periodStart = value; } }
 		public DateTime PeriodEnd { get { return this._periodEnd; } set { this._periodEnd = value; } }
 		public string FormattedPeriod {
