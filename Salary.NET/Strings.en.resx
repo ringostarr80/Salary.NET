@@ -129,11 +129,26 @@
   <data name="ERROR" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="HINT" xml:space="preserve">
+    <value>Hint</value>
+  </data>
   <data name="INCOME" xml:space="preserve">
     <value>Income</value>
   </data>
   <data name="PERIOD" xml:space="preserve">
     <value>Period</value>
+  </data>
+  <data name="QUESTION_UNHANDLED_EXCEPTION_SEND_REPORT" xml:space="preserve">
+    <value>An unhandled exception occured. Should an error report been send to the developer?</value>
+  </data>
+  <data name="UNHANDLED_EXCEPTION" xml:space="preserve">
+    <value>Unhandled exception</value>
+  </data>
+  <data name="UNHANDLED_EXCEPTION_REPORT_SENT_FAILED" xml:space="preserve">
+    <value>An error occurred during sending the error: {0}\nShould it been tried again?</value>
+  </data>
+  <data name="UNHANDLED_EXCEPTION_REPORT_SENT_SUCCESSFULLY" xml:space="preserve">
+    <value>A Crash-Report was sent to the developer</value>
   </data>
   <data name="WARNING" xml:space="preserve">
     <value>Warning</value>

@@ -129,11 +129,26 @@
   <data name="ERROR" xml:space="preserve">
     <value>Fehler</value>
   </data>
+  <data name="HINT" xml:space="preserve">
+    <value>Hinweis</value>
+  </data>
   <data name="INCOME" xml:space="preserve">
     <value>Gehalt</value>
   </data>
   <data name="PERIOD" xml:space="preserve">
     <value>Zeitraum</value>
+  </data>
+  <data name="QUESTION_UNHANDLED_EXCEPTION_SEND_REPORT" xml:space="preserve">
+    <value>Es ist eine unbehandelte Ausnahme aufgetreten. Soll ein Fehlerbericht an den Entwickler gesendet werden?</value>
+  </data>
+  <data name="UNHANDLED_EXCEPTION" xml:space="preserve">
+    <value>Unbehandelte Ausnahme</value>
+  </data>
+  <data name="UNHANDLED_EXCEPTION_REPORT_SENT_FAILED" xml:space="preserve">
+    <value>Es ist ein Fehler beim Versenden des Fehlers aufgetreten: {0}\nSoll es noch einmal versucht werden?</value>
+  </data>
+  <data name="UNHANDLED_EXCEPTION_REPORT_SENT_SUCCESSFULLY" xml:space="preserve">
+    <value>Es wurde ein Crash-Report an den Entwickler gesendet</value>
   </data>
   <data name="WARNING" xml:space="preserve">
     <value>Warnung</value>

@@ -48,8 +48,8 @@
 			// 
 			// buttonClose
 			// 
-			resources.ApplyResources(this.buttonClose, "buttonClose");
 			this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			resources.ApplyResources(this.buttonClose, "buttonClose");
 			this.buttonClose.Name = "buttonClose";
 			this.buttonClose.UseVisualStyleBackColor = true;
 			this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);

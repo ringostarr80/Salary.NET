@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Name="Salary.NET" Manufacturer="Ringo Leese"
-			 Language="1033" Version="0.0.6"
+			 Language="1033" Version="0.0.7"
 			 Id="E77D04B7-5ECD-4C21-8DCA-254f2E3B207C"
 			 UpgradeCode="F501F82F-95BA-4EAC-9E57-4A92258B6AF7">
 		<Package Id="*" Keywords="Installer" Description="Salary.NET Installer" Manufacturer="Ringo Leese"
 				 InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<Upgrade Id="F501F82F-95BA-4EAC-9E57-4A92258B6AF7">
-			<UpgradeVersion OnlyDetect="yes" Property="SELFFOUND" Minimum="0.0.6" IncludeMinimum="yes" Maximum="0.0.6" IncludeMaximum="yes" />
-			<UpgradeVersion OnlyDetect="yes" Property="NEWERFOUND" Minimum="0.0.6" IncludeMinimum="no" />
+			<UpgradeVersion OnlyDetect="yes" Property="SELFFOUND" Minimum="0.0.7" IncludeMinimum="yes" Maximum="0.0.7" IncludeMaximum="yes" />
+			<UpgradeVersion OnlyDetect="yes" Property="NEWERFOUND" Minimum="0.0.7" IncludeMinimum="no" />
 		</Upgrade>
 
 		<CustomAction Id='AlreadyUpdated' Error='[ProductName] is already installed.' />
@@ -33,7 +33,7 @@
 						<File Id="SalaryLibrary.dll" Name="SalaryLibrary.dll" Source="$(var.SalaryForm.TargetDir)SalaryLibrary.dll"/>
 						<File Id="ObjectListView.dll" Name="ObjectListView.dll" Source="$(var.SalaryForm.TargetDir)ObjectListView.dll"/>
 						<File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.SalaryForm.TargetDir)Newtonsoft.Json.dll"/>
-						<File Id="System.IO.Compression.ZipFile.dll" Name="System.IO.Compression.ZipFile.dll" Source="$(var.SalaryForm.TargetDir)System.IO.Compression.ZipFile.dll"/>
+						<!--<File Id="System.IO.Compression.ZipFile.dll" Name="System.IO.Compression.ZipFile.dll" Source="$(var.SalaryForm.TargetDir)System.IO.Compression.ZipFile.dll"/>-->
 						<File Id="ZedGraph.dll" Name="ZedGraph.dll" Source="$(var.SalaryForm.TargetDir)ZedGraph.dll"/>
 					</Component>
 					<Directory Id="LanguageDe" Name="de">

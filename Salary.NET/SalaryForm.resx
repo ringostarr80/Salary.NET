@@ -122,61 +122,61 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItemXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="toolStripMenuItemXMLFile.Text" xml:space="preserve">
     <value>&amp;XML-Datei</value>
   </data>
   <data name="toolStripMenuItemNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemNew.Text" xml:space="preserve">
     <value>&amp;Neu</value>
   </data>
   <data name="toolStripMenuItemOpenXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="toolStripMenuItemOpenXMLFile.Text" xml:space="preserve">
     <value>&amp;XML-Datei</value>
   </data>
   <data name="toolStripMenuItemOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemOpen.Text" xml:space="preserve">
     <value>&amp;Öffnen</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 6</value>
+    <value>149, 6</value>
   </data>
   <data name="toolStripMenuItemClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemClose.Text" xml:space="preserve">
     <value>&amp;Beenden</value>
   </data>
   <data name="toolStripMenuItemFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 21</value>
+    <value>48, 20</value>
   </data>
   <data name="toolStripMenuItemFile.Text" xml:space="preserve">
     <value>&amp;Datei</value>
   </data>
   <data name="toolStripMenuItemEditAddEmployee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="toolStripMenuItemEditAddEmployee.Text" xml:space="preserve">
     <value>&amp;Mitarbeiter</value>
   </data>
   <data name="toolStripMenuItemEditAddSalaryAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="toolStripMenuItemEditAddSalaryAccount.Text" xml:space="preserve">
     <value>&amp;Gehaltsabrechnung</value>
   </data>
   <data name="toolStripMenuItemAddSalaryTypes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="toolStripMenuItemAddSalaryTypes.Text" xml:space="preserve">
     <value>&amp;Lohnarten</value>
@@ -186,13 +186,13 @@
     <value>False</value>
   </data>
   <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
     <value>&amp;Hinzufügen</value>
   </data>
   <data name="toolStripMenuItemChangeSalaryTypes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="toolStripMenuItemChangeSalaryTypes.Text" xml:space="preserve">
     <value>&amp;Lohnarten</value>
@@ -201,37 +201,37 @@
     <value>False</value>
   </data>
   <data name="toolStripMenuItemEditChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemEditChange.Text" xml:space="preserve">
     <value>&amp;Ändern</value>
   </data>
   <data name="toolStripMenuItemEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="toolStripMenuItemEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 21</value>
+    <value>79, 20</value>
   </data>
   <data name="toolStripMenuItemEdit.Text" xml:space="preserve">
     <value>&amp;Bearbeiten</value>
   </data>
   <data name="toolStripMenuItemLanguageGermany.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="toolStripMenuItemLanguageGermany.Text" xml:space="preserve">
     <value>&amp;Deutsch</value>
   </data>
   <data name="toolStripMenuItemLanguageEnglish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="toolStripMenuItemLanguageEnglish.Text" xml:space="preserve">
     <value>&amp;English</value>
   </data>
   <data name="toolStripMenuItemLanguageJapanese.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="toolStripMenuItemLanguageJapanese.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="toolStripMenuItemLanguageJapanese.Text" xml:space="preserve">
     <value>&amp;日本語</value>
@@ -240,16 +240,16 @@
     <value>False</value>
   </data>
   <data name="toolStripMenuItemLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="toolStripMenuItemLanguage.Text" xml:space="preserve">
     <value>&amp;Sprache</value>
   </data>
   <data name="toolStripMenuItemOptions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="toolStripMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 21</value>
+    <value>69, 20</value>
   </data>
   <data name="toolStripMenuItemOptions.Text" xml:space="preserve">
     <value>&amp;Optionen</value>
@@ -267,7 +267,7 @@
     <value>&amp;Info über Salary.NET...</value>
   </data>
   <data name="toolStripMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 21</value>
+    <value>44, 20</value>
   </data>
   <data name="toolStripMenuItemHelp.Text" xml:space="preserve">
     <value>&amp;Hilfe</value>
@@ -276,7 +276,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 25</value>
+    <value>624, 24</value>
   </data>
   <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -334,7 +334,7 @@
     <value>3, 3</value>
   </data>
   <data name="objectListViewEmployees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 450</value>
+    <value>610, 385</value>
   </data>
   <data name="objectListViewEmployees.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -352,13 +352,13 @@
     <value>0</value>
   </data>
   <data name="tabPageEmployees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 22</value>
   </data>
   <data name="tabPageEmployees.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPageEmployees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>616, 456</value>
+    <value>616, 391</value>
   </data>
   <data name="tabPageEmployees.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -406,7 +406,7 @@
     <value>userControlSalaryFilter</value>
   </data>
   <data name="&gt;&gt;userControlSalaryFilter.Type" xml:space="preserve">
-    <value>Salary.NET.UserControlSalaryFilter, Salary.NET, Version=0.0.5.0, Culture=neutral, PublicKeyToken=dad9b423fe2add48</value>
+    <value>Salary.NET.UserControlSalaryFilter, Salary.NET, Version=0.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;userControlSalaryFilter.Parent" xml:space="preserve">
     <value>splitContainerSalaryAccounts.Panel1</value>
@@ -454,7 +454,7 @@
     <value>0, 0</value>
   </data>
   <data name="objectListViewSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 421</value>
+    <value>610, 357</value>
   </data>
   <data name="objectListViewSalaryAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -484,10 +484,13 @@
     <value>1</value>
   </data>
   <data name="splitContainerSalaryAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 450</value>
+    <value>610, 385</value>
   </data>
   <data name="splitContainerSalaryAccounts.SplitterDistance" type="System.Int32, mscorlib">
     <value>25</value>
+  </data>
+  <data name="splitContainerSalaryAccounts.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="splitContainerSalaryAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -505,13 +508,13 @@
     <value>0</value>
   </data>
   <data name="tabPageSalaries.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 22</value>
   </data>
   <data name="tabPageSalaries.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPageSalaries.Size" type="System.Drawing.Size, System.Drawing">
-    <value>616, 456</value>
+    <value>616, 391</value>
   </data>
   <data name="tabPageSalaries.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -538,7 +541,7 @@
     <value>0, 0</value>
   </data>
   <data name="zedGraphControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>616, 456</value>
+    <value>616, 391</value>
   </data>
   <data name="zedGraphControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -556,10 +559,10 @@
     <value>0</value>
   </data>
   <data name="tabPageGraph.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 22</value>
   </data>
   <data name="tabPageGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>616, 456</value>
+    <value>616, 391</value>
   </data>
   <data name="tabPageGraph.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -583,10 +586,10 @@
     <value>Fill</value>
   </data>
   <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
+    <value>0, 24</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 484</value>
+    <value>624, 417</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -673,13 +676,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 15</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 509</value>
+    <value>624, 441</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 8.25pt</value>
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

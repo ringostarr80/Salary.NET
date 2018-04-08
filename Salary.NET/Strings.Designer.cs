@@ -97,6 +97,15 @@ namespace Salary.NET {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hinweis ähnelt.
+        /// </summary>
+        internal static string HINT {
+            get {
+                return ResourceManager.GetString("HINT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Gehalt ähnelt.
         /// </summary>
         internal static string INCOME {
@@ -111,6 +120,42 @@ namespace Salary.NET {
         internal static string PERIOD {
             get {
                 return ResourceManager.GetString("PERIOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Es ist eine unbehandelte Ausnahme aufgetreten. Soll ein Fehlerbericht an den Entwickler gesendet werden? ähnelt.
+        /// </summary>
+        internal static string QUESTION_UNHANDLED_EXCEPTION_SEND_REPORT {
+            get {
+                return ResourceManager.GetString("QUESTION_UNHANDLED_EXCEPTION_SEND_REPORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Unbehandelte Ausnahme ähnelt.
+        /// </summary>
+        internal static string UNHANDLED_EXCEPTION {
+            get {
+                return ResourceManager.GetString("UNHANDLED_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Es ist ein Fehler beim Versenden des Fehlers aufgetreten: {0}\nSoll es noch einmal versucht werden? ähnelt.
+        /// </summary>
+        internal static string UNHANDLED_EXCEPTION_REPORT_SENT_FAILED {
+            get {
+                return ResourceManager.GetString("UNHANDLED_EXCEPTION_REPORT_SENT_FAILED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Es wurde ein Crash-Report an den Entwickler gesendet ähnelt.
+        /// </summary>
+        internal static string UNHANDLED_EXCEPTION_REPORT_SENT_SUCCESSFULLY {
+            get {
+                return ResourceManager.GetString("UNHANDLED_EXCEPTION_REPORT_SENT_SUCCESSFULLY", resourceCulture);
             }
         }
         

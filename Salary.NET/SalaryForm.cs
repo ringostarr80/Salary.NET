@@ -200,6 +200,11 @@ namespace Salary.NET
 			this.userControlSalaryFilter.ChangeLocalization(languageCode);
 		}
 
+		public string GetLocalizedString(string name)
+		{
+			return this._localizations.GetString(name);
+		}
+
 		private void ToolStripMenuItemXMLFile_Click(object sender, EventArgs e)
 		{
 			var dialogResult = this.saveFileDialogNewDb.ShowDialog();
