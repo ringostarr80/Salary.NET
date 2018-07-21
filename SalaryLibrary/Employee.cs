@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using Newtonsoft.Json.Linq;
 
 namespace SalaryLibrary
 {
@@ -26,6 +27,13 @@ namespace SalaryLibrary
 			var personnelNumberNode = node.SelectSingleNode("./personnel-number");
 			if (personnelNumberNode != null) {
 				this.PersonnelNumber = personnelNumberNode.InnerText;
+			}
+		}
+
+		public Employee(JToken json) : base(json)
+		{
+			if (json["personnel_number"]?.Type == JTokenType.String) {
+				this.PersonnelNumber = json["personnel_number"].ToString();
 			}
 		}
 	}

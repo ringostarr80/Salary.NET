@@ -19,7 +19,7 @@ namespace Salary.NET
 		private ResourceManager _resourceManager = new ResourceManager("Salary.NET.SalaryForm", typeof(SalaryForm).Assembly);
 		private ResourceManager _localizations = new ResourceManager("Salary.NET.Strings", typeof(SalaryForm).Assembly);
 		private ISalaryDataProvider _salaryData = null;
-		private string _openedDataProvider = String.Empty;
+		private string _openedDataProvider = string.Empty;
 		private Employee _openedEmployee = null;
 		private object _clipboardSalaryId = null;
 		private BarItem _netBarItem = null;
@@ -221,7 +221,27 @@ namespace Salary.NET
 			this._openedDataProvider = fileInfo.Name;
 			this.Text = "Salary.NET - " + this._openedDataProvider;
 
+			this.objectListViewEmployees.ClearObjects();
+
 			this.toolStripMenuItemEditAdd.Enabled = true;
+		}
+
+		private void OnlineAccountToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			using (var createOnlineAccountForm = new CreateOnlineAccountForm()) {
+				var dialogResult = createOnlineAccountForm.ShowDialog();
+				if (dialogResult != DialogResult.OK) {
+					return;
+				}
+
+				this._salaryData = new SalaryDataREST(createOnlineAccountForm.Username, createOnlineAccountForm.Password, createOnlineAccountForm.EncryptionPassword, createOnlineAccountForm.BaseUrl);
+				this._openedDataProvider = "Online-Account: " + createOnlineAccountForm.Username;
+				this.Text = "Salary.NET - " + this._openedDataProvider;
+
+				this.objectListViewEmployees.ClearObjects();
+
+				this.toolStripMenuItemEditAdd.Enabled = true;
+			}
 		}
 
 		private void ToolStripMenuItemOpenXMLFile_Click(object sender, EventArgs e)
@@ -245,6 +265,35 @@ namespace Salary.NET
 			var salaryTypes = this._salaryData.GetSalaryTypes();
 			if (salaryTypes.HasConflictingElements) {
 				MessageBox.Show("Es gibt Lohnarten, die miteinander in Konflikt stehen.", this._localizations.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void OnlineAccountToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			using (var loginToOnlineAccountForm = new LoginToOnlineAccountForm()) {
+				var dialogResult = loginToOnlineAccountForm.ShowDialog();
+				if (dialogResult != DialogResult.OK) {
+					return;
+				}
+
+				this._salaryData = new SalaryDataREST(loginToOnlineAccountForm.Username, loginToOnlineAccountForm.Password, loginToOnlineAccountForm.EncryptionPassword, loginToOnlineAccountForm.BaseUrl);
+				this._openedDataProvider = "Online-Account: " + loginToOnlineAccountForm.Username;
+				this.Text = "Salary.NET - " + this._openedDataProvider;
+
+				this.toolStripMenuItemEditAdd.Enabled = true;
+				this.toolStripMenuItemEditChange.Enabled = true;
+
+				try {
+					var employees = this._salaryData.GetEmployees();
+					this.objectListViewEmployees.SetObjects(employees);
+
+					var salaryTypes = this._salaryData.GetSalaryTypes();
+					if (salaryTypes.HasConflictingElements) {
+						MessageBox.Show("Es gibt Lohnarten, die miteinander in Konflikt stehen.", this._localizations.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				} catch (Exception exc) {
+					MessageBox.Show("Fehler: " + exc.Message, this._localizations.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 
@@ -298,8 +347,8 @@ namespace Salary.NET
 			}
 
 			var item = this.objectListViewEmployees.SelectedItems[0];
-			var id = Convert.ToUInt32(item.SubItems[0].Text);
-			this.ShowSalaryAccountsOfEmployee(id);
+			//var id = Convert.ToUInt32(item.SubItems[0].Text);
+			this.ShowSalaryAccountsOfEmployee(item.SubItems[0].Text);
 		}
 
 		private void ToolStripMenuItemShowSalaryAccounts_Click(object sender, EventArgs e)
@@ -309,11 +358,11 @@ namespace Salary.NET
 			}
 
 			var item = this.objectListViewEmployees.SelectedItems[0];
-			var id = Convert.ToUInt32(item.SubItems[0].Text);
-			this.ShowSalaryAccountsOfEmployee(id);
+			//var id = Convert.ToUInt32(item.SubItems[0].Text);
+			this.ShowSalaryAccountsOfEmployee(item.SubItems[0].Text);
 		}
 
-		private void ShowSalaryAccountsOfEmployee(uint id)
+		private void ShowSalaryAccountsOfEmployee(object id)
 		{
 			var employee = this._salaryData.GetEmployee(id);
 			this.tabControlMain.SelectedTab = this.tabPageSalaries;

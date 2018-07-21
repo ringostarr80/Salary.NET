@@ -9,14 +9,14 @@ namespace SalaryLibrary.SalaryDataProviders
 {
 	public class SalaryDataXml : ISalaryDataProvider
 	{
-		private string _combinedFilename = String.Empty;
-		private string _employeeFilename = String.Empty;
-		private string _salaryFilename = String.Empty;
-		private XmlDocument _combinedDoc = null;
-		private XmlDocument _employeeDoc = null;
-		private XmlDocument _salaryDoc = null;
-		private CultureInfo _culture = CultureInfo.CreateSpecificCulture("en-US");
-		private object _writeLock = new object();
+		private readonly string _combinedFilename = string.Empty;
+		private readonly string _employeeFilename = string.Empty;
+		private readonly string _salaryFilename = string.Empty;
+		private readonly XmlDocument _combinedDoc = null;
+		private readonly XmlDocument _employeeDoc = null;
+		private readonly XmlDocument _salaryDoc = null;
+		private readonly CultureInfo _culture = CultureInfo.CreateSpecificCulture("en-US");
+		private readonly object _writeLock = new object();
 		private SalaryTypeCollection _cachedSalaryTypes = null;
 
 		public SalaryTypeCollection CachedSalaryTypes {
@@ -94,22 +94,22 @@ namespace SalaryLibrary.SalaryDataProviders
 		{
 			var employeeNode = employeeDoc.CreateElement("employee");
 			employeeNode.SetAttribute("id", employee.Id.ToString());
-			if(employee.PersonnelNumber != String.Empty) {
+			if(employee.PersonnelNumber != string.Empty) {
 				var personnelNumberNode = employeeDoc.CreateElement("personnel-number");
 				personnelNumberNode.InnerText = employee.PersonnelNumber;
 				employeeNode.AppendChild(personnelNumberNode);
 			}
-			if(employee.FirstName != String.Empty) {
+			if(employee.FirstName != string.Empty) {
 				var firstNameNode = employeeDoc.CreateElement("first-name");
 				firstNameNode.InnerText = employee.FirstName;
 				employeeNode.AppendChild(firstNameNode);
 			}
-			if(employee.MiddleName != String.Empty) {
+			if(employee.MiddleName != string.Empty) {
 				var middleNameNode = employeeDoc.CreateElement("middle-name");
 				middleNameNode.InnerText = employee.MiddleName;
 				employeeNode.AppendChild(middleNameNode);
 			}
-			if(employee.LastName != String.Empty) {
+			if(employee.LastName != string.Empty) {
 				var lastNameNode = employeeDoc.CreateElement("last-name");
 				lastNameNode.InnerText = employee.LastName;
 				employeeNode.AppendChild(lastNameNode);
@@ -137,12 +137,12 @@ namespace SalaryLibrary.SalaryDataProviders
 			}
 
 			var periodNode = salaryDoc.CreateElement("period");
-			var periodString = String.Format("{0}-{1:00}", salary.PeriodStart.Year, salary.PeriodStart.Month);
+			var periodString = string.Format("{0}-{1:00}", salary.PeriodStart.Year, salary.PeriodStart.Month);
 			if (salary.PeriodStart.Year != salary.PeriodEnd.Year ||
 				salary.PeriodStart.Month != salary.PeriodEnd.Month ||
 				salary.PeriodStart.Day != 1 ||
 				salary.PeriodEnd.Day != DateTime.DaysInMonth(salary.PeriodEnd.Year, salary.PeriodEnd.Month)) {
-				periodString += String.Format("-{0:00} - {1}-{2:00}-{3:00}", salary.PeriodStart.Day, salary.PeriodEnd.Year, salary.PeriodEnd.Month, salary.PeriodEnd.Day);
+				periodString += string.Format("-{0:00} - {1}-{2:00}-{3:00}", salary.PeriodStart.Day, salary.PeriodEnd.Year, salary.PeriodEnd.Month, salary.PeriodEnd.Day);
 			}
 			periodNode.InnerText = periodString;
 			salaryNode.AppendChild(periodNode);
@@ -214,7 +214,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		public object InsertEmployee(Employee employee)
 		{
 			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
-			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
+			var employeeFilename = (this._employeeFilename != string.Empty) ? this._employeeFilename : this._combinedFilename;
 
 			var salaryDataNode = employeeDoc.SelectSingleNode("/salary-data");
 			if (salaryDataNode == null) {
@@ -248,7 +248,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		public void UpdateEmployee(Employee employee)
 		{
 			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
-			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
+			var employeeFilename = (this._employeeFilename != string.Empty) ? this._employeeFilename : this._combinedFilename;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + employee.Id + "']");
 			if (employeeNode == null) {
 				throw new ArgumentException("Cannot find employee-id in xml-data to update.");
@@ -271,7 +271,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		public void DeleteEmployee(object id)
 		{
 			var employeeDoc = this._employeeDoc ?? this._combinedDoc;
-			var employeeFilename = (this._employeeFilename != String.Empty) ? this._employeeFilename : this._combinedFilename;
+			var employeeFilename = (this._employeeFilename != string.Empty) ? this._employeeFilename : this._combinedFilename;
 			var employeeNode = employeeDoc.SelectSingleNode("/salary-data/employees/employee[@id='" + id + "']");
 			if(employeeNode == null) {
 				return;
@@ -288,8 +288,8 @@ namespace SalaryLibrary.SalaryDataProviders
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var firstNameNode = employeeNode.SelectSingleNode("./first-name");
 				var lastNameNode = employeeNode.SelectSingleNode("./last-name");
-				var currentFirstName = String.Empty;
-				var currentLastName = String.Empty;
+				var currentFirstName = string.Empty;
+				var currentLastName = string.Empty;
 				if(firstNameNode != null) {
 					currentFirstName = firstNameNode.InnerText.Trim();
 				}
@@ -327,8 +327,8 @@ namespace SalaryLibrary.SalaryDataProviders
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var firstNameNode = employeeNode.SelectSingleNode("./first-name");
 				var lastNameNode = employeeNode.SelectSingleNode("./last-name");
-				var currentFirstName = String.Empty;
-				var currentLastName = String.Empty;
+				var currentFirstName = string.Empty;
+				var currentLastName = string.Empty;
 				if(firstNameNode != null) {
 					currentFirstName = firstNameNode.InnerText.Trim();
 				}
@@ -366,8 +366,8 @@ namespace SalaryLibrary.SalaryDataProviders
 			foreach(XmlNode employeeNode in employeeNodes) {
 				var firstNameNode = employeeNode.SelectSingleNode("./first-name");
 				var lastNameNode = employeeNode.SelectSingleNode("./last-name");
-				var currentFirstName = String.Empty;
-				var currentLastName = String.Empty;
+				var currentFirstName = string.Empty;
+				var currentLastName = string.Empty;
 				if(firstNameNode != null) {
 					currentFirstName = firstNameNode.InnerText.Trim();
 				}
@@ -503,7 +503,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		public object InsertSalary(SalaryAccount salary)
 		{
 			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
-			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+			var salaryFilename = (this._salaryFilename != string.Empty) ? this._salaryFilename : this._combinedFilename;
 
 			var salaryDataNode = salaryDoc.SelectSingleNode("/salary-data");
 			if (salaryDataNode == null) {
@@ -597,7 +597,7 @@ namespace SalaryLibrary.SalaryDataProviders
 				if (salaryNode.Attributes.GetNamedItem("id") == null) {
 					continue;
 				}
-				var employee = new Employee(id, String.Empty, String.Empty);
+				var employee = new Employee(id, string.Empty, string.Empty);
 				var salaryAccount = new SalaryAccount(this.CachedSalaryTypes, employee, salaryNode);
 				callback(salaryAccount);
 				count++;
@@ -614,7 +614,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		public void UpdateSalary(SalaryAccount salary)
 		{
 			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
-			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+			var salaryFilename = (this._salaryFilename != string.Empty) ? this._salaryFilename : this._combinedFilename;
 			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + salary.Id + "']");
 			if(salaryNode == null) {
 				throw new ArgumentException("Cannot find salary-id in xml-data to update.");
@@ -633,7 +633,7 @@ namespace SalaryLibrary.SalaryDataProviders
 		public void DeleteSalary(object id)
 		{
 			var salaryDoc = this._salaryDoc ?? this._combinedDoc;
-			var salaryFilename = (this._salaryFilename != String.Empty) ? this._salaryFilename : this._combinedFilename;
+			var salaryFilename = (this._salaryFilename != string.Empty) ? this._salaryFilename : this._combinedFilename;
 			var salaryNode = salaryDoc.SelectSingleNode("/salary-data/salary-accountings/salary[@id='" + id + "']");
 			if(salaryNode == null) {
 				throw new ArgumentException("Cannot find salary-id in xml-data to delete.");
@@ -717,6 +717,8 @@ namespace SalaryLibrary.SalaryDataProviders
 			salaryTypesNode.AppendChild(salaryTypeNode);
 			salaryDoc.Save(salaryFilename);
 
+			this._cachedSalaryTypes = this.GetSalaryTypes();
+
 			return salaryType.Id;
 		}
 
@@ -758,6 +760,8 @@ namespace SalaryLibrary.SalaryDataProviders
 			}
 
 			salaryDoc.Save(salaryFilename);
+
+			this._cachedSalaryTypes = this.GetSalaryTypes();
 
 			return newIds.ToArray();
 		}

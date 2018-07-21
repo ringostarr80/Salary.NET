@@ -79,7 +79,7 @@ namespace Salary.NET
 						this.buttonInstallUpdate.Enabled = true;
 					}
 				};
-				webClient.DownloadStringAsync(new Uri("https://salary.ringoleese.de/api/salary.net/"));
+				webClient.DownloadStringAsync(new Uri("https://salary.ringoleese.de/api/salary.net/versions"));
 			}
 		}
 

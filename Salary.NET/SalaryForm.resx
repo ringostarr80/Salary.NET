@@ -122,34 +122,53 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItemXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemXMLFile.Text" xml:space="preserve">
     <value>&amp;XML-Datei</value>
   </data>
+  <data name="toolStripMenuItemOnlineAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="toolStripMenuItemOnlineAccount.Text" xml:space="preserve">
+    <value>Online-Account</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="toolStripMenuItemOnlineAccount.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripMenuItemNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemNew.Text" xml:space="preserve">
     <value>&amp;Neu</value>
   </data>
   <data name="toolStripMenuItemOpenXMLFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemOpenXMLFile.Text" xml:space="preserve">
     <value>&amp;XML-Datei</value>
   </data>
+  <data name="ToolStripMenuItemOpenOnlineAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ToolStripMenuItemOpenOnlineAccount.Text" xml:space="preserve">
+    <value>Online-Account</value>
+  </data>
+  <data name="ToolStripMenuItemOpenOnlineAccount.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripMenuItemOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemOpen.Text" xml:space="preserve">
     <value>&amp;Öffnen</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItemClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItemClose.Text" xml:space="preserve">
     <value>&amp;Beenden</value>
@@ -181,12 +200,11 @@
   <data name="toolStripMenuItemAddSalaryTypes.Text" xml:space="preserve">
     <value>&amp;Lohnarten</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStripMenuItemEditAdd.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripMenuItemEditAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="toolStripMenuItemEditAdd.Text" xml:space="preserve">
     <value>&amp;Hinzufügen</value>
@@ -201,7 +219,7 @@
     <value>False</value>
   </data>
   <data name="toolStripMenuItemEditChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="toolStripMenuItemEditChange.Text" xml:space="preserve">
     <value>&amp;Ändern</value>
@@ -240,7 +258,7 @@
     <value>False</value>
   </data>
   <data name="toolStripMenuItemLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>120, 22</value>
   </data>
   <data name="toolStripMenuItemLanguage.Text" xml:space="preserve">
     <value>&amp;Sprache</value>
@@ -406,7 +424,7 @@
     <value>userControlSalaryFilter</value>
   </data>
   <data name="&gt;&gt;userControlSalaryFilter.Type" xml:space="preserve">
-    <value>Salary.NET.UserControlSalaryFilter, Salary.NET, Version=0.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Salary.NET.UserControlSalaryFilter, Salary.NET, Version=0.0.7.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;userControlSalaryFilter.Parent" xml:space="preserve">
     <value>splitContainerSalaryAccounts.Panel1</value>
@@ -3461,6 +3479,12 @@
   <data name="&gt;&gt;toolStripMenuItemXMLFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItemOnlineAccount.Name" xml:space="preserve">
+    <value>toolStripMenuItemOnlineAccount</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOnlineAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItemOpen.Name" xml:space="preserve">
     <value>toolStripMenuItemOpen</value>
   </data>
@@ -3471,6 +3495,12 @@
     <value>toolStripMenuItemOpenXMLFile</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItemOpenXMLFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemOpenOnlineAccount.Name" xml:space="preserve">
+    <value>ToolStripMenuItemOpenOnlineAccount</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemOpenOnlineAccount.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Xml;
+using Newtonsoft.Json.Linq;
 
 namespace SalaryLibrary
 {
@@ -111,7 +112,7 @@ namespace SalaryLibrary
 						case "birthday":
 							var birthdayText = childNode.InnerText.Trim();
 							if (birthdayText != string.Empty) {
-								var dateMatch = Regex.Match(birthdayText, "^(\\d{4})-(\\d{2})-(\\d{2})$", RegexOptions.Compiled);
+								var dateMatch = Regex.Match(birthdayText, "^(\\d{4})-(\\d{2})-(\\d{2})(\\s(\\d{2}):(\\d{2}):(\\d{2}))?$", RegexOptions.Compiled);
 								if(!dateMatch.Success) {
 									throw new FormatException("The birthday-node (" + birthdayText + ") has an invalid format. Expected format: YYYY-MM-DD.");
 								}
@@ -122,6 +123,51 @@ namespace SalaryLibrary
 							}
 							break;
 					}
+				}
+			}
+		}
+
+		public Person(JToken json)
+		{
+			if (json["id"] != null) {
+				this.Id = json["id"].ToString();
+			}
+
+			this.FirstName = json["first_name"]?.ToString();
+			this.MiddleName = json["middle_name"]?.ToString();
+			this.LastName = json["last_name"]?.ToString();
+			if (json["gender"] != null) {
+				switch (json["gender"].ToString()) {
+					case "male":
+						this.Gender = Gender.Male;
+						break;
+
+					case "female":
+						this.Gender = Gender.Female;
+						break;
+
+					case "notspecified":
+						this.Gender = Gender.NotSpecified;
+						break;
+
+					case "unknown":
+						this.Gender = Gender.Unknown;
+						break;
+
+					default:
+						throw new FormatException("The gender (" + json["gender"].ToString() + ") is invalid. Valid genders are: male, female, notspecified or unknown.");
+				}
+			}
+			if (json["birthday"]?.Type == JTokenType.String) {
+				if (json["birthday"].ToString() != string.Empty) {
+					var dateMatch = Regex.Match(json["birthday"].ToString(), "^(\\d{4})-(\\d{2})-(\\d{2})(\\s(\\d{2}):(\\d{2}):(\\d{2}))?$", RegexOptions.Compiled);
+					if (!dateMatch.Success) {
+						throw new FormatException("The birthday-node (" + json["birthday"].ToString() + ") has an invalid format. Expected format: YYYY-MM-DD.");
+					}
+					var year = Convert.ToInt32(dateMatch.Groups[1].Value);
+					var month = Convert.ToInt32(dateMatch.Groups[2].Value);
+					var day = Convert.ToInt32(dateMatch.Groups[3].Value);
+					this.Birthday = new DateTime(year, month, day);
 				}
 			}
 		}

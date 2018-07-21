@@ -33,8 +33,10 @@
 			this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemNew = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemXMLFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemOnlineAccount = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemOpenXMLFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItemOpenOnlineAccount = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +121,8 @@
 			// toolStripMenuItemNew
 			// 
 			this.toolStripMenuItemNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemXMLFile});
+            this.toolStripMenuItemXMLFile,
+            this.toolStripMenuItemOnlineAccount});
 			this.toolStripMenuItemNew.Name = "toolStripMenuItemNew";
 			resources.ApplyResources(this.toolStripMenuItemNew, "toolStripMenuItemNew");
 			// 
@@ -129,10 +132,17 @@
 			resources.ApplyResources(this.toolStripMenuItemXMLFile, "toolStripMenuItemXMLFile");
 			this.toolStripMenuItemXMLFile.Click += new System.EventHandler(this.ToolStripMenuItemXMLFile_Click);
 			// 
+			// toolStripMenuItemOnlineAccount
+			// 
+			this.toolStripMenuItemOnlineAccount.Name = "toolStripMenuItemOnlineAccount";
+			resources.ApplyResources(this.toolStripMenuItemOnlineAccount, "toolStripMenuItemOnlineAccount");
+			this.toolStripMenuItemOnlineAccount.Click += new System.EventHandler(this.OnlineAccountToolStripMenuItem_Click);
+			// 
 			// toolStripMenuItemOpen
 			// 
 			this.toolStripMenuItemOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemOpenXMLFile});
+            this.toolStripMenuItemOpenXMLFile,
+            this.ToolStripMenuItemOpenOnlineAccount});
 			this.toolStripMenuItemOpen.Name = "toolStripMenuItemOpen";
 			resources.ApplyResources(this.toolStripMenuItemOpen, "toolStripMenuItemOpen");
 			// 
@@ -141,6 +151,12 @@
 			this.toolStripMenuItemOpenXMLFile.Name = "toolStripMenuItemOpenXMLFile";
 			resources.ApplyResources(this.toolStripMenuItemOpenXMLFile, "toolStripMenuItemOpenXMLFile");
 			this.toolStripMenuItemOpenXMLFile.Click += new System.EventHandler(this.ToolStripMenuItemOpenXMLFile_Click);
+			// 
+			// ToolStripMenuItemOpenOnlineAccount
+			// 
+			this.ToolStripMenuItemOpenOnlineAccount.Name = "ToolStripMenuItemOpenOnlineAccount";
+			resources.ApplyResources(this.ToolStripMenuItemOpenOnlineAccount, "ToolStripMenuItemOpenOnlineAccount");
+			this.ToolStripMenuItemOpenOnlineAccount.Click += new System.EventHandler(this.OnlineAccountToolStripMenuItem1_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -584,6 +600,8 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCheckForUpdates;
 		private UserControlSalaryFilter userControlSalaryFilter;
 		private System.Windows.Forms.SplitContainer splitContainerSalaryAccounts;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOnlineAccount;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpenOnlineAccount;
 	}
 }
 
