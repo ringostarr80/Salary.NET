@@ -172,7 +172,7 @@ namespace SalaryLibrary.SalaryDataProviders
 
 		public async Task UpdateEmployeeAsync(Employee employee)
 		{
-			throw new NotImplementedException();
+			await Task.Run(() => {throw new NotImplementedException();});
 		}
 
 		public void DeleteEmployee(object id)
