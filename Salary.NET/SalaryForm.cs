@@ -16,14 +16,12 @@ namespace Salary.NET
 {
 	public partial class SalaryForm : Form
 	{
-		private ResourceManager _resourceManager = new ResourceManager("Salary.NET.SalaryForm", typeof(SalaryForm).Assembly);
-		private ResourceManager _localizations = new ResourceManager("Salary.NET.Strings", typeof(SalaryForm).Assembly);
+		private readonly ResourceManager _resourceManager = new ResourceManager("Salary.NET.SalaryForm", typeof(SalaryForm).Assembly);
+		private readonly ResourceManager _localizations = new ResourceManager("Salary.NET.Strings", typeof(SalaryForm).Assembly);
 		private ISalaryDataProvider _salaryData = null;
 		private string _openedDataProvider = string.Empty;
 		private Employee _openedEmployee = null;
 		private object _clipboardSalaryId = null;
-		private BarItem _netBarItem = null;
-		private BarItem _grossBarItem = null;
 		private string _updateExecutable = string.Empty;
 
 		public SalaryForm()
@@ -323,7 +321,7 @@ namespace Salary.NET
 				}
 
 				var employee = addEmployeeForm.Employee;
-				var id = this._salaryData.InsertEmployee(employee);
+				this._salaryData.InsertEmployee(employee);
 				this.objectListViewEmployees.AddObject(employee);
 			}
 		}
@@ -401,8 +399,8 @@ namespace Salary.NET
 				netWageData.Add(new XDate(salaryAccount.PeriodStart), salaryAccount.NetWage);
 				grossWageData.Add(new XDate(salaryAccount.PeriodStart), salaryAccount.GrossWage);
 			}
-			this._netBarItem = graphPane.AddBar("Netto-Gehalt", netWageData, Color.Green);
-			this._grossBarItem = graphPane.AddBar("Brutto-Gehalt", grossWageData, Color.Blue);
+			graphPane.AddBar("Netto-Gehalt", netWageData, Color.Green);
+			graphPane.AddBar("Brutto-Gehalt", grossWageData, Color.Blue);
 			graphPane.BarSettings.Type = BarType.SortedOverlay;
 			graphPane.AxisChange();
 		}
